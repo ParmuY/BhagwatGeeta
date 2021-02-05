@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    //array list for recycler vieww
+    //array list for recycler view
     private void arrayListForRecyclerView(){
         recycleViewItemList = new ArrayList<>();
         recycleViewItemList.add(new RecycleViewItem(R.drawable.imgicon1,"अर्जुनविषाद योग"));
