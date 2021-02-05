@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Bhagavad Gita</string>
+    <string name="adhyay">अध्याय</string>
+    <string name="textview">TextView</string>
+    <string name="adhyay1_shloka">adhyay1 shloka</string>
+    <string name="adhyay1">अध्याय 1</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shloka">\"श्लोक \"</string>
+    <string name="share_shloka">Share Shloka</string>
+    <string name="favourite">Favourite</string>
+    <string name="content_about">हमने इस एंड्रॉयड ऐप के रूप में "भगवद् गीता" के अध्यायों और सही उच्चारण को संकलित करने की कोशिश की है। आप इस ऐप्लिकेशन में कोई गलती पाते हैं हमें एक ईमेल भेजें और हम इसे सही करने का प्रयास करेंगे।
+
+</string>
+
+    <string name="button">Button</string>
+    <string name="navigation_drawer_open">Open Drawer</string>
+    <string name="navigation_drawer_close">Close Drawer</string>
+    <string name="header_title_bhagvadgita">श्रीमद्भगवद्गीता</string>
+    <string name="about_app">About app</string>
+    <string name="notification_title">श्रीमद्भगवद्गीता ज्ञान</string>
+    <string name="notification_text">आज का ज्ञान</string>
+    <string name="youtube_channel_link"><a href="http://m.youtube.com/channel/UCVtjkubwUesxdPb6hpnoANw">Youtube Channel Link</a></string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="adhyay_suchi">
+        <item>अध्याय 1 ~ अर्जुनविषाद योग</item>
+        <item>अध्याय 2 ~ सांख्य योग </item>
+        <item>अध्याय 3 ~ कर्म योग </item>
+        <item>अध्याय 4 ~ ज्ञानकर्मसंन्यास योग</item>
+        <item>अध्याय 5 ~ कर्मसंन्यास योग</item>
+        <item>अध्याय 6 ~ आत्मसंयम योग</item>
+        <item>अध्याय 7 ~ ज्ञानविज्ञान योग</item>
+        <item>अध्याय 8 ~ अक्षरब्रह्म योग</item>
+        <item>अध्याय 9 ~ राजविद्याराजगुह्य योग</item>
+        <item>अध्याय 10 ~ विभूतियोग</item>
+        <item>अध्याय 11 ~ विश्वरूपदर्शन योग</item>
+        <item>अध्याय 12 ~ भक्ति योग</item>
+        <item>अध्याय 13 ~ क्षेत्र-क्षेत्रज्ञविभागयोग</item>
+        <item>अध्याय 14 ~ गुणत्रयविभाग योग</item>
+        <item>अध्याय 15 ~ पुरुषोत्तम योग</item>
+        <item>अध्याय 16 ~ दैवासुरसम्पद्विभाग योग</item>
+        <item>अध्याय 17 ~ श्रद्धात्रयविभाग योग</item>
+        <item>अध्याय 18 ~ मोक्षसंन्यास योग</item>
+    </string-array>
+</resources>

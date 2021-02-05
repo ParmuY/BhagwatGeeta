@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/dark_mode"
+            android:icon="@drawable/ic_dark__mode"
+            android:title="@string/dark_mode"
+            app:actionLayout="@layout/dark_mode_switchbtn"/>
+        <item android:id="@+id/share_drawer"
+            android:icon="@drawable/ic_share"
+            android:title="@string/share_the_app"/>
+        <item android:id="@+id/rate"
+            android:icon="@drawable/ic_baseline_star_24"
+            android:title="@string/rate_app"/>
+        <item android:id="@+id/about"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="@string/about"/>
+
+
+
+
+
+    </group>
+
+</menu>
