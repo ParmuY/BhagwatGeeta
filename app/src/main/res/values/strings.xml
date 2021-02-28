@@ -36,6 +36,7 @@
     <string name="about_app">About app</string>
     <string name="notification_title">श्रीमद्भगवद्गीता ज्ञान</string>
     <string name="notification_text">आज का ज्ञान</string>
+    <string name="feedback">Feedback</string>
     <string-array name="adhyay_suchi">
         <item>अध्याय 1 ~ अर्जुनविषाद योग</item>
         <item>अध्याय 2 ~ सांख्य योग </item>

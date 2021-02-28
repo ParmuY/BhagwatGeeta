@@ -1,5 +1,5 @@
 package com.parmu.bhagwatgeeta;
-
+//new featue branch
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -215,6 +215,11 @@ public class MainActivity extends AppCompatActivity {
                         displayMessage("rate the app");
                         drawerLayout.closeDrawers();
                         return true;
+                    case R.id.feedback:
+                        menuItem.setChecked(true);
+                        feedbackIntent();
+                        drawerLayout.closeDrawers();
+                        return true;
                     case R.id.about:
                         menuItem.setChecked(false);
                         Intent intent = new Intent(MainActivity.this,AboutAppActivity.class);
@@ -260,6 +265,14 @@ public class MainActivity extends AppCompatActivity {
     }
     public void displayMessage(String message) {
         Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+    }
+    private void feedbackIntent(){
+        Intent iFeedback = new Intent(Intent.ACTION_SEND);
+        iFeedback.setType("*/*");
+        iFeedback.putExtra(Intent.EXTRA_EMAIL,new String[] {"pramesh2151@gmail.com"});
+        iFeedback.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
+        iFeedback.putExtra(Intent.EXTRA_TEXT,"write feedback here");
+        startActivity(Intent.createChooser(iFeedback,"Send Feedback:"));
     }
 
 }
