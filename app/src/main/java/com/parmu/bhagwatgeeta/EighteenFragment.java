@@ -871,5 +871,5 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
             }
         }
     }
-
+//fixing bitmap savving
 }
