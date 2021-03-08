@@ -47,6 +47,7 @@ public class NineFragment extends Fragment implements ViewPager.OnPageChangeList
     Context context9;
     ViewPager viewPager9;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -90,6 +91,7 @@ public class NineFragment extends Fragment implements ViewPager.OnPageChangeList
         }
         context9= getActivity();
         mediaPlayer9 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
     }
 
     @Override
@@ -393,7 +395,7 @@ public class NineFragment extends Fragment implements ViewPager.OnPageChangeList
             mediaPlayer9.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
 
             share_bitMap_to_Apps();
         }

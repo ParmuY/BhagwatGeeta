@@ -1,24 +1,31 @@
 package com.parmu.bhagwatgeeta;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,38 +33,39 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 import static com.parmu.bhagwatgeeta.Adhyay18_AC18.pagePosition18;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link EighteenFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class EighteenFragment extends Fragment implements ViewPager.OnPageChangeListener{
     private TextView textView;
     public MediaPlayer mediaPlayer18;
     Context context18;
     ViewPager viewPager18;
+    private ScrollView scrollView;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    Drawable drawable;
+    private ConstraintLayout constrainedLayout;
+    RequestPermissions requestPermissions;
 
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     public EighteenFragment() {
         // Required empty public constructor
@@ -91,6 +99,8 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
         }
         context18= getActivity();
         mediaPlayer18 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
+
     }
 
     @Override
@@ -99,17 +109,20 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
         // Inflate the layout for this fragment
       View view18= inflater.inflate(R.layout.fragment_eighteen, container, false);
       textView=view18.findViewById(R.id.text_display_18);
+      scrollView= view18.findViewById(R.id.scroll_view);
+      constrainedLayout = view18.findViewById(R.id.constrained_layout);
+      drawable = getResources().getDrawable(R.drawable.paper_texture_brown);
+
+//      if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_NO){
+//            scrollView.setBackgroundResource(R.drawable.paper_texture_brown);
+//        }
+
       textView.setText(getArguments().getString("message18"));
 
 
         FloatingActionButton fabPlayBtn18 = view18.findViewById(R.id.fabplaysound18);
         viewPager18=getActivity().findViewById(R.id.pager18);
         viewPager18.addOnPageChangeListener(this);
-
-
-
-
-
 
         fabPlayBtn18.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -783,6 +796,7 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(mediaPlayer18.isPlaying())
@@ -791,85 +805,76 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
             mediaPlayer18.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             share_bitMap_to_Apps();
         }
         return super.onOptionsItemSelected(item);
     }
 
     //sharing image form of shloka
-    private Uri getImageUri(Context inContext, Bitmap inImage) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.PNG, 100, bytes);
+    private Uri getImageUri(Bitmap inImage) {
 
-        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
-        return Uri.parse(path);
+        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/BhagwatGeeta";
+        File dir = new File(dirPath);
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+        File imgFile = new File(dirPath,"image"+".png");
+        if (imgFile.exists()) {
+            imgFile.delete();
+        }
+        else{
+            try {
+                imgFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+
+            FileOutputStream fos = new FileOutputStream(imgFile);
+            inImage.compress(Bitmap.CompressFormat.PNG,100,fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return Uri.parse(imgFile.getAbsolutePath());
+
     }
 
 
+
     private void share_bitMap_to_Apps() {
-        if (ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission((requireActivity()).getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             String adhyayN="अध्याय 18";
             String appDes = "\uD83D\uDD05"+adhyayN+"\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47"+"here will come the app link";
             Intent i = new Intent(Intent.ACTION_SEND);
-
-            i.setType("*/*");
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-    /*compress(Bitmap.CompressFormat.PNG, 100, stream);
-    byte[] bytes = stream.toByteArray();*/
-
-            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getActivity(), getBitmapFromView(textView)));
+            i.setType("image/*");
+            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getBitmapFromView(scrollView, textView)));
             i.putExtra(Intent.EXTRA_TEXT,appDes);
 
             try {
                 startActivity(Intent.createChooser(i, "Share by"));
             } catch (android.content.ActivityNotFoundException ex) {
-
                 ex.printStackTrace();
             }
 
         }
  }
-
-    private static Bitmap getBitmapFromView(View view) {
+      private  Bitmap getBitmapFromView(View bView, TextView textView) {
         //Define a bitmap with the same size as the view
-        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(),view.getHeight(), Bitmap.Config.ARGB_8888);
+        Bitmap returnedBitmap = Bitmap.createBitmap(bView.getWidth(),bView.getHeight(), Bitmap.Config.ARGB_8888);
         //Bind a canvas to it
         Canvas canvas = new Canvas(returnedBitmap);
-        //Get the view's background
-        Drawable bgDrawable = view.getBackground();
-        if (bgDrawable != null)
-            //has background drawable, then draw it on the canvas
-            bgDrawable.draw(canvas);
-        else
-            //does not have background drawable, then draw white background on the canvas
-            canvas.drawColor(Color.WHITE);
-        // draw the view on the canvas
-        view.draw(canvas);
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+            bView.setBackgroundResource(R.drawable.paper_texture_brown);
+            textView.setTextColor(Color.BLACK);
+        }
+        bView.draw(canvas);
         //return the bitmap
         return returnedBitmap;
     }
-    public void checkPermission(String permission, int requestCode)
-    {
-        if (ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), permission) == PackageManager.PERMISSION_DENIED) {
-            // Requesting the permission
-            ActivityCompat.requestPermissions(getActivity(), new String[] { permission }, requestCode);
-        }
-
-    }
-    // This function is called when the user accepts or decline the permission.
-// Request Code is used to check which permission called this function.
-// This request code is provided when the user is prompt for permission.
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getActivity(), "Storage Permission Granted", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getActivity().getApplicationContext(), "Storage Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-//fixing bitmap savving
 }

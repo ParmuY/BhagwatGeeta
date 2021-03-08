@@ -47,6 +47,7 @@ public class TwelveFragment extends Fragment implements ViewPager.OnPageChangeLi
     Context context12;
     ViewPager viewPager12;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -89,6 +90,7 @@ public class TwelveFragment extends Fragment implements ViewPager.OnPageChangeLi
         }
         context12= getActivity();
         mediaPlayer12 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
     }
 
     @Override
@@ -297,7 +299,7 @@ public class TwelveFragment extends Fragment implements ViewPager.OnPageChangeLi
             mediaPlayer12.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
 
             share_bitMap_to_Apps();
         }

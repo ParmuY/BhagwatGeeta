@@ -47,6 +47,7 @@ public class FourteenFragment extends Fragment  implements ViewPager.OnPageChang
     Context context14;
     ViewPager viewPager14;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
 
 
@@ -91,6 +92,7 @@ public class FourteenFragment extends Fragment  implements ViewPager.OnPageChang
         }
         context14= getActivity();
         mediaPlayer14 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
     }
 
     @Override
@@ -353,8 +355,7 @@ public class FourteenFragment extends Fragment  implements ViewPager.OnPageChang
             mediaPlayer14.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             share_bitMap_to_Apps();
         }
         return super.onOptionsItemSelected(item);

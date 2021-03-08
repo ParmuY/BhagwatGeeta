@@ -47,6 +47,7 @@ public class EightFragment extends Fragment implements ViewPager.OnPageChangeLis
     Context context8;
     ViewPager viewPager8;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
 
 
@@ -91,6 +92,7 @@ public class EightFragment extends Fragment implements ViewPager.OnPageChangeLis
         }
         context8= getActivity();
         mediaPlayer8 = new MediaPlayer();
+        requestPermissions  = new RequestPermissions();
     }
 
     @Override
@@ -353,7 +355,7 @@ public class EightFragment extends Fragment implements ViewPager.OnPageChangeLis
             mediaPlayer8.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             share_bitMap_to_Apps();
         }
         return super.onOptionsItemSelected(item);

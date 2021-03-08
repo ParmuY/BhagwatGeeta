@@ -1,6 +1,7 @@
 package com.parmu.bhagwatgeeta;
 
 import android.Manifest;
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -49,6 +50,7 @@ public class SixteenFragment extends Fragment implements ViewPager.OnPageChangeL
     Context context16;
     ViewPager viewPager16;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
 
 
@@ -93,6 +95,7 @@ public class SixteenFragment extends Fragment implements ViewPager.OnPageChangeL
         }
         context16= getActivity();
         mediaPlayer16 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
     }
 
     @Override
@@ -331,8 +334,7 @@ public class SixteenFragment extends Fragment implements ViewPager.OnPageChangeL
             mediaPlayer16.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             share_bitMap_to_Apps();
         }
         return super.onOptionsItemSelected(item);

@@ -48,6 +48,7 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
     Context context4;
     ViewPager viewPager4;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
 
 
@@ -92,6 +93,7 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
         }
         context4 = getActivity();
         mediaPlayer4 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
     }
 
     @Override
@@ -435,8 +437,7 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
             mediaPlayer4.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-            share_bitMap_to_Apps();
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());            share_bitMap_to_Apps();
         }
         return super.onOptionsItemSelected(item);
     }

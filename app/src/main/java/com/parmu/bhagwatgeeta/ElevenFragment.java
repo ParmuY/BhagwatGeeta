@@ -47,6 +47,7 @@ public class ElevenFragment extends Fragment implements ViewPager.OnPageChangeLi
     Context context11;
     ViewPager viewPager11;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
 
 
@@ -91,6 +92,7 @@ public class ElevenFragment extends Fragment implements ViewPager.OnPageChangeLi
         }
         context11= getActivity();
         mediaPlayer11 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
     }
 
     @Override
@@ -497,7 +499,7 @@ public class ElevenFragment extends Fragment implements ViewPager.OnPageChangeLi
             mediaPlayer11.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
 
             share_bitMap_to_Apps();
         }

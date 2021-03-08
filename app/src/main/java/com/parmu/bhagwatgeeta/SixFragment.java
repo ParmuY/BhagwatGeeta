@@ -47,6 +47,7 @@ public class SixFragment extends Fragment implements ViewPager.OnPageChangeListe
     Context context6;
     ViewPager viewPager6;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
 
 
@@ -91,6 +92,7 @@ public class SixFragment extends Fragment implements ViewPager.OnPageChangeListe
         }
         context6=getActivity();
         mediaPlayer6 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
     }
 
     @Override
@@ -472,8 +474,7 @@ public class SixFragment extends Fragment implements ViewPager.OnPageChangeListe
             mediaPlayer6.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             share_bitMap_to_Apps();
         }
         return super.onOptionsItemSelected(item);

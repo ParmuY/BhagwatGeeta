@@ -48,6 +48,7 @@ public class ThreeFragment extends Fragment implements ViewPager.OnPageChangeLis
     Context context3;
     ViewPager viewPager3;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -91,6 +92,7 @@ public class ThreeFragment extends Fragment implements ViewPager.OnPageChangeLis
         }
         context3= getActivity();
         mediaPlayer3 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
     }
 
     @Override
@@ -442,7 +444,7 @@ public class ThreeFragment extends Fragment implements ViewPager.OnPageChangeLis
             mediaPlayer3.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             share_bitMap_to_Apps();
         }
         return super.onOptionsItemSelected(item);

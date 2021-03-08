@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ScrollView xmlns:tools="http://schemas.android.com/tools"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="ExtraText"
-        >
+        android:id="@+id/scroll_view"
+        android:background="@color/backgroundColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ExtraText">
         xmlns:android="http://schemas.android.com/apk/res/android" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/constrained_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:context=".EighteenFragment"
-            android:background="@color/backgroundColor"
-            >
+            tools:ignore="ScrollViewSize">
+
 
             <TextView
                 android:id="@+id/text_display_18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
-                android:text="@string/textview"
-                android:textSize="20sp"
                 android:scrollbars="vertical"
+                android:text="@string/textview"
                 android:textColor="@color/textColor"
-                android:background="@color/backgroundColor"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.178"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="15dp" />
+                app:layout_constraintVertical_bias="0.178" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

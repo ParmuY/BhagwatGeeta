@@ -59,6 +59,7 @@ public class OneFragment extends Fragment implements ViewPager.OnPageChangeListe
     ViewPager viewPager;
     TextView textView;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    RequestPermissions requestPermissions;
 
 
 
@@ -102,8 +103,9 @@ public class OneFragment extends Fragment implements ViewPager.OnPageChangeListe
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-      context= getActivity();
+        context= getActivity();
         mediaPlayer = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
 
 
     }
@@ -534,8 +536,7 @@ public class OneFragment extends Fragment implements ViewPager.OnPageChangeListe
             mediaPlayer.release();}
         int id = item.getItemId();
         if(id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-            share_bitMap_to_Apps();
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());            share_bitMap_to_Apps();
         }
         return super.onOptionsItemSelected(item);
     }

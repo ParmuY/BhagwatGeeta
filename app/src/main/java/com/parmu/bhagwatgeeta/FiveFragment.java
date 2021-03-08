@@ -48,7 +48,7 @@ public class FiveFragment extends Fragment implements ViewPager.OnPageChangeList
     Context context5;
     ViewPager viewPager5;
     private static final int STORAGE_PERMISSION_CODE = 101;
-
+    RequestPermissions requestPermissions;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -92,6 +92,7 @@ public class FiveFragment extends Fragment implements ViewPager.OnPageChangeList
         }
         context5= getActivity();
         mediaPlayer5 = new MediaPlayer();
+        requestPermissions = new RequestPermissions();
     }
 
     @Override
@@ -349,8 +350,7 @@ public class FiveFragment extends Fragment implements ViewPager.OnPageChangeList
 
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-            share_bitMap_to_Apps();
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());            share_bitMap_to_Apps();
         }
         return super.onOptionsItemSelected(item);
     }
