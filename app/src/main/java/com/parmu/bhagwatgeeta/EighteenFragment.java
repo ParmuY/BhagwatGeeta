@@ -55,12 +55,12 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
     ViewPager viewPager18;
     private ScrollView scrollView;
     private static final int STORAGE_PERMISSION_CODE = 101;
-    RequestPermissions requestPermissions;
+    RequestPermissions requestPermissions = new RequestPermissions();
+    private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -69,15 +69,6 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment EighteenFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static EighteenFragment newInstance(String param1, String param2) {
         EighteenFragment fragment = new EighteenFragment();
         Bundle args = new Bundle();
@@ -97,7 +88,6 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
         }
         context18= getActivity();
         mediaPlayer18 = new MediaPlayer();
-        requestPermissions = new RequestPermissions();
 
     }
 
@@ -729,7 +719,6 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
     // method for media player
     private void playDisSound(Context c, int soundID) throws IOException {
 
-
         if(mediaPlayer18.isPlaying()){mediaPlayer18.pause(); mediaPlayer18.seekTo(0);
         }
         else {
@@ -795,74 +784,8 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
         int id = item.getItemId();
         if (id==R.id.share_shlola){
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            share_bitMap_to_Apps();
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(),scrollView,textView);
         }
         return super.onOptionsItemSelected(item);
     }
-
-    //sharing image form of shloka
-    private Uri getImageUri(Bitmap inImage) {
-
-        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/BhagwatGeeta";
-        File dir = new File(dirPath);
-        if(!dir.exists()){
-            dir.mkdirs();
-        }
-        File imgFile = new File(dirPath,"image"+".png");
-        if (imgFile.exists()) {
-            imgFile.delete();
-        }
-        else{
-            try {
-                imgFile.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-
-            FileOutputStream fos = new FileOutputStream(imgFile);
-            inImage.compress(Bitmap.CompressFormat.PNG,100,fos);
-            fos.flush();
-            fos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return Uri.parse(imgFile.getAbsolutePath());
-
-    }
-
-    private  Bitmap getBitmapFromView(View bView, TextView textView) {
-        //Define a bitmap with the same size as the view
-        Bitmap returnedBitmap = Bitmap.createBitmap(bView.getWidth(),bView.getHeight(), Bitmap.Config.ARGB_8888);
-        //Bind a canvas to it
-        Canvas canvas = new Canvas(returnedBitmap);
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
-            bView.setBackgroundResource(R.drawable.paper_texture_brown);
-            textView.setTextColor(Color.BLACK);
-        }
-        bView.draw(canvas);
-        //return the bitmap
-        return returnedBitmap;
-    }
-    private void share_bitMap_to_Apps() {
-        if (ContextCompat.checkSelfPermission((requireActivity()).getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            String adhyayN="अध्याय 18";
-            String appDes = "\uD83D\uDD05"+adhyayN+"\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47"+"here will come the app link";
-            Intent i = new Intent(Intent.ACTION_SEND);
-            i.setType("*/*");
-            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getBitmapFromView(scrollView, textView)));
-            i.putExtra(Intent.EXTRA_TEXT,appDes);
-
-            try {
-                startActivity(Intent.createChooser(i, "Share by"));
-            } catch (android.content.ActivityNotFoundException ex) {
-                ex.printStackTrace();
-            }
-
-        }
-    }
-
 }
