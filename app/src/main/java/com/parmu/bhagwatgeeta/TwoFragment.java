@@ -15,6 +15,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -22,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,6 +58,7 @@ public class TwoFragment extends Fragment implements ViewPager.OnPageChangeListe
     ViewPager viewPager2;
     private static final int STORAGE_PERMISSION_CODE = 101;
     RequestPermissions requestPermissions;
+    private ConstraintLayout constraintLayout;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -115,12 +118,7 @@ public class TwoFragment extends Fragment implements ViewPager.OnPageChangeListe
         FloatingActionButton fabPlayBtn2 = view2.findViewById(R.id.fabplaysound2);
         viewPager2=getActivity().findViewById(R.id.pager2);
         viewPager2.addOnPageChangeListener(this);
-
-
-
-
-
-
+        constraintLayout = view2.findViewById(R.id.constrained_layout);
         fabPlayBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -766,24 +764,50 @@ public class TwoFragment extends Fragment implements ViewPager.OnPageChangeListe
         }
         return super.onOptionsItemSelected(item);
     }
-
     //sharing image form of shloka
-    private Uri getImageUri(Context inContext, Bitmap inImage) {
+    private Uri getImageUri(Bitmap inImage) {
 
-       ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.PNG, 100, bytes);
+        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/BhagwatGeeta";
+        File dir = new File(dirPath);
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+        File imgFile = new File(dirPath,"image"+".png");
+        if (imgFile.exists()) {
+            imgFile.delete();
+        }
+        else{
+            try {
+                imgFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         try {
-            bytes.flush();
+            FileOutputStream fos = new FileOutputStream(imgFile);
+            inImage.compress(Bitmap.CompressFormat.PNG,100,fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try {
-            bytes.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        return Uri.parse(imgFile.getAbsolutePath());
+    }
+
+    private  Bitmap getBitmapFromView(View bView, TextView textView) {
+        //Define a bitmap with the same size as the view
+        Bitmap returnedBitmap = Bitmap.createBitmap(bView.getWidth(),bView.getHeight(), Bitmap.Config.ARGB_8888);
+        //Bind a canvas to it
+        Canvas canvas = new Canvas(returnedBitmap);
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+            bView.setBackgroundResource(R.drawable.paper_texture_brown);
+            textView.setTextColor(Color.BLACK);
         }
-        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "title", null);
-        return Uri.parse(path);
+        bView.draw(canvas);
+        //return the bitmap
+        return returnedBitmap;
     }
 
     private void share_bitMap_to_Apps() {
@@ -793,9 +817,8 @@ public class TwoFragment extends Fragment implements ViewPager.OnPageChangeListe
             String appDes = "\uD83D\uDD05"+adhyayN+"\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47"+"here will come the app link";
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("*/*");
-            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getContext(), getBitmapFromView(textView)));
+            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getBitmapFromView(constraintLayout,textView)));
             i.putExtra(Intent.EXTRA_TEXT,appDes);
-
             try {
                 startActivityForResult(Intent.createChooser(i, "Share by"),512);
             } catch (android.content.ActivityNotFoundException ex) {
@@ -803,56 +826,6 @@ public class TwoFragment extends Fragment implements ViewPager.OnPageChangeListe
                 ex.printStackTrace();
             }
         }
-    }
-
-    private static Bitmap getBitmapFromView(View view) {
-        //Define a bitmap with the same size as the view
-        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(),view.getHeight(), Bitmap.Config.ARGB_8888);
-        //Bind a canvas to it
-        Canvas canvas = new Canvas(returnedBitmap);
-        //Get the view's background
-        Drawable bgDrawable = view.getBackground();
-        if (bgDrawable != null)
-            //has background drawable, then draw it on the canvas
-            bgDrawable.draw(canvas);
-        else
-            //does not have background drawable, then draw white background on the canvas
-            canvas.drawColor(Color.WHITE);
-        // draw the view on the canvas
-        view.draw(canvas);
-        //return the bitmap
-        return returnedBitmap;
-    }
-
-    // Function to check and request permission.
-    public void checkPermission(String permission, int requestCode)
-    {
-        if (ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), permission) == PackageManager.PERMISSION_DENIED) {
-            // Requesting the permission
-            ActivityCompat.requestPermissions(getActivity(), new String[] { permission }, requestCode);
-        }
-
-    }
-    // This function is called when the user accepts or decline the permission.
-// Request Code is used to check which permission called this function.
-// This request code is provided when the user is prompt for permission.
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getActivity(), "Storage Permission Granted", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getActivity().getApplicationContext(), "Storage Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
-        super.onActivityResult(requestCode,resultCode, data);
-
-
-
     }
 
 }

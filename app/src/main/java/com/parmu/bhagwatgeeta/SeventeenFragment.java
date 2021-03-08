@@ -13,12 +13,14 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -32,6 +34,9 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import static com.parmu.bhagwatgeeta.Adhyay17_AC17.pagePosition17;
@@ -48,6 +53,7 @@ public class SeventeenFragment extends Fragment implements ViewPager.OnPageChang
     ViewPager viewPager17;
     private static final int STORAGE_PERMISSION_CODE = 101;
     RequestPermissions requestPermissions;
+    private ConstraintLayout constraintLayout;
 
 
 
@@ -102,17 +108,10 @@ public class SeventeenFragment extends Fragment implements ViewPager.OnPageChang
         View view17= inflater.inflate(R.layout.fragment_seventeen, container, false);
         textView=view17.findViewById(R.id.text_display_17);
         textView.setText(getArguments().getString("message17"));
-
-
+        constraintLayout = view17.findViewById(R.id.constrained_layout);
         FloatingActionButton fabPlayBtn17 = view17.findViewById(R.id.fabplaysound17);
         viewPager17=getActivity().findViewById(R.id.pager17);
         viewPager17.addOnPageChangeListener(this);
-
-
-
-
-
-
         fabPlayBtn17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -367,79 +366,66 @@ public class SeventeenFragment extends Fragment implements ViewPager.OnPageChang
         return super.onOptionsItemSelected(item);
     }
 
-    //sharing image form of shloka
-    private Uri getImageUri(Context inContext, Bitmap inImage) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        inImage.compress(Bitmap.CompressFormat.PNG, 100, bytes);
-
-        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
-        return Uri.parse(path);
-    }
-
-
     private void share_bitMap_to_Apps() {
 
         if (ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             String adhyayN="अध्याय 17";
             String appDes = "\uD83D\uDD05"+adhyayN+"\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47"+"here will come the app link";
             Intent i = new Intent(Intent.ACTION_SEND);
-
             i.setType("*/*");
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-    /*compress(Bitmap.CompressFormat.PNG, 100, stream);
-    byte[] bytes = stream.toByteArray();*/
-
-            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getActivity(), getBitmapFromView(textView)));
+            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getBitmapFromView(constraintLayout, textView)));
             i.putExtra(Intent.EXTRA_TEXT,appDes);
-
             try {
                 startActivity(Intent.createChooser(i, "Share by"));
             } catch (android.content.ActivityNotFoundException ex) {
-
                 ex.printStackTrace();
             }
-
         }
     }
+    //sharing image form of shloka
+    private Uri getImageUri(Bitmap inImage) {
 
-    private static Bitmap getBitmapFromView(View view) {
+        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/BhagwatGeeta";
+        File dir = new File(dirPath);
+        if(!dir.exists()){
+            dir.mkdirs();
+        }
+        File imgFile = new File(dirPath,"image"+".png");
+        if (imgFile.exists()) {
+            imgFile.delete();
+        }
+        else{
+            try {
+                imgFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+
+            FileOutputStream fos = new FileOutputStream(imgFile);
+            inImage.compress(Bitmap.CompressFormat.PNG,100,fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return Uri.parse(imgFile.getAbsolutePath());
+    }
+
+    private  Bitmap getBitmapFromView(View bView, TextView textView) {
         //Define a bitmap with the same size as the view
-        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(),view.getHeight(), Bitmap.Config.ARGB_8888);
+        Bitmap returnedBitmap = Bitmap.createBitmap(bView.getWidth(),bView.getHeight(), Bitmap.Config.ARGB_8888);
         //Bind a canvas to it
         Canvas canvas = new Canvas(returnedBitmap);
-        //Get the view's background
-        Drawable bgDrawable = view.getBackground();
-        if (bgDrawable != null)
-            //has background drawable, then draw it on the canvas
-            bgDrawable.draw(canvas);
-        else
-            //does not have background drawable, then draw white background on the canvas
-            canvas.drawColor(Color.WHITE);
-        // draw the view on the canvas
-        view.draw(canvas);
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+            bView.setBackgroundResource(R.drawable.paper_texture_brown);
+            textView.setTextColor(Color.BLACK);
+        }
+        bView.draw(canvas);
         //return the bitmap
         return returnedBitmap;
     }
-    public void checkPermission(String permission, int requestCode)
-    {
-        if (ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), permission) == PackageManager.PERMISSION_DENIED) {
-            // Requesting the permission
-            ActivityCompat.requestPermissions(getActivity(), new String[] { permission }, requestCode);
-        }
-
-    }
-    // This function is called when the user accepts or decline the permission.
-// Request Code is used to check which permission called this function.
-// This request code is provided when the user is prompt for permission.
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == STORAGE_PERMISSION_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(getActivity(), "Storage Permission Granted", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getActivity().getApplicationContext(), "Storage Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
 }

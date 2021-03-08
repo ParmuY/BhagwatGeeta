@@ -55,8 +55,6 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
     ViewPager viewPager18;
     private ScrollView scrollView;
     private static final int STORAGE_PERMISSION_CODE = 101;
-    Drawable drawable;
-    private ConstraintLayout constrainedLayout;
     RequestPermissions requestPermissions;
 
     private static final String ARG_PARAM1 = "param1";
@@ -110,16 +108,7 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
       View view18= inflater.inflate(R.layout.fragment_eighteen, container, false);
       textView=view18.findViewById(R.id.text_display_18);
       scrollView= view18.findViewById(R.id.scroll_view);
-      constrainedLayout = view18.findViewById(R.id.constrained_layout);
-      drawable = getResources().getDrawable(R.drawable.paper_texture_brown);
-
-//      if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_NO){
-//            scrollView.setBackgroundResource(R.drawable.paper_texture_brown);
-//        }
-
       textView.setText(getArguments().getString("message18"));
-
-
         FloatingActionButton fabPlayBtn18 = view18.findViewById(R.id.fabplaysound18);
         viewPager18=getActivity().findViewById(R.id.pager18);
         viewPager18.addOnPageChangeListener(this);
@@ -845,26 +834,7 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
 
     }
 
-
-
-    private void share_bitMap_to_Apps() {
-        if (ContextCompat.checkSelfPermission((requireActivity()).getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            String adhyayN="अध्याय 18";
-            String appDes = "\uD83D\uDD05"+adhyayN+"\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47"+"here will come the app link";
-            Intent i = new Intent(Intent.ACTION_SEND);
-            i.setType("image/*");
-            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getBitmapFromView(scrollView, textView)));
-            i.putExtra(Intent.EXTRA_TEXT,appDes);
-
-            try {
-                startActivity(Intent.createChooser(i, "Share by"));
-            } catch (android.content.ActivityNotFoundException ex) {
-                ex.printStackTrace();
-            }
-
-        }
- }
-      private  Bitmap getBitmapFromView(View bView, TextView textView) {
+    private  Bitmap getBitmapFromView(View bView, TextView textView) {
         //Define a bitmap with the same size as the view
         Bitmap returnedBitmap = Bitmap.createBitmap(bView.getWidth(),bView.getHeight(), Bitmap.Config.ARGB_8888);
         //Bind a canvas to it
@@ -877,4 +847,22 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
         //return the bitmap
         return returnedBitmap;
     }
+    private void share_bitMap_to_Apps() {
+        if (ContextCompat.checkSelfPermission((requireActivity()).getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            String adhyayN="अध्याय 18";
+            String appDes = "\uD83D\uDD05"+adhyayN+"\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47"+"here will come the app link";
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("*/*");
+            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getBitmapFromView(scrollView, textView)));
+            i.putExtra(Intent.EXTRA_TEXT,appDes);
+
+            try {
+                startActivity(Intent.createChooser(i, "Share by"));
+            } catch (android.content.ActivityNotFoundException ex) {
+                ex.printStackTrace();
+            }
+
+        }
+    }
+
 }
