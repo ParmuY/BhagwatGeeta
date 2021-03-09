@@ -55,6 +55,7 @@ public class SevenFragment extends Fragment implements ViewPager.OnPageChangeLis
     private static final int STORAGE_PERMISSION_CODE = 101;
     RequestPermissions requestPermissions;
     private ConstraintLayout constraintLayout;
+    private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
 
 
 
@@ -367,72 +368,11 @@ public class SevenFragment extends Fragment implements ViewPager.OnPageChangeLis
             mediaPlayer7.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());            share_bitMap_to_Apps();
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView);
+
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void share_bitMap_to_Apps() {
-
-        if (ContextCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            String adhyayN="अध्याय 7";
-            String appDes = "\uD83D\uDD05"+adhyayN+"\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47"+"here will come the app link";
-            Intent i = new Intent(Intent.ACTION_SEND);
-            i.setType("*/*");
-            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getBitmapFromView(constraintLayout,textView)));
-            i.putExtra(Intent.EXTRA_TEXT,appDes);
-            try {
-                startActivity(Intent.createChooser(i, "Share by"));
-            } catch (android.content.ActivityNotFoundException ex) {
-                ex.printStackTrace();
-            }
-        }
-    }
-    //sharing image form of shloka
-    private Uri getImageUri(Bitmap inImage) {
-
-        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/BhagwatGeeta";
-        File dir = new File(dirPath);
-        if(!dir.exists()){
-            dir.mkdirs();
-        }
-        File imgFile = new File(dirPath,"image"+".png");
-        if (imgFile.exists()) {
-            imgFile.delete();
-        }
-        else{
-            try {
-                imgFile.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-
-            FileOutputStream fos = new FileOutputStream(imgFile);
-            inImage.compress(Bitmap.CompressFormat.PNG,100,fos);
-            fos.flush();
-            fos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return Uri.parse(imgFile.getAbsolutePath());
-
-    }
-
-    private  Bitmap getBitmapFromView(View bView, TextView textView) {
-        //Define a bitmap with the same size as the view
-        Bitmap returnedBitmap = Bitmap.createBitmap(bView.getWidth(),bView.getHeight(), Bitmap.Config.ARGB_8888);
-        //Bind a canvas to it
-        Canvas canvas = new Canvas(returnedBitmap);
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
-            bView.setBackgroundResource(R.drawable.paper_texture_brown);
-            textView.setTextColor(Color.BLACK);
-        }
-        bView.draw(canvas);
-        //return the bitmap
-        return returnedBitmap;
-    }
 }

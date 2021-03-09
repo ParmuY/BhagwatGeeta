@@ -55,7 +55,7 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
     ViewPager viewPager18;
     private ScrollView scrollView;
     private static final int STORAGE_PERMISSION_CODE = 101;
-    RequestPermissions requestPermissions = new RequestPermissions();
+    private RequestPermissions requestPermissions = new RequestPermissions();
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
 
     private static final String ARG_PARAM1 = "param1";
