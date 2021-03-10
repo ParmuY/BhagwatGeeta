@@ -771,4 +771,5 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
         }
         return super.onOptionsItemSelected(item);
     }
+    //simplitfying code
 }
