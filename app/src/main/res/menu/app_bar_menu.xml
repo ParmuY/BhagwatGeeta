@@ -8,10 +8,4 @@
         android:icon="@drawable/ic_share"
         app:showAsAction="collapseActionView|ifRoom"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
-
-
-
-
-
-
 </menu>

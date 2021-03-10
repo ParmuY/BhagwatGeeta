@@ -1,5 +1,5 @@
 package com.parmu.bhagwatgeeta.activities;
-//new featue branch
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -205,26 +205,32 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.dark_mode:
+                        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_NO && !switchDark.isChecked()){
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                            switchDark.setChecked(true);
+                            editor.putBoolean("isDarkModeOn", true);
+                        }
+                        else{
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                            switchDark.setChecked(false);
+                            editor.putBoolean("isDarkModeOn", false);
+                        }
+                        editor.apply();
                         menuItem.setVisible(true);
-                        menuItem.setEnabled(true);
                         return true;
                     case R.id.share_drawer:
-                        menuItem.setChecked(true);
                         displayMessage("share selected");
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.rate:
-                        menuItem.setChecked(true);
                         displayMessage("rate the app");
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.feedback:
-                        menuItem.setChecked(true);
                         feedbackIntent();
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.about:
-                        menuItem.setChecked(false);
                         Intent intent = new Intent(MainActivity.this,AboutAppActivity.class);
                         startActivity(intent);
                         drawerLayout.closeDrawers();
