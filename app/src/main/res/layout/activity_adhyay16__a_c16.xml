@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.Adhyay16_AC16"
     android:orientation="vertical"
-    android:background="@color/backgroundColor">
+    >
 
     <include
         layout="@layout/toolbar_layout"/>

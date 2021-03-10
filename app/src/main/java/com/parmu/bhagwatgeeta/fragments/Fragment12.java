@@ -92,7 +92,7 @@ public class Fragment12 extends Fragment implements ViewPager.OnPageChangeListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-    View view12=inflater.inflate(R.layout.fragment_twelve, container, false);
+    View view12=inflater.inflate(R.layout.fragment_12, container, false);
     textView=view12.findViewById(R.id.text_display_12);
     textView.setText(getArguments().getString("message12"));
     constraintLayout = view12.findViewById(R.id.constrained_layout);

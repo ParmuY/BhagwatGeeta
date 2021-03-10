@@ -8,9 +8,7 @@
     <string name="shloka">\"श्लोक \"</string>
     <string name="share_shloka">Share Shloka</string>
     <string name="favourite">Favourite</string>
-    <string name="content_about">हमने इस एंड्रॉयड ऐप के रूप में "भगवद् गीता" के अध्यायों और सही उच्चारण को संकलित करने की कोशिश की है। आप इस ऐप्लिकेशन में कोई गलती पाते हैं हमें एक ईमेल भेजें और हम इसे सही करने का प्रयास करेंगे।
-
-</string>
+    <string name="content_about">हमने इस एंड्रॉयड ऐप के रूप में "भगवद् गीता" के अध्यायों और सही उच्चारण को संकलित करने की कोशिश की है। आप इस ऐप्लिकेशन में कोई गलती पाते हैं हमें एक ईमेल भेजें और हम इसे सही करने का प्रयास करेंगे।</string>
 
     <string name="button">Button</string>
     <string name="navigation_drawer_open">Open Drawer</string>

@@ -95,7 +95,7 @@ public class Fragment8 extends Fragment implements ViewPager.OnPageChangeListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view8=inflater.inflate(R.layout.fragment_eight, container, false);
+        View view8=inflater.inflate(R.layout.fragment_8, container, false);
         textView=view8.findViewById(R.id.text_display_8);
         textView.setText(getArguments().getString("message8"));
         constraintLayout = view8.findViewById(R.id.constrained_layout);

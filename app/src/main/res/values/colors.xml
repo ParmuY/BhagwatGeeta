@@ -6,5 +6,6 @@
     <color name="textColor">#212121</color>
     <color name="backgroundColor">#EDD39A</color>
     <color name="black">#000000</color>
+    <color name="fabBackgroundTint">#FF5722</color>
 
 </resources>

@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.Adhyay1_AC1"
     android:orientation="vertical"
-    android:background="@color/backgroundColor"
-
     >
 
     <include

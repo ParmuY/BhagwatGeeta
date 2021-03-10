@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -34,7 +35,7 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
     public MediaPlayer mediaPlayer18;
     Context context18;
     ViewPager viewPager18;
-    private ScrollView scrollView;
+    private ConstraintLayout constraintLayout;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions = new RequestPermissions();
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
@@ -76,9 +77,9 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-      View view18= inflater.inflate(R.layout.fragment_eighteen, container, false);
+      View view18= inflater.inflate(R.layout.fragment_18, container, false);
       textView=view18.findViewById(R.id.text_display_18);
-      scrollView= view18.findViewById(R.id.constrained_layout);
+      constraintLayout = view18.findViewById(R.id.constrained_layout);
       textView.setText(getArguments().getString("message18"));
         FloatingActionButton fabPlayBtn18 = view18.findViewById(R.id.fabplaysound18);
         viewPager18=getActivity().findViewById(R.id.pager18);
@@ -765,7 +766,7 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
         int id = item.getItemId();
         if (id==R.id.share_shlola){
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),scrollView,textView,"अध्याय 18");
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 18");
 
         }
         return super.onOptionsItemSelected(item);

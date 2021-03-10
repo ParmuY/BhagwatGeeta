@@ -104,7 +104,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_one, container, false);
+        View view=inflater.inflate(R.layout.fragment_1, container, false);
         textView = view.findViewById(R.id.text_display_1);
 
         textView.setText(getArguments().getString("message"));

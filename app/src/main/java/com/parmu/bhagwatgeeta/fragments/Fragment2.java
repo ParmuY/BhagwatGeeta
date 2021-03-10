@@ -96,7 +96,7 @@ public class Fragment2 extends Fragment implements ViewPager.OnPageChangeListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view2= inflater.inflate(R.layout.fragment_two, container, false);
+        View view2= inflater.inflate(R.layout.fragment_2, container, false);
         textView=view2.findViewById(R.id.text_display_2);
         textView.setText(getArguments().getString("message2"));
 

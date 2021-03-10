@@ -94,7 +94,7 @@ public class Fragment13 extends Fragment  implements ViewPager.OnPageChangeListe
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view13=inflater.inflate(R.layout.fragment_thirteen, container, false);
+        View view13=inflater.inflate(R.layout.fragment_13, container, false);
         textView=view13.findViewById(R.id.text_display_13);
         textView.setText(getArguments().getString("message13"));
         constraintLayout =view13.findViewById(R.id.constrained_layout);

@@ -94,7 +94,7 @@ public class Fragment16 extends Fragment implements ViewPager.OnPageChangeListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-     View view16=inflater.inflate(R.layout.fragment_sixteen, container, false);
+     View view16=inflater.inflate(R.layout.fragment_16, container, false);
      textView=view16.findViewById(R.id.text_display_16);
      textView.setText(getArguments().getString("message16"));
      constraintLayout = view16.findViewById(R.id.constrained_layout);
