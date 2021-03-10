@@ -15,7 +15,7 @@
             android:id="@+id/constrained_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".FifteenFragment"
+            tools:context=".fragments.FifteenFragment"
             android:background="@color/backgroundColor"
             >
 

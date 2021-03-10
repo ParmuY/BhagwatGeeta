@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     android:orientation="vertical"
-    tools:context=".Adhyay15_AC15">
+    tools:context=".activities.Adhyay15_AC15">
     <include
         layout="@layout/toolbar_layout"/>
     <com.google.android.material.tabs.TabLayout

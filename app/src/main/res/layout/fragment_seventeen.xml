@@ -12,7 +12,7 @@
             android:id="@+id/constrained_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".SeventeenFragment"
+            tools:context=".fragments.SeventeenFragment"
             android:background="@color/backgroundColor"
             >
 

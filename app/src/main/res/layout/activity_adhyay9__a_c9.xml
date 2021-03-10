@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Adhyay9_AC9"
+    tools:context=".activities.Adhyay9_AC9"
     android:background="@color/backgroundColor"
     android:orientation="vertical">
     <include

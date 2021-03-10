@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".Adhyay8_AC8"
+    tools:context=".activities.Adhyay8_AC8"
     android:orientation="vertical">
     <include
         layout="@layout/toolbar_layout"/>

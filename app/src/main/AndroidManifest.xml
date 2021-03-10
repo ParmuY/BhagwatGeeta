@@ -9,107 +9,107 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <receiver android:name=".AlarmReceiver"/>
+        <receiver android:name=".misc.AlarmReceiver"/>
 
         <activity
-            android:name=".AboutAppActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.AboutAppActivity"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:label="@string/about_app"
             />
         <activity
-            android:name=".Adhyay18_AC18"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay18_AC18"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay17_AC17"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay17_AC17"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay16_AC16"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay16_AC16"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay15_AC15"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay15_AC15"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay14_AC14"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay14_AC14"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay13_AC13"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay13_AC13"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay12_AC12"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay12_AC12"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay11_AC11"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay11_AC11"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay10_AC10"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay10_AC10"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay9_AC9"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay9_AC9"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay8_AC8"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay8_AC8"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay7_AC7"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay7_AC7"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay6_AC6"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay6_AC6"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay5_AC_5"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay5_AC_5"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay4_AC4"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay4_AC4"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".Adhyay3_AC3"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay3_AC3"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay2_AC2"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay2_AC2"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Adhyay1_AC1"
-            android:parentActivityName=".MainActivity"
+            android:name=".activities.Adhyay1_AC1"
+            android:parentActivityName=".activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity2"
+        <activity android:name=".activities.MainActivity2"
             android:configChanges="orientation"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -119,7 +119,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/adhyay"
             android:configChanges="orientation"
             android:screenOrientation="portrait" />
