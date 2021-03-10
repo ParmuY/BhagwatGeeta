@@ -31,10 +31,10 @@ import static com.parmu.bhagwatgeeta.activities.Adhyay13_AC13.pagePosition13;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ThirteenFragment#newInstance} factory method to
+ * Use the {@link Fragment13#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ThirteenFragment extends Fragment  implements ViewPager.OnPageChangeListener{
+public class Fragment13 extends Fragment  implements ViewPager.OnPageChangeListener{
     private TextView textView;
     public MediaPlayer mediaPlayer13;
     Context context13;
@@ -55,7 +55,7 @@ public class ThirteenFragment extends Fragment  implements ViewPager.OnPageChang
     private String mParam1;
     private String mParam2;
 
-    public ThirteenFragment() {
+    public Fragment13() {
         // Required empty public constructor
     }
 
@@ -65,11 +65,11 @@ public class ThirteenFragment extends Fragment  implements ViewPager.OnPageChang
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ThirteenFragment.
+     * @return A new instance of fragment Fragment13.
      */
     // TODO: Rename and change types and number of parameters
-    public static ThirteenFragment newInstance(String param1, String param2) {
-        ThirteenFragment fragment = new ThirteenFragment();
+    public static Fragment13 newInstance(String param1, String param2) {
+        Fragment13 fragment = new Fragment13();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

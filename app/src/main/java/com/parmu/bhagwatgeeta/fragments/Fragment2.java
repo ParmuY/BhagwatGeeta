@@ -33,10 +33,10 @@ import static com.parmu.bhagwatgeeta.activities.Adhyay2_AC2.pagePosition2;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link TwoFragment#newInstance} factory method to
+ * Use the {@link Fragment2#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TwoFragment extends Fragment implements ViewPager.OnPageChangeListener {
+public class Fragment2 extends Fragment implements ViewPager.OnPageChangeListener {
     private TextView textView;
     public MediaPlayer mediaPlayer2;
     Context context2;
@@ -56,7 +56,7 @@ public class TwoFragment extends Fragment implements ViewPager.OnPageChangeListe
     private String mParam1;
     private String mParam2;
 
-    public TwoFragment() {
+    public Fragment2() {
         // Required empty public constructor
     }
 
@@ -66,11 +66,11 @@ public class TwoFragment extends Fragment implements ViewPager.OnPageChangeListe
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TwoFragment.
+     * @return A new instance of fragment Fragment2.
      */
     // TODO: Rename and change types and number of parameters
-    public static TwoFragment newInstance(String param1, String param2) {
-        TwoFragment fragment = new TwoFragment();
+    public static Fragment2 newInstance(String param1, String param2) {
+        Fragment2 fragment = new Fragment2();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

@@ -35,10 +35,10 @@ import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pagePosition;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link OneFragment#newInstance} factory method to
+ * Use the {@link Fragment1#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OneFragment extends Fragment implements ViewPager.OnPageChangeListener {
+public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListener {
 
 
     public MediaPlayer mediaPlayer;
@@ -62,7 +62,7 @@ public class OneFragment extends Fragment implements ViewPager.OnPageChangeListe
     private String mParam1;
     private String mParam2;
 
-    public OneFragment() {
+    public Fragment1() {
         // Required empty public constructor
     }
 
@@ -72,11 +72,11 @@ public class OneFragment extends Fragment implements ViewPager.OnPageChangeListe
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment OneFragment.
+     * @return A new instance of fragment Fragment1.
      */
     // TODO: Rename and change types and number of parameters
-    public static OneFragment newInstance(String param1, String param2) {
-        OneFragment fragment = new OneFragment();
+    public static Fragment1 newInstance(String param1, String param2) {
+        Fragment1 fragment = new Fragment1();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -105,7 +105,7 @@ public class OneFragment extends Fragment implements ViewPager.OnPageChangeListe
 
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_one, container, false);
-        textView = view.findViewById(R.id.frag_text_display);
+        textView = view.findViewById(R.id.text_display_1);
 
         textView.setText(getArguments().getString("message"));
         FloatingActionButton fabPlayBtn = view.findViewById(R.id.fabplaysound);

@@ -31,10 +31,10 @@ import static com.parmu.bhagwatgeeta.activities.Adhyay10_AC10.pagePosition10;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link TenFragment#newInstance} factory method to
+ * Use the {@link Fragment10#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TenFragment extends Fragment implements ViewPager.OnPageChangeListener {
+public class Fragment10 extends Fragment implements ViewPager.OnPageChangeListener {
     private TextView textView;
     public MediaPlayer mediaPlayer10;
     Context context10;
@@ -53,7 +53,7 @@ public class TenFragment extends Fragment implements ViewPager.OnPageChangeListe
     private String mParam1;
     private String mParam2;
 
-    public TenFragment() {
+    public Fragment10() {
         // Required empty public constructor
     }
 
@@ -63,11 +63,11 @@ public class TenFragment extends Fragment implements ViewPager.OnPageChangeListe
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TenFragment.
+     * @return A new instance of fragment Fragment10.
      */
     // TODO: Rename and change types and number of parameters
-    public static TenFragment newInstance(String param1, String param2) {
-        TenFragment fragment = new TenFragment();
+    public static Fragment10 newInstance(String param1, String param2) {
+        Fragment10 fragment = new Fragment10();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

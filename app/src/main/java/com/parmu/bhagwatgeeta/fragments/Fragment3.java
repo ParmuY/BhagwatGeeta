@@ -32,10 +32,10 @@ import static com.parmu.bhagwatgeeta.activities.Adhyay3_AC3.pagePosition3;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ThreeFragment#newInstance} factory method to
+ * Use the {@link Fragment3#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ThreeFragment extends Fragment implements ViewPager.OnPageChangeListener{
+public class Fragment3 extends Fragment implements ViewPager.OnPageChangeListener{
     private TextView textView;
     public MediaPlayer mediaPlayer3;
     Context context3;
@@ -55,7 +55,7 @@ public class ThreeFragment extends Fragment implements ViewPager.OnPageChangeLis
     private String mParam1;
     private String mParam2;
 
-    public ThreeFragment() {
+    public Fragment3() {
         // Required empty public constructor
     }
 
@@ -65,11 +65,11 @@ public class ThreeFragment extends Fragment implements ViewPager.OnPageChangeLis
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ThreeFragment.
+     * @return A new instance of fragment Fragment3.
      */
     // TODO: Rename and change types and number of parameters
-    public static ThreeFragment newInstance(String param1, String param2) {
-        ThreeFragment fragment = new ThreeFragment();
+    public static Fragment3 newInstance(String param1, String param2) {
+        Fragment3 fragment = new Fragment3();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

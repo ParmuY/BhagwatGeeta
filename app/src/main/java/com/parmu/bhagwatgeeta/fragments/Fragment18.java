@@ -29,7 +29,7 @@ import java.io.IOException;
 
 import static com.parmu.bhagwatgeeta.activities.Adhyay18_AC18.pagePosition18;
 
-public class EighteenFragment extends Fragment implements ViewPager.OnPageChangeListener{
+public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListener{
     private TextView textView;
     public MediaPlayer mediaPlayer18;
     Context context18;
@@ -46,12 +46,12 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
     private String mParam2;
 
 
-    public EighteenFragment() {
+    public Fragment18() {
         // Required empty public constructor
     }
 
-    public static EighteenFragment newInstance(String param1, String param2) {
-        EighteenFragment fragment = new EighteenFragment();
+    public static Fragment18 newInstance(String param1, String param2) {
+        Fragment18 fragment = new Fragment18();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -78,7 +78,7 @@ public class EighteenFragment extends Fragment implements ViewPager.OnPageChange
         // Inflate the layout for this fragment
       View view18= inflater.inflate(R.layout.fragment_eighteen, container, false);
       textView=view18.findViewById(R.id.text_display_18);
-      scrollView= view18.findViewById(R.id.scroll_view);
+      scrollView= view18.findViewById(R.id.constrained_layout);
       textView.setText(getArguments().getString("message18"));
         FloatingActionButton fabPlayBtn18 = view18.findViewById(R.id.fabplaysound18);
         viewPager18=getActivity().findViewById(R.id.pager18);

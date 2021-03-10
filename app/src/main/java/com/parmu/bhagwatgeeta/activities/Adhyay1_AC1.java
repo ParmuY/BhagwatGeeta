@@ -10,13 +10,13 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagwatgeeta.R;
-import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter;
+import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter1;
 
 public class Adhyay1_AC1 extends AppCompatActivity {
 
     private Toolbar toolbar;
     public static ViewPager viewPager;
-    private ViewPagerAdapter adapter;
+    private ViewPagerAdapter1 adapter;
     private TabLayout tabLayout;
 
     public static int pagePosition;
@@ -37,7 +37,7 @@ public class Adhyay1_AC1 extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         viewPager = findViewById(R.id.pager);
-        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter = new ViewPagerAdapter1(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         //opening recent left page in view pager
         viewPager.setCurrentItem(recentPage);

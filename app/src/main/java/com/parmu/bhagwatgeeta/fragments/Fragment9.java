@@ -20,31 +20,29 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.parmu.bhagwatgeeta.activities.Adhyay4_AC4;
+import com.parmu.bhagwatgeeta.activities.Adhyay9_AC9;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 
 import java.io.IOException;
 
-
-import static com.parmu.bhagwatgeeta.activities.Adhyay4_AC4.pagePosition4;
+import static com.parmu.bhagwatgeeta.activities.Adhyay9_AC9.pagePosition9;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FourFragment#newInstance} factory method to
+ * Use the {@link Fragment9#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FourFragment extends Fragment implements ViewPager.OnPageChangeListener {
+public class Fragment9 extends Fragment implements ViewPager.OnPageChangeListener{
     private TextView textView;
-    public MediaPlayer mediaPlayer4;
-    Context context4;
-    ViewPager viewPager4;
+    public MediaPlayer mediaPlayer9;
+    Context context9;
+    ViewPager viewPager9;
     private static final int STORAGE_PERMISSION_CODE = 101;
     RequestPermissions requestPermissions;
-    ConstraintLayout constraintLayout;
+    private ConstraintLayout constraintLayout;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
-
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -56,7 +54,7 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
     private String mParam1;
     private String mParam2;
 
-    public FourFragment() {
+    public Fragment9() {
         // Required empty public constructor
     }
 
@@ -66,11 +64,11 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FourFragment.
+     * @return A new instance of fragment Fragment9.
      */
     // TODO: Rename and change types and number of parameters
-    public static FourFragment newInstance(String param1, String param2) {
-        FourFragment fragment = new FourFragment();
+    public static Fragment9 newInstance(String param1, String param2) {
+        Fragment9 fragment = new Fragment9();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -86,8 +84,8 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        context4 = getActivity();
-        mediaPlayer4 = new MediaPlayer();
+        context9= getActivity();
+        mediaPlayer9 = new MediaPlayer();
         requestPermissions = new RequestPermissions();
     }
 
@@ -95,293 +93,246 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view4=inflater.inflate(R.layout.fragment_four, container, false);
-       textView=view4.findViewById(R.id.text_display_4);
-       textView.setText(getArguments().getString("message4"));
-       constraintLayout= view4.findViewById(R.id.constrained_layout);
-       FloatingActionButton fabPlayBtn4 = view4.findViewById(R.id.fabplaysound4);
-        viewPager4=getActivity().findViewById(R.id.pager4);
-        viewPager4.addOnPageChangeListener(this);
-
-
-
-        fabPlayBtn4.setOnClickListener(new View.OnClickListener() {
+       View view9= inflater.inflate(R.layout.fragment_nine, container, false);
+       textView=view9.findViewById(R.id.text_display_9);
+       textView.setText(getArguments().getString("message9"));
+        constraintLayout =view9.findViewById(R.id.constrained_layout);
+        FloatingActionButton fabPlayBtn9 = view9.findViewById(R.id.fabplaysound9);
+        viewPager9=getActivity().findViewById(R.id.pager9);
+        viewPager9.addOnPageChangeListener(this);
+         fabPlayBtn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Adhyay4_AC4.pageGetPosition4();
+                Adhyay9_AC9.pageGetPosition9();
 
-                if (pagePosition4 == 0) {
+                if (pagePosition9 == 0) {
 
                     try {
-                        playDisSound(context4, R.raw.c4s1);
+                        playDisSound(context9, R.raw.c9s1);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 1) {
+                } else if (pagePosition9 == 1) {
                     try {
-                        playDisSound(context4, R.raw.c4s2);
+                        playDisSound(context9, R.raw.c9s2);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 2) {
+                } else if (pagePosition9 == 2) {
                     try {
-                        playDisSound(context4, R.raw.c4s3);
+                        playDisSound(context9, R.raw.c9s3);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 3) {
+                } else if (pagePosition9 == 3) {
                     try {
-                        playDisSound(context4, R.raw.c4s4);
+                        playDisSound(context9, R.raw.c9s4);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 4) {
+                } else if (pagePosition9 == 4) {
                     try {
-                        playDisSound(context4, R.raw.c4s5);
+                        playDisSound(context9, R.raw.c9s5);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 5) {
+                } else if (pagePosition9 == 5) {
                     try {
-                        playDisSound(context4, R.raw.c4s6);
+                        playDisSound(context9, R.raw.c9s6);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 6) {
+                } else if (pagePosition9 == 6) {
                     try {
-                        playDisSound(context4, R.raw.c4s7);
+                        playDisSound(context9, R.raw.c9s7);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 7) {
+                } else if (pagePosition9 == 7) {
                     try {
-                        playDisSound(context4, R.raw.c4s8);
+                        playDisSound(context9, R.raw.c9s8);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 8) {
+                } else if (pagePosition9 == 8) {
                     try {
-                        playDisSound(context4, R.raw.c4s9);
+                        playDisSound(context9, R.raw.c9s9);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 9) {
+                } else if (pagePosition9 == 9) {
                     try {
-                        playDisSound(context4, R.raw.c4s10);
+                        playDisSound(context9, R.raw.c9s10);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 10) {
+                } else if (pagePosition9 == 10) {
                     try {
-                        playDisSound(context4, R.raw.c4s11);
+                        playDisSound(context9, R.raw.c9s11);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 11) {
+                } else if (pagePosition9 == 11) {
                     try {
-                        playDisSound(context4, R.raw.c4s12);
+                        playDisSound(context9, R.raw.c9s12);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 12) {
+                } else if (pagePosition9 == 12) {
                     try {
-                        playDisSound(context4, R.raw.c4s13);
+                        playDisSound(context9, R.raw.c9s13);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 13) {
+                } else if (pagePosition9 == 13) {
                     try {
-                        playDisSound(context4, R.raw.c4s14);
+                        playDisSound(context9, R.raw.c9s14);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 14) {
+                } else if (pagePosition9 == 14) {
                     try {
-                        playDisSound(context4, R.raw.c4s15);
+                        playDisSound(context9, R.raw.c9s15);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 15) {
+                } else if (pagePosition9 == 15) {
                     try {
-                        playDisSound(context4, R.raw.c4s16);
+                        playDisSound(context9, R.raw.c9s16);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 16) {
+                } else if (pagePosition9 == 16) {
                     try {
-                        playDisSound(context4, R.raw.c4s17);
+                        playDisSound(context9, R.raw.c9s17);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 17) {
+                } else if (pagePosition9 == 17) {
                     try {
-                        playDisSound(context4, R.raw.c4s18);
+                        playDisSound(context9, R.raw.c9s18);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 18) {
+                } else if (pagePosition9 == 18) {
                     try {
-                        playDisSound(context4, R.raw.c4s19);
+                        playDisSound(context9, R.raw.c9s19);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 19) {
+                } else if (pagePosition9 == 19) {
                     try {
-                        playDisSound(context4, R.raw.c4s20);
+                        playDisSound(context9, R.raw.c9s20);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 20) {
+                } else if (pagePosition9 == 20) {
                     try {
-                        playDisSound(context4, R.raw.c4s21);
+                        playDisSound(context9, R.raw.c9s21);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 21) {
+                } else if (pagePosition9 == 21) {
                     try {
-                        playDisSound(context4, R.raw.c4s22);
+                        playDisSound(context9, R.raw.c9s22);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 22) {
+                } else if (pagePosition9 == 22) {
                     try {
-                        playDisSound(context4, R.raw.c4s23);
+                        playDisSound(context9, R.raw.c9s23);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 23) {
+                } else if (pagePosition9 == 23) {
                     try {
-                        playDisSound(context4, R.raw.c4s24);
+                        playDisSound(context9, R.raw.c9s24);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 24) {
+                } else if (pagePosition9 == 24) {
                     try {
-                        playDisSound(context4, R.raw.c4s25);
+                        playDisSound(context9, R.raw.c9s25);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 25) {
+                } else if (pagePosition9 == 25) {
                     try {
-                        playDisSound(context4, R.raw.c4s26);
+                        playDisSound(context9, R.raw.c9s26);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 26) {
+                } else if (pagePosition9 == 26) {
                     try {
-                        playDisSound(context4, R.raw.c4s27);
+                        playDisSound(context9, R.raw.c9s27);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 27) {
+                } else if (pagePosition9 == 27) {
                     try {
-                        playDisSound(context4, R.raw.c4s28);
+                        playDisSound(context9, R.raw.c9s28);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 28) {
+                } else if (pagePosition9 == 28) {
                     try {
-                        playDisSound(context4, R.raw.c4s29_30);
+                        playDisSound(context9, R.raw.c9s29);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 29) {
+                } else if (pagePosition9 == 29) {
                     try {
-                        playDisSound(context4, R.raw.c4s31);
+                        playDisSound(context9, R.raw.c9s30);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 30) {
+                } else if (pagePosition9 == 30) {
                     try {
-                        playDisSound(context4, R.raw.c4s32);
+                        playDisSound(context9, R.raw.c9s31);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 31) {
+                } else if (pagePosition9 == 31) {
                     try {
-                        playDisSound(context4, R.raw.c4s32);
+                        playDisSound(context9, R.raw.c9s32);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 32) {
+                } else if (pagePosition9 == 32) {
                     try {
-                        playDisSound(context4, R.raw.c4s34);
+                        playDisSound(context9, R.raw.c9s33);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition4 == 33) {
+                } else if (pagePosition9 == 33) {
                     try {
-                        playDisSound(context4, R.raw.c4s35);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else if (pagePosition4 == 34) {
-                    try {
-                        playDisSound(context4, R.raw.c4s36);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else if (pagePosition4 == 35) {
-                    try {
-                        playDisSound(context4, R.raw.c4s37);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else if (pagePosition4 == 36) {
-                    try {
-                        playDisSound(context4, R.raw.c4s38);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else if (pagePosition4 == 37) {
-                    try {
-                        playDisSound(context4, R.raw.c4s39);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else if (pagePosition4 == 38) {
-                    try {
-                        playDisSound(context4, R.raw.c4s40);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else if (pagePosition4 == 39) {
-                    try {
-                        playDisSound(context4, R.raw.c4s41);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else if (pagePosition4 == 40) {
-                    try {
-                        playDisSound(context4, R.raw.c4s42);
+                        playDisSound(context9, R.raw.c9s34);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
-
             }
         });
-       return view4;
+       return view9;
     }
-
     // method for media player
     private void playDisSound(Context c, int soundID) throws IOException {
 
 
-        if(mediaPlayer4.isPlaying()){mediaPlayer4.pause(); mediaPlayer4.seekTo(0);
+        if(mediaPlayer9.isPlaying()){mediaPlayer9.pause(); mediaPlayer9.seekTo(0);
         }
         else {
-            mediaPlayer4.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer4.prepare();
+            mediaPlayer9.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
+            mediaPlayer9.prepare();
         }
-        mediaPlayer4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+        mediaPlayer9.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
-            public void onCompletion(MediaPlayer mediaPlayer2) {
-                mediaPlayer4.stop();
-                mediaPlayer4.reset(); }
+            public void onCompletion(MediaPlayer mediaPlayer9) {
+                mediaPlayer9.stop();
+                mediaPlayer9.reset(); }
         });
-        mediaPlayer4.start();
+        mediaPlayer9.start();
 
     }
 
@@ -392,15 +343,16 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
 
     @Override
     public void onPageSelected(int position) {
-        if(mediaPlayer4.isPlaying()){
+        if(mediaPlayer9.isPlaying()){
             try {
-                mediaPlayer4.stop();
-                mediaPlayer4.reset();
+                mediaPlayer9.stop();
+                mediaPlayer9.reset();
             }
             catch (Exception e)
             {
                 e.printStackTrace();
             } }
+
 
     }
 
@@ -411,11 +363,12 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
     @Override
     public void onDestroyView (){
         super.onDestroyView();
-        if(mediaPlayer4.isPlaying())
+        if(mediaPlayer9.isPlaying())
         {
-            mediaPlayer4.reset();
-            mediaPlayer4.release();}
+            mediaPlayer9.reset();
+            mediaPlayer9.release();}
     }
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
@@ -425,17 +378,18 @@ public class FourFragment extends Fragment implements ViewPager.OnPageChangeList
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(mediaPlayer4.isPlaying())
+        if(mediaPlayer9.isPlaying())
         {
-            mediaPlayer4.reset();
-            mediaPlayer4.release();}
+            mediaPlayer9.reset();
+            mediaPlayer9.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 4");
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 9");
 
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 }
