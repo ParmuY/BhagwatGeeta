@@ -26,7 +26,7 @@ import com.parmu.bhagwatgeeta.misc.RecycleViewItem;
 
 import java.util.ArrayList;
 
-
+//lol
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
