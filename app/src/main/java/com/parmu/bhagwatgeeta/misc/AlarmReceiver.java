@@ -19,7 +19,6 @@ public class AlarmReceiver extends BroadcastReceiver {
     @SuppressLint("UnsafeProtectedBroadcastReceiver")
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.e("broatcast", "okk");
         addNotification(context);
     }
 
@@ -41,7 +40,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         builder.setAutoCancel(true);
 
         Intent notificationIntent = new Intent(context, MainActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(context,0,notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent contentIntent = PendingIntent.getActivity(context,10,notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
 
         //adds a notification

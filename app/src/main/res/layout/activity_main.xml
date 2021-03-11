@@ -12,7 +12,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/paper_texture_brown"
         android:orientation="vertical"
         tools:context=".activities.MainActivity">
         <androidx.recyclerview.widget.RecyclerView
@@ -21,7 +20,7 @@
             android:layout_height="match_parent"
             android:padding="4dp"
             android:scrollbars="vertical"
-            android:background="#F8E2C2"
+            android:background="@drawable/paper_texture_brown"
             android:layout_marginTop="?attr/actionBarSize"/>
 
         <include layout="@layout/toolbar_layout" />

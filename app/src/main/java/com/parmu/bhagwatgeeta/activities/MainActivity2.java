@@ -2,11 +2,16 @@ package com.parmu.bhagwatgeeta.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.parmu.bhagwatgeeta.misc.AlarmReceiver;
@@ -40,10 +45,9 @@ public class MainActivity2 extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity2.this, MainActivity.class);
                 startActivity(intent);
                 finish();
-                //
                 timer.cancel();
             }
-        },3000);
+        },1000);
     }
 
     public void myAlarm() {
@@ -54,8 +58,8 @@ public class MainActivity2 extends AppCompatActivity {
         calendar.set(Calendar.SECOND, 0);
         long systemTime= System.currentTimeMillis();
 
-        Intent alarmIntent = new Intent(getApplicationContext(), AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 10, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 20, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         if(systemTime<=calendar.getTimeInMillis()){
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY,pendingIntent);
