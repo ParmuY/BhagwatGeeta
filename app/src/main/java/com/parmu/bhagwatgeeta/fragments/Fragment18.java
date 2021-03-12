@@ -45,7 +45,7 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
 
     private String mParam1;
     private String mParam2;
-
+//fixing error
 
     public Fragment18() {
         // Required empty public constructor
