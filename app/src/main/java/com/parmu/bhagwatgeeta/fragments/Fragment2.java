@@ -87,7 +87,6 @@ public class Fragment2 extends Fragment implements ViewPager.OnPageChangeListene
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         context2= getActivity();
-        mediaPlayer2 = new MediaPlayer();
         requestPermissions = new RequestPermissions();
 
     }
@@ -766,6 +765,12 @@ public class Fragment2 extends Fragment implements ViewPager.OnPageChangeListene
         {
             mediaPlayer2.reset();
             mediaPlayer2.release();}
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        mediaPlayer2 = null;
+        mediaPlayer2 = new MediaPlayer();
     }
 
 

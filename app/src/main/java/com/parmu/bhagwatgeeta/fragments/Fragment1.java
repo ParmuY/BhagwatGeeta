@@ -93,7 +93,6 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         context= getActivity();
-        mediaPlayer = new MediaPlayer();
         requestPermissions = new RequestPermissions();
 
 
@@ -541,6 +540,13 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 1");
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mediaPlayer = null;
+        mediaPlayer = new MediaPlayer();
     }
 
 

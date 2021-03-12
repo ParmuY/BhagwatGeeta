@@ -86,7 +86,6 @@ public class Fragment3 extends Fragment implements ViewPager.OnPageChangeListene
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         context3= getActivity();
-        mediaPlayer3 = new MediaPlayer();
         requestPermissions = new RequestPermissions();
     }
 
@@ -460,6 +459,12 @@ public class Fragment3 extends Fragment implements ViewPager.OnPageChangeListene
         {
             mediaPlayer3.reset();
             mediaPlayer3.release();}
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        mediaPlayer3 = null;
+        mediaPlayer3 = new MediaPlayer();
     }
 
 

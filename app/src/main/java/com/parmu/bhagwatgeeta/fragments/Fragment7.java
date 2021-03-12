@@ -87,7 +87,6 @@ public class Fragment7 extends Fragment implements ViewPager.OnPageChangeListene
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         context7= getActivity();
-//        mediaPlayer7 = new MediaPlayer();
         requestPermissions = new RequestPermissions();
     }
 
