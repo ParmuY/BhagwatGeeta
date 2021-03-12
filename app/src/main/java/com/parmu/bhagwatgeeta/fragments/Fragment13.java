@@ -316,26 +316,6 @@ public class Fragment13 extends Fragment  implements ViewPager.OnPageChangeListe
         });
         return view13;
     }
-    
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-
-        if(mediaPlayer13.isPlaying()){mediaPlayer13.pause(); mediaPlayer13.seekTo(0);
-        }
-        else {
-            mediaPlayer13.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer13.prepare();
-        }
-        mediaPlayer13.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer13) {
-                mediaPlayer13.stop();
-                mediaPlayer13.reset(); }
-        });
-        mediaPlayer13.start();
-
-    }
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -346,13 +326,14 @@ public class Fragment13 extends Fragment  implements ViewPager.OnPageChangeListe
     public void onPageSelected(int position) {
         if(mediaPlayer13.isPlaying()){
             try {
-                mediaPlayer13.stop();
-                mediaPlayer13.reset();
+                mediaPlayer13.pause();
+                mediaPlayer13.seekTo(0);
             }
             catch (Exception e)
             {
                 e.printStackTrace();
-            } }
+            }
+        }
 
     }
 
@@ -360,13 +341,19 @@ public class Fragment13 extends Fragment  implements ViewPager.OnPageChangeListe
     public void onPageScrollStateChanged(int state) {
 
     }
-    @Override
-    public void onDestroyView (){
-        super.onDestroyView();
-        if(mediaPlayer13.isPlaying())
-        {
-            mediaPlayer13.reset();
-            mediaPlayer13.release();}
+    // method for media player
+    private void playDisSound(Context c, int soundID) throws IOException {
+
+        if(mediaPlayer13.isPlaying()) {
+            mediaPlayer13.pause();
+            mediaPlayer13.seekTo(0);
+        }
+        else {
+            mediaPlayer13.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
+            mediaPlayer13.prepare();
+        }
+        mediaPlayer13.start();
+
     }
 
     @Override
@@ -375,15 +362,14 @@ public class Fragment13 extends Fragment  implements ViewPager.OnPageChangeListe
         inflater.inflate(R.menu.app_bar_menu_1, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(mediaPlayer13.isPlaying())
-        {
-            mediaPlayer13.reset();
-            mediaPlayer13.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
+            if(mediaPlayer13.isPlaying()){
+                mediaPlayer13.pause();
+                mediaPlayer13.seekTo(0);
+            }
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 13");
 
@@ -391,27 +377,30 @@ public class Fragment13 extends Fragment  implements ViewPager.OnPageChangeListe
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public void onPause(){
-        super.onPause();
-        if(mediaPlayer13.isPlaying())
-        {
-            mediaPlayer13.reset();
-            mediaPlayer13.release();}
-    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        if(mediaPlayer13.isPlaying())
-        {
-            mediaPlayer13.reset();
-            mediaPlayer13.release();}
-    }
-    @Override
     public void onResume() {
         super.onResume();
         mediaPlayer13 = null;
         mediaPlayer13 = new MediaPlayer();
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer13.isPlaying())
+        {
+            mediaPlayer13.pause();
+            mediaPlayer13.seekTo(0);
+        }
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer13!=null)
+        {
+            mediaPlayer13.reset();
+            mediaPlayer13.release();
+            mediaPlayer13 = null;
+        }
 
+    }
 
 }

@@ -275,26 +275,6 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
         });
         return view14;
     }
-    
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-
-        if(mediaPlayer14.isPlaying()){mediaPlayer14.pause(); mediaPlayer14.seekTo(0);
-        }
-        else {
-            mediaPlayer14.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer14.prepare();
-        }
-        mediaPlayer14.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer14) {
-                mediaPlayer14.stop();
-                mediaPlayer14.reset(); }
-        });
-        mediaPlayer14.start();
-
-    }
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -305,13 +285,14 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
     public void onPageSelected(int position) {
         if(mediaPlayer14.isPlaying()){
             try {
-                mediaPlayer14.stop();
-                mediaPlayer14.reset();
+                mediaPlayer14.pause();
+                mediaPlayer14.seekTo(0);
             }
             catch (Exception e)
             {
                 e.printStackTrace();
-            } }
+            }
+        }
 
     }
 
@@ -319,13 +300,19 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
     public void onPageScrollStateChanged(int state) {
 
     }
-    @Override
-    public void onDestroyView (){
-        super.onDestroyView();
-        if(mediaPlayer14.isPlaying())
-        {
-            mediaPlayer14.reset();
-            mediaPlayer14.release();}
+    // method for media player
+    private void playDisSound(Context c, int soundID) throws IOException {
+
+        if(mediaPlayer14.isPlaying()) {
+            mediaPlayer14.pause();
+            mediaPlayer14.seekTo(0);
+        }
+        else {
+            mediaPlayer14.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
+            mediaPlayer14.prepare();
+        }
+        mediaPlayer14.start();
+
     }
 
     @Override
@@ -334,15 +321,14 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
         inflater.inflate(R.menu.app_bar_menu_1, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(mediaPlayer14.isPlaying())
-        {
-            mediaPlayer14.reset();
-            mediaPlayer14.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
+            if(mediaPlayer14.isPlaying()){
+                mediaPlayer14.pause();
+                mediaPlayer14.seekTo(0);
+            }
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 14");
 
@@ -350,28 +336,30 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public void onPause(){
-        super.onPause();
-        if(mediaPlayer14.isPlaying())
-        {
-            mediaPlayer14.reset();
-            mediaPlayer14.release();}
-    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        if(mediaPlayer14.isPlaying())
-        {
-            mediaPlayer14.reset();
-            mediaPlayer14.release();}
-    }
-    @Override
     public void onResume() {
         super.onResume();
         mediaPlayer14 = null;
         mediaPlayer14 = new MediaPlayer();
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer14.isPlaying())
+        {
+            mediaPlayer14.pause();
+            mediaPlayer14.seekTo(0);
+        }
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer14!=null)
+        {
+            mediaPlayer14.reset();
+            mediaPlayer14.release();
+            mediaPlayer14 = null;
+        }
 
-
+    }
 
 }

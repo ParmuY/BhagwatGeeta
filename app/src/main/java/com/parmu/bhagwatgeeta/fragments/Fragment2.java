@@ -677,42 +677,23 @@ public class Fragment2 extends Fragment implements ViewPager.OnPageChangeListene
         return view2;
     }
 
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-
-        if(mediaPlayer2.isPlaying()){mediaPlayer2.pause(); mediaPlayer2.seekTo(0);
-        }
-        else {
-            mediaPlayer2.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer2.prepare();
-        }
-        mediaPlayer2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer2) {
-                mediaPlayer2.stop();
-                mediaPlayer2.reset(); }
-        });
-        mediaPlayer2.start();
-
-    }
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        
+
     }
 
     @Override
     public void onPageSelected(int position) {
         if(mediaPlayer2.isPlaying()){
             try {
-                mediaPlayer2.stop();
-                mediaPlayer2.reset();
+                mediaPlayer2.pause();
+                mediaPlayer2.seekTo(0);
             }
             catch (Exception e)
             {
                 e.printStackTrace();
-            } }
+            }
+        }
 
     }
 
@@ -720,13 +701,19 @@ public class Fragment2 extends Fragment implements ViewPager.OnPageChangeListene
     public void onPageScrollStateChanged(int state) {
 
     }
-    @Override
-    public void onDestroyView (){
-        super.onDestroyView();
-        if(mediaPlayer2.isPlaying())
-        {
-            mediaPlayer2.reset();
-            mediaPlayer2.release();}
+    // method for media player
+    private void playDisSound(Context c, int soundID) throws IOException {
+
+        if(mediaPlayer2.isPlaying()) {
+            mediaPlayer2.pause();
+            mediaPlayer2.seekTo(0);
+        }
+        else {
+            mediaPlayer2.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
+            mediaPlayer2.prepare();
+        }
+        mediaPlayer2.start();
+
     }
 
     @Override
@@ -735,15 +722,14 @@ public class Fragment2 extends Fragment implements ViewPager.OnPageChangeListene
         inflater.inflate(R.menu.app_bar_menu_1, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(mediaPlayer2.isPlaying())
-        {
-            mediaPlayer2.reset();
-            mediaPlayer2.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
+            if(mediaPlayer2.isPlaying()){
+                mediaPlayer2.pause();
+                mediaPlayer2.seekTo(0);
+            }
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 2");
 
@@ -751,27 +737,30 @@ public class Fragment2 extends Fragment implements ViewPager.OnPageChangeListene
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public void onPause(){
-        super.onPause();
-        if(mediaPlayer2.isPlaying())
-        {
-            mediaPlayer2.reset();
-            mediaPlayer2.release();}
-    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        if(mediaPlayer2.isPlaying())
-        {
-            mediaPlayer2.reset();
-            mediaPlayer2.release();}
-    }
-    @Override
     public void onResume() {
         super.onResume();
         mediaPlayer2 = null;
         mediaPlayer2 = new MediaPlayer();
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer2.isPlaying())
+        {
+            mediaPlayer2.pause();
+            mediaPlayer2.seekTo(0);
+        }
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer2!=null)
+        {
+            mediaPlayer2.reset();
+            mediaPlayer2.release();
+            mediaPlayer2 = null;
+        }
 
+    }
 
 }

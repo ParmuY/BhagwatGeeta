@@ -17,7 +17,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -39,7 +38,6 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions = new RequestPermissions();
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
-
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -698,24 +696,6 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
       return view18;
     }
     
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-        if(mediaPlayer18.isPlaying()){mediaPlayer18.pause(); mediaPlayer18.seekTo(0);
-        }
-        else {
-            mediaPlayer18.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer18.prepare();
-        }
-        mediaPlayer18.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer18) {
-                mediaPlayer18.stop();
-                mediaPlayer18.reset(); }
-        });
-        mediaPlayer18.start();
-
-    }
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -726,13 +706,14 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
     public void onPageSelected(int position) {
         if(mediaPlayer18.isPlaying()){
             try {
-                mediaPlayer18.stop();
-                mediaPlayer18.reset();
+                mediaPlayer18.pause();
+                mediaPlayer18.seekTo(0);
             }
             catch (Exception e)
             {
                 e.printStackTrace();
-            } }
+            }
+        }
 
     }
 
@@ -740,13 +721,19 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
     public void onPageScrollStateChanged(int state) {
 
     }
-    @Override
-    public void onDestroyView (){
-        super.onDestroyView();
-        if(mediaPlayer18.isPlaying())
-        {
-            mediaPlayer18.reset();
-            mediaPlayer18.release();}
+    // method for media player
+    private void playDisSound(Context c, int soundID) throws IOException {
+
+        if(mediaPlayer18.isPlaying()) {
+            mediaPlayer18.pause();
+            mediaPlayer18.seekTo(0);
+        }
+        else {
+            mediaPlayer18.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
+            mediaPlayer18.prepare();
+        }
+        mediaPlayer18.start();
+
     }
 
     @Override
@@ -755,16 +742,14 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
         inflater.inflate(R.menu.app_bar_menu_1, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(mediaPlayer18.isPlaying())
-        {
-            mediaPlayer18.reset();
-            mediaPlayer18.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
+            if(mediaPlayer18.isPlaying()){
+                mediaPlayer18.pause();
+                mediaPlayer18.seekTo(0);
+            }
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 18");
 
@@ -772,26 +757,30 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public void onPause(){
-        super.onPause();
-        if(mediaPlayer18.isPlaying())
-        {
-            mediaPlayer18.reset();
-            mediaPlayer18.release();}
-    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        if(mediaPlayer18.isPlaying())
-        {
-            mediaPlayer18.reset();
-            mediaPlayer18.release();}
-    }
-    @Override
     public void onResume() {
         super.onResume();
         mediaPlayer18 = null;
         mediaPlayer18 = new MediaPlayer();
+    }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer18.isPlaying())
+        {
+            mediaPlayer18.pause();
+            mediaPlayer18.seekTo(0);
+        }
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer18!=null)
+        {
+            mediaPlayer18.reset();
+            mediaPlayer18.release();
+            mediaPlayer18 = null;
+        }
+
     }
 
 

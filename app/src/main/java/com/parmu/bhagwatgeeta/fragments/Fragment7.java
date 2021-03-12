@@ -288,42 +288,23 @@ public class Fragment7 extends Fragment implements ViewPager.OnPageChangeListene
         return view7;
     }
 
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-
-        if(mediaPlayer7.isPlaying()){mediaPlayer7.pause(); mediaPlayer7.seekTo(0);
-        }
-        else {
-            mediaPlayer7.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer7.prepare();
-        }
-        mediaPlayer7.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer7) {
-                mediaPlayer7.stop();
-                mediaPlayer7.reset(); }
-        });
-        mediaPlayer7.start();
-
-    }
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        
+
     }
 
     @Override
     public void onPageSelected(int position) {
         if(mediaPlayer7.isPlaying()){
             try {
-                mediaPlayer7.stop();
-                mediaPlayer7.reset();
+                mediaPlayer7.pause();
+                mediaPlayer7.seekTo(0);
             }
             catch (Exception e)
             {
                 e.printStackTrace();
-            } }
+            }
+        }
 
     }
 
@@ -331,21 +312,35 @@ public class Fragment7 extends Fragment implements ViewPager.OnPageChangeListene
     public void onPageScrollStateChanged(int state) {
 
     }
+    // method for media player
+    private void playDisSound(Context c, int soundID) throws IOException {
+
+        if(mediaPlayer7.isPlaying()) {
+            mediaPlayer7.pause();
+            mediaPlayer7.seekTo(0);
+        }
+        else {
+            mediaPlayer7.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
+            mediaPlayer7.prepare();
+        }
+        mediaPlayer7.start();
+
+    }
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
         inflater.inflate(R.menu.app_bar_menu_1, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(mediaPlayer7.isPlaying())
-        {
-            mediaPlayer7.reset();
-            mediaPlayer7.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
+            if(mediaPlayer7.isPlaying()){
+                mediaPlayer7.pause();
+                mediaPlayer7.seekTo(0);
+            }
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 7");
 
@@ -353,30 +348,31 @@ public class Fragment7 extends Fragment implements ViewPager.OnPageChangeListene
         return super.onOptionsItemSelected(item);
     }
     @Override
-    public void onDestroyView(){
-        super.onDestroyView();
-        if(mediaPlayer7.isPlaying())
-        {
-            mediaPlayer7.reset();
-            mediaPlayer7.release();
-
-        }
+    public void onResume() {
+        super.onResume();
+        mediaPlayer7 = null;
+        mediaPlayer7 = new MediaPlayer();
     }
     @Override
     public void onPause(){
         super.onPause();
         if(mediaPlayer7.isPlaying())
         {
-            mediaPlayer7.reset();
-            mediaPlayer7.release();
-
+            mediaPlayer7.pause();
+            mediaPlayer7.seekTo(0);
         }
     }
     @Override
-    public void onResume() {
-        super.onResume();
-        mediaPlayer7 = null;
-        mediaPlayer7 = new MediaPlayer();
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer7!=null)
+        {
+            mediaPlayer7.reset();
+            mediaPlayer7.release();
+            mediaPlayer7 = null;
+        }
+
     }
+
 }
 

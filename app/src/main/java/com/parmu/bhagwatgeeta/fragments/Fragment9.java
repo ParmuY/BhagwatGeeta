@@ -315,43 +315,23 @@ public class Fragment9 extends Fragment implements ViewPager.OnPageChangeListene
         });
        return view9;
     }
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-
-        if(mediaPlayer9.isPlaying()){mediaPlayer9.pause(); mediaPlayer9.seekTo(0);
-        }
-        else {
-            mediaPlayer9.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer9.prepare();
-        }
-        mediaPlayer9.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mediaPlayer9) {
-                mediaPlayer9.stop();
-                mediaPlayer9.reset(); }
-        });
-        mediaPlayer9.start();
-
-    }
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        
+
     }
 
     @Override
     public void onPageSelected(int position) {
         if(mediaPlayer9.isPlaying()){
             try {
-                mediaPlayer9.stop();
-                mediaPlayer9.reset();
+                mediaPlayer9.pause();
+                mediaPlayer9.seekTo(0);
             }
             catch (Exception e)
             {
                 e.printStackTrace();
-            } }
-
+            }
+        }
 
     }
 
@@ -359,13 +339,19 @@ public class Fragment9 extends Fragment implements ViewPager.OnPageChangeListene
     public void onPageScrollStateChanged(int state) {
 
     }
-    @Override
-    public void onDestroyView (){
-        super.onDestroyView();
-        if(mediaPlayer9.isPlaying())
-        {
-            mediaPlayer9.reset();
-            mediaPlayer9.release();}
+    // method for media player
+    private void playDisSound(Context c, int soundID) throws IOException {
+
+        if(mediaPlayer9.isPlaying()) {
+            mediaPlayer9.pause();
+            mediaPlayer9.seekTo(0);
+        }
+        else {
+            mediaPlayer9.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
+            mediaPlayer9.prepare();
+        }
+        mediaPlayer9.start();
+
     }
 
     @Override
@@ -374,15 +360,14 @@ public class Fragment9 extends Fragment implements ViewPager.OnPageChangeListene
         inflater.inflate(R.menu.app_bar_menu_1, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(mediaPlayer9.isPlaying())
-        {
-            mediaPlayer9.reset();
-            mediaPlayer9.release();}
         int id = item.getItemId();
         if (id==R.id.share_shlola){
+            if(mediaPlayer9.isPlaying()){
+                mediaPlayer9.pause();
+                mediaPlayer9.seekTo(0);
+            }
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 9");
 
@@ -390,27 +375,30 @@ public class Fragment9 extends Fragment implements ViewPager.OnPageChangeListene
         return super.onOptionsItemSelected(item);
     }
     @Override
+    public void onResume() {
+        super.onResume();
+        mediaPlayer9 = null;
+        mediaPlayer9 = new MediaPlayer();
+    }
+    @Override
     public void onPause(){
         super.onPause();
         if(mediaPlayer9.isPlaying())
         {
-            mediaPlayer9.reset();
-            mediaPlayer9.release();}
+            mediaPlayer9.pause();
+            mediaPlayer9.seekTo(0);
+        }
     }
     @Override
     public void onDestroy(){
         super.onDestroy();
-        if(mediaPlayer9.isPlaying())
+        if(mediaPlayer9!=null)
         {
             mediaPlayer9.reset();
-            mediaPlayer9.release();}
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        mediaPlayer9 = null;
-        mediaPlayer9= new MediaPlayer();
-    }
+            mediaPlayer9.release();
+            mediaPlayer9 = null;
+        }
 
+    }
 
 }
