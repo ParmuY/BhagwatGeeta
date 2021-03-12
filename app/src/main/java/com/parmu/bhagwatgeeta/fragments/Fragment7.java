@@ -87,7 +87,7 @@ public class Fragment7 extends Fragment implements ViewPager.OnPageChangeListene
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         context7= getActivity();
-        mediaPlayer7 = new MediaPlayer();
+//        mediaPlayer7 = new MediaPlayer();
         requestPermissions = new RequestPermissions();
     }
 
@@ -333,15 +333,6 @@ public class Fragment7 extends Fragment implements ViewPager.OnPageChangeListene
 
     }
     @Override
-    public void onDestroyView (){
-        super.onDestroyView();
-        if(mediaPlayer7.isPlaying())
-        {
-            mediaPlayer7.reset();
-            mediaPlayer7.release();}
-    }
-
-    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
         inflater.inflate(R.menu.app_bar_menu_1, menu);
@@ -362,5 +353,31 @@ public class Fragment7 extends Fragment implements ViewPager.OnPageChangeListene
         }
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onDestroyView(){
+        super.onDestroyView();
+        if(mediaPlayer7.isPlaying())
+        {
+            mediaPlayer7.reset();
+            mediaPlayer7.release();
 
+        }
+    }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer7.isPlaying())
+        {
+            mediaPlayer7.reset();
+            mediaPlayer7.release();
+
+        }
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        mediaPlayer7 = null;
+        mediaPlayer7 = new MediaPlayer();
+    }
 }
+

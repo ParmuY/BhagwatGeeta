@@ -294,5 +294,22 @@ public class Fragment12 extends Fragment implements ViewPager.OnPageChangeListen
         }
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer12.isPlaying())
+        {
+            mediaPlayer12.reset();
+            mediaPlayer12.release();}
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer12.isPlaying())
+        {
+            mediaPlayer12.reset();
+            mediaPlayer12.release();}
+    }
+
 
 }

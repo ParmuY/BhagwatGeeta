@@ -355,5 +355,22 @@ public class Fragment17 extends Fragment implements ViewPager.OnPageChangeListen
         }
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer17.isPlaying())
+        {
+            mediaPlayer17.reset();
+            mediaPlayer17.release();}
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer17.isPlaying())
+        {
+            mediaPlayer17.reset();
+            mediaPlayer17.release();}
+    }
+
 
 }

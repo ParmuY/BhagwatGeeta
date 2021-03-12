@@ -771,5 +771,22 @@ public class Fragment18 extends Fragment implements ViewPager.OnPageChangeListen
         }
         return super.onOptionsItemSelected(item);
     }
-    //new feature branch
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer18.isPlaying())
+        {
+            mediaPlayer18.reset();
+            mediaPlayer18.release();}
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer18.isPlaying())
+        {
+            mediaPlayer18.reset();
+            mediaPlayer18.release();}
+    }
+
+
 }

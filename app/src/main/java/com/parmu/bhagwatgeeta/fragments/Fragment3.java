@@ -445,5 +445,23 @@ public class Fragment3 extends Fragment implements ViewPager.OnPageChangeListene
         return super.onOptionsItemSelected(item);
     }
 
-
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer3.isPlaying())
+        {
+            mediaPlayer3.reset();
+            mediaPlayer3.release();}
     }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer3.isPlaying())
+        {
+            mediaPlayer3.reset();
+            mediaPlayer3.release();}
+    }
+
+
+
+}

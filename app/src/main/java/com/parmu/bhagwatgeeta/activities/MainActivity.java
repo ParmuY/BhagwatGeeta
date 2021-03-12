@@ -278,11 +278,17 @@ public class MainActivity extends AppCompatActivity {
     private void feedbackIntent(){
         Intent iFeedback = new Intent(Intent.ACTION_SEND);
         iFeedback.setType("*/*");
-        iFeedback.putExtra(Intent.EXTRA_EMAIL,new String[] {"pramesh2151@gmail.com"});
-        iFeedback.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
-        iFeedback.putExtra(Intent.EXTRA_TEXT,"write feedback here");
+        try {
+            iFeedback.setPackage("com.google.android.gm");
+            iFeedback.putExtra(Intent.EXTRA_EMAIL,new String[] {"pramesh2151@gmail.com"});
+            iFeedback.putExtra(Intent.EXTRA_SUBJECT, "App Feedback (BhagwatGeeta)");
+            iFeedback.putExtra(Intent.EXTRA_TEXT,"Please provide your feedback here\n");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         startActivity(Intent.createChooser(iFeedback,"Send Feedback:"));
     }
+
 
 }
 

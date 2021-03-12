@@ -391,5 +391,22 @@ public class Fragment13 extends Fragment  implements ViewPager.OnPageChangeListe
         }
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer13.isPlaying())
+        {
+            mediaPlayer13.reset();
+            mediaPlayer13.release();}
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer13.isPlaying())
+        {
+            mediaPlayer13.reset();
+            mediaPlayer13.release();}
+    }
+
 
 }

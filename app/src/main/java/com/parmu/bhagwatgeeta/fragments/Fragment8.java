@@ -350,5 +350,22 @@ public class Fragment8 extends Fragment implements ViewPager.OnPageChangeListene
         }
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer8.isPlaying())
+        {
+            mediaPlayer8.reset();
+            mediaPlayer8.release();}
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer8.isPlaying())
+        {
+            mediaPlayer8.reset();
+            mediaPlayer8.release();}
+    }
+
 
 }

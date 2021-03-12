@@ -449,6 +449,23 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
         return view;
     }
 
+    @Override
+    public void onPause(){
+        super.onPause();
+        if(mediaPlayer.isPlaying())
+        {
+            mediaPlayer.reset();
+            mediaPlayer.release();}
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mediaPlayer.isPlaying())
+        {
+            mediaPlayer.reset();
+            mediaPlayer.release();}
+    }
+
     // method for media player
     public void playDisSound(Context c, int soundID) throws IOException {
 
