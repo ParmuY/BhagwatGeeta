@@ -29,6 +29,7 @@ import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 import java.io.IOException;
 
 
+import static com.parmu.bhagwatgeeta.activities.Adhyay18_AC18.pagePosition18;
 import static com.parmu.bhagwatgeeta.activities.Adhyay2_AC2.pagePosition2;
 
 /**
@@ -731,7 +732,7 @@ public class Fragment2 extends Fragment implements ViewPager.OnPageChangeListene
                 mediaPlayer2.seekTo(0);
             }
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 2");
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 2","C2"+ pagePosition2);
 
         }
         return super.onOptionsItemSelected(item);
