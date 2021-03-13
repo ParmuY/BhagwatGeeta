@@ -31,7 +31,7 @@ import java.io.IOException;
 
 import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pagePosition;
 
-
+//
 
 /**
  * A simple {@link Fragment} subclass.
