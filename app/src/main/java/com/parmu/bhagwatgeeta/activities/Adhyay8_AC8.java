@@ -7,7 +7,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 
 
 import com.google.android.material.tabs.TabLayout;
@@ -64,9 +63,9 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
         editor.putInt("PageSaved8",pagePo);
         editor.apply();
         //for mediaplayer   iske baad ka copy paste krna hai
-        if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
-            if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
-                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+        if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
+            if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){
+                ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
     }
@@ -78,9 +77,9 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
 
     @Override
     public void onPageSelected(int position) {
-        if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
-            if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
-                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+        if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
+            if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){
+                ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
     }

@@ -61,9 +61,9 @@ public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageCh
         editor.putInt("PageSaved1", pagePo);
         editor.apply();
 
-        if (ClassForCombinedMediaPlayer.mediaPlayer != null) {
-            if (ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()) {
-                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+        if (ClassForCombinedMediaPlayer.mediaPlayerOb != null) {
+            if (ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()) {
+                ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
     }
@@ -75,9 +75,9 @@ public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageCh
 
     @Override
     public void onPageSelected(int position) {
-        if (ClassForCombinedMediaPlayer.mediaPlayer != null) {
-            if (ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()) {
-                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+        if (ClassForCombinedMediaPlayer.mediaPlayerOb != null) {
+            if (ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()) {
+                ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
     }

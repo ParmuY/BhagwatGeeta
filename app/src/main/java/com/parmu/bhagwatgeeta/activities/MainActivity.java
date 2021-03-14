@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.Switch;
@@ -21,12 +22,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.parmu.bhagwatgeeta.R;
+import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.RecycleViewAdapter;
 import com.parmu.bhagwatgeeta.misc.RecycleViewItem;
 
 import java.util.ArrayList;
 
-//lol
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
@@ -64,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
     //array list for recycler view
@@ -289,6 +285,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(iFeedback,"Send Feedback:"));
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("ondestroy","ondestroy called main activity");
+        ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
+        ClassForCombinedMediaPlayer.mediaPlayerOb.release();
+        ClassForCombinedMediaPlayer.mediaPlayerOb = null;
+    }
 
 }
 

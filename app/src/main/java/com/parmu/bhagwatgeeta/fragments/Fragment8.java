@@ -256,7 +256,7 @@ public class Fragment8 extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            ClassForCombinedMediaPlayer.mediaPlayer.reset();
+            ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 8","C8"+ pagePosition8);
         }

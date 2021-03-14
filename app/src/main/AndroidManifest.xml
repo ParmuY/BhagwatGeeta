@@ -6,7 +6,6 @@
 
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <receiver android:name=".misc.AlarmReceiver"/>
 
@@ -141,7 +140,9 @@
             android:name=".activities.MainActivity"
             android:label="@string/adhyay"
             android:configChanges="orientation"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

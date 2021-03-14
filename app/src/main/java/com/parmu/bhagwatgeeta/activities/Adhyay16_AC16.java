@@ -59,9 +59,9 @@ public class Adhyay16_AC16 extends AppCompatActivity implements ViewPager.OnPage
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("PageSaved16",pagePo);
         editor.apply();
-        if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
-            if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
-                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+        if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
+            if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){
+                ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
     }
@@ -73,9 +73,9 @@ public class Adhyay16_AC16 extends AppCompatActivity implements ViewPager.OnPage
 
     @Override
     public void onPageSelected(int position) {
-        if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
-            if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
-                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+        if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
+            if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){
+                ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
     }

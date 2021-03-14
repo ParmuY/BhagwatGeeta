@@ -3,7 +3,6 @@ package com.parmu.bhagwatgeeta.activities;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.SharedPreferences;
@@ -62,9 +61,9 @@ public class Adhyay7_AC7 extends AppCompatActivity implements ViewPager.OnPageCh
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("PageSaved7", pagePo);
         editor.apply();
-        if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
-            if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
-                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+        if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
+            if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){
+                ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
     }
@@ -76,9 +75,9 @@ public class Adhyay7_AC7 extends AppCompatActivity implements ViewPager.OnPageCh
 
     @Override
     public void onPageSelected(int position) {
-        if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
-            if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
-                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+        if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
+            if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){
+                ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
     }

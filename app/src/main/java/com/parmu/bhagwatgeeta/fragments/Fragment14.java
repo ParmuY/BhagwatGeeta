@@ -2,14 +2,11 @@ package com.parmu.bhagwatgeeta.fragments;
 
 import android.Manifest;
 import android.content.Context;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -265,7 +262,7 @@ public class Fragment14 extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            ClassForCombinedMediaPlayer.mediaPlayer.reset();
+            ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 14","C14"+ pagePosition14);
 
