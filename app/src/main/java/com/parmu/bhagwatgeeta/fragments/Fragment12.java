@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.parmu.bhagwatgeeta.activities.Adhyay12_AC12;
 import com.parmu.bhagwatgeeta.R;
+import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 
@@ -30,27 +31,17 @@ import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay12_AC12.pagePosition12;
 import static com.parmu.bhagwatgeeta.activities.Adhyay18_AC18.pagePosition18;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment12#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Fragment12 extends Fragment implements ViewPager.OnPageChangeListener {
+public class Fragment12 extends Fragment {
     private TextView textView;
-    public MediaPlayer mediaPlayer12;
-    Context context12;
-    ViewPager viewPager12;
+    private Context context12;
     private static final int STORAGE_PERMISSION_CODE = 101;
-    RequestPermissions requestPermissions;
+    private RequestPermissions requestPermissions;
     private ConstraintLayout constraintLayout;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -58,15 +49,6 @@ public class Fragment12 extends Fragment implements ViewPager.OnPageChangeListen
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment12.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Fragment12 newInstance(String param1, String param2) {
         Fragment12 fragment = new Fragment12();
         Bundle args = new Bundle();
@@ -97,9 +79,6 @@ public class Fragment12 extends Fragment implements ViewPager.OnPageChangeListen
     textView.setText(getArguments().getString("message12"));
     constraintLayout = view12.findViewById(R.id.constrained_layout);
     FloatingActionButton fabPlayBtn12 = view12.findViewById(R.id.fabplaysound12);
-        viewPager12=getActivity().findViewById(R.id.pager12);
-        viewPager12.addOnPageChangeListener(this);
-
         fabPlayBtn12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,109 +88,109 @@ public class Fragment12 extends Fragment implements ViewPager.OnPageChangeListen
                 if (pagePosition12 == 0) {
 
                     try {
-                        playDisSound(context12, R.raw.c12s1);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s1);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 1) {
                     try {
-                        playDisSound(context12, R.raw.c12s2);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s2);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 2) {
                     try {
-                        playDisSound(context12, R.raw.c12s3_4);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s3_4);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 3) {
                     try {
-                        playDisSound(context12, R.raw.c12s5);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s5);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 4) {
                     try {
-                        playDisSound(context12, R.raw.c12s6);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s6);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 5) {
                     try {
-                        playDisSound(context12, R.raw.c12s7);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s7);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 6) {
                     try {
-                        playDisSound(context12, R.raw.c12s8);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s8);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 7) {
                     try {
-                        playDisSound(context12, R.raw.c12s9);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s9);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 8) {
                     try {
-                        playDisSound(context12, R.raw.c12s10);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s10);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 9) {
                     try {
-                        playDisSound(context12, R.raw.c12s11);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s11);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 10) {
                     try {
-                        playDisSound(context12, R.raw.c12s12);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s12);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 11) {
                     try {
-                        playDisSound(context12, R.raw.c12s13_14);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s13_14);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 12) {
                     try {
-                        playDisSound(context12, R.raw.c12s15);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s15);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 13) {
                     try {
-                        playDisSound(context12, R.raw.c12s16);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s16);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 14) {
                     try {
-                        playDisSound(context12, R.raw.c12s17);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s17);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 15) {
                     try {
-                        playDisSound(context12, R.raw.c12s18);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s18);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 16) {
                     try {
-                        playDisSound(context12, R.raw.c12s19);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s19);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition12 == 17) {
                     try {
-                        playDisSound(context12, R.raw.c12s20);
+                        ClassForCombinedMediaPlayer.playDisSound(context12, R.raw.c12s20);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -219,44 +198,6 @@ public class Fragment12 extends Fragment implements ViewPager.OnPageChangeListen
             }
         });
     return view12;
-    }
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-        if(mediaPlayer12.isPlaying()){
-            try {
-                mediaPlayer12.pause();
-                mediaPlayer12.seekTo(0);
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-        if(mediaPlayer12.isPlaying()) {
-            mediaPlayer12.pause();
-            mediaPlayer12.seekTo(0);
-        }
-        else {
-            mediaPlayer12.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer12.prepare();
-        }
-        mediaPlayer12.start();
-
     }
 
     @Override
@@ -269,41 +210,12 @@ public class Fragment12 extends Fragment implements ViewPager.OnPageChangeListen
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            if(mediaPlayer12.isPlaying()){
-                mediaPlayer12.pause();
-                mediaPlayer12.seekTo(0);
-            }
+            ClassForCombinedMediaPlayer.mediaPlayer.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 12","C12"+ pagePosition12);
 
         }
         return super.onOptionsItemSelected(item);
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        mediaPlayer12 = null;
-        mediaPlayer12 = new MediaPlayer();
-    }
-    @Override
-    public void onPause(){
-        super.onPause();
-        if(mediaPlayer12.isPlaying())
-        {
-            mediaPlayer12.pause();
-            mediaPlayer12.seekTo(0);
-        }
-    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        if(mediaPlayer12!=null)
-        {
-            mediaPlayer12.reset();
-            mediaPlayer12.release();
-            mediaPlayer12 = null;
-        }
-
     }
 
 }

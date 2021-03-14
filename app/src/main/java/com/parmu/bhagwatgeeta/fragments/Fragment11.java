@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.parmu.bhagwatgeeta.activities.Adhyay11_AC11;
 import com.parmu.bhagwatgeeta.R;
+import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 
@@ -30,29 +31,17 @@ import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay11_AC11.pagePosition11;
 import static com.parmu.bhagwatgeeta.activities.Adhyay18_AC18.pagePosition18;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment11#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Fragment11 extends Fragment implements ViewPager.OnPageChangeListener{
+public class Fragment11 extends Fragment{
     private TextView textView;
-    public MediaPlayer mediaPlayer11;
-    Context context11;
-    ViewPager viewPager11;
+    private Context context11;
     private static final int STORAGE_PERMISSION_CODE = 101;
-    RequestPermissions requestPermissions;
+    private RequestPermissions requestPermissions;
     private ConstraintLayout constraintLayout;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
 
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -60,15 +49,6 @@ public class Fragment11 extends Fragment implements ViewPager.OnPageChangeListen
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment11.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Fragment11 newInstance(String param1, String param2) {
         Fragment11 fragment = new Fragment11();
         Bundle args = new Bundle();
@@ -99,10 +79,7 @@ public class Fragment11 extends Fragment implements ViewPager.OnPageChangeListen
        textView.setText(getArguments().getString("message11"));
        constraintLayout = view11.findViewById(R.id.constrained_layout);
        FloatingActionButton fabPlayBtn11 = view11.findViewById(R.id.fabplaysound11);
-        viewPager11=getActivity().findViewById(R.id.pager11);
-        viewPager11.addOnPageChangeListener(this);
-
-        fabPlayBtn11.setOnClickListener(new View.OnClickListener() {
+       fabPlayBtn11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -111,313 +88,313 @@ public class Fragment11 extends Fragment implements ViewPager.OnPageChangeListen
                 if (pagePosition11 == 0) {
 
                     try {
-                        playDisSound(context11, R.raw.c11s1);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s1);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 1) {
                     try {
-                        playDisSound(context11, R.raw.c11s2);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s2);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 2) {
                     try {
-                        playDisSound(context11, R.raw.c11s3);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s3);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 3) {
                     try {
-                        playDisSound(context11, R.raw.c11s4);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s4);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 4) {
                     try {
-                        playDisSound(context11, R.raw.c11s5);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s5);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 5) {
                     try {
-                        playDisSound(context11, R.raw.c11s6);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s6);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 6) {
                     try {
-                        playDisSound(context11, R.raw.c11s7);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s7);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 7) {
                     try {
-                        playDisSound(context11, R.raw.c11s8);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s8);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 8) {
                     try {
-                        playDisSound(context11, R.raw.c11s9);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s9);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 9) {
                     try {
-                        playDisSound(context11, R.raw.c11s10_11);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s10_11);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 10) {
                     try {
-                        playDisSound(context11, R.raw.c11s12);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s12);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 11) {
                     try {
-                        playDisSound(context11, R.raw.c11s13);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s13);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 12) {
                     try {
-                        playDisSound(context11, R.raw.c11s14);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s14);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 13) {
                     try {
-                        playDisSound(context11, R.raw.c11s15);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s15);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 14) {
                     try {
-                        playDisSound(context11, R.raw.c11s16);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s16);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 15) {
                     try {
-                        playDisSound(context11, R.raw.c11s17);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s17);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 16) {
                     try {
-                        playDisSound(context11, R.raw.c11s18);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s18);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 17) {
                     try {
-                        playDisSound(context11, R.raw.c11s19);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s19);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 18) {
                     try {
-                        playDisSound(context11, R.raw.c11s20);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s20);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 19) {
                     try {
-                        playDisSound(context11, R.raw.c11s21);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s21);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 20) {
                     try {
-                        playDisSound(context11, R.raw.c11s22);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s22);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 21) {
                     try {
-                        playDisSound(context11, R.raw.c11s23);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s23);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 22) {
                     try {
-                        playDisSound(context11, R.raw.c11s24);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s24);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 23) {
                     try {
-                        playDisSound(context11, R.raw.c11s25);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s25);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 24) {
                     try {
-                        playDisSound(context11, R.raw.c11s26_27);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s26_27);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 25) {
                     try {
-                        playDisSound(context11, R.raw.c11s28);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s28);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 26) {
                     try {
-                        playDisSound(context11, R.raw.c11s29);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s29);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 27) {
                     try {
-                        playDisSound(context11, R.raw.c11s30);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s30);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 28) {
                     try {
-                        playDisSound(context11, R.raw.c11s31);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s31);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 29) {
                     try {
-                        playDisSound(context11, R.raw.c11s32);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s32);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 30) {
                     try {
-                        playDisSound(context11, R.raw.c11s33);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s33);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 31) {
                     try {
-                        playDisSound(context11, R.raw.c11s34);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s34);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 32) {
                     try {
-                        playDisSound(context11, R.raw.c11s35);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s35);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 33) {
                     try {
-                        playDisSound(context11, R.raw.c11s36);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s36);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 34) {
                     try {
-                        playDisSound(context11, R.raw.c11s37);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s37);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 35) {
                     try {
-                        playDisSound(context11, R.raw.c11s38);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s38);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 36) {
                     try {
-                        playDisSound(context11, R.raw.c11s39);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s39);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 37) {
                     try {
-                        playDisSound(context11, R.raw.c11s40);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s40);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 38) {
                     try {
-                        playDisSound(context11, R.raw.c11s41_42);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s41_42);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 39) {
                     try {
-                        playDisSound(context11, R.raw.c11s43);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s43);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 40) {
                     try {
-                        playDisSound(context11, R.raw.c11s44);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s44);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 41) {
                     try {
-                        playDisSound(context11, R.raw.c11s45);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s45);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 42) {
                     try {
-                        playDisSound(context11, R.raw.c11s46);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s46);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 43) {
                     try {
-                        playDisSound(context11, R.raw.c11s47);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s47);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 44) {
                     try {
-                        playDisSound(context11, R.raw.c11s48);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s48);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 45) {
                     try {
-                        playDisSound(context11, R.raw.c11s49);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s49);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 46) {
                     try {
-                        playDisSound(context11, R.raw.c11s50);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s50);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 47) {
                     try {
-                        playDisSound(context11, R.raw.c11s51);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s51);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 48) {
                     try {
-                        playDisSound(context11, R.raw.c11s52);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s52);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 49) {
                     try {
-                        playDisSound(context11, R.raw.c11s53);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s53);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 50) {
                     try {
-                        playDisSound(context11, R.raw.c11s54);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s54);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition11 == 51) {
                     try {
-                        playDisSound(context11, R.raw.c11s55);
+                        ClassForCombinedMediaPlayer.playDisSound(context11, R.raw.c11s55);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -425,44 +402,6 @@ public class Fragment11 extends Fragment implements ViewPager.OnPageChangeListen
             }
         });
        return view11;
-    }
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-        if(mediaPlayer11.isPlaying()){
-            try {
-                mediaPlayer11.pause();
-                mediaPlayer11.seekTo(0);
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-        if(mediaPlayer11.isPlaying()) {
-            mediaPlayer11.pause();
-            mediaPlayer11.seekTo(0);
-        }
-        else {
-            mediaPlayer11.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer11.prepare();
-        }
-        mediaPlayer11.start();
-
     }
 
     @Override
@@ -475,41 +414,10 @@ public class Fragment11 extends Fragment implements ViewPager.OnPageChangeListen
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            if(mediaPlayer11.isPlaying()){
-                mediaPlayer11.pause();
-                mediaPlayer11.seekTo(0);
-            }
+            ClassForCombinedMediaPlayer.mediaPlayer.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 11","C11"+ pagePosition11);
-
         }
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    public void onResume() {
-        super.onResume();
-        mediaPlayer11 = null;
-        mediaPlayer11 = new MediaPlayer();
-    }
-    @Override
-    public void onPause(){
-        super.onPause();
-        if(mediaPlayer11.isPlaying())
-        {
-            mediaPlayer11.pause();
-            mediaPlayer11.seekTo(0);
-        }
-    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        if(mediaPlayer11!=null)
-        {
-            mediaPlayer11.reset();
-            mediaPlayer11.release();
-            mediaPlayer11 = null;
-        }
-
-    }
-
 }

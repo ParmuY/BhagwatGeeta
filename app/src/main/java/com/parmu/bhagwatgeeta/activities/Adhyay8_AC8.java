@@ -43,6 +43,7 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
         adapter=new ViewPagerAdapter8(getSupportFragmentManager());
         viewPager8.setAdapter(adapter);
         viewPager8.setCurrentItem(recentPage);
+        //implement and below change hai
         viewPager8.addOnPageChangeListener(this);
 
         tabLayout=findViewById(R.id.tabs);
@@ -62,13 +63,12 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("PageSaved8",pagePo);
         editor.apply();
-        //for mediaplayer
+        //for mediaplayer   iske baad ka copy paste krna hai
         if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
             if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
                 ClassForCombinedMediaPlayer.mediaPlayer.reset();
             }
         }
-        Log.e("mediaPlayer released","mediaplayer released on stop");
     }
 
     @Override
@@ -81,7 +81,6 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
         if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
             if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
                 ClassForCombinedMediaPlayer.mediaPlayer.reset();
-                Log.e("onpage selected ","page changed and mediaplayer reset");
             }
         }
     }

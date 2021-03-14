@@ -10,9 +10,10 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagwatgeeta.R;
+import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter3;
 
-public class Adhyay3_AC3 extends AppCompatActivity {
+public class Adhyay3_AC3 extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     private Toolbar toolbar;
     public static ViewPager viewPager3;
     private ViewPagerAdapter3 adapter;
@@ -40,6 +41,7 @@ public class Adhyay3_AC3 extends AppCompatActivity {
         adapter= new ViewPagerAdapter3(getSupportFragmentManager());
         viewPager3.setAdapter(adapter);
         viewPager3.setCurrentItem(recentPage);
+        viewPager3.addOnPageChangeListener(this);
 
         tabLayout=findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager3);
@@ -58,5 +60,27 @@ public class Adhyay3_AC3 extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("PageSaved3",pagePo);
         editor.apply();
+        if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
+            if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
+                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+            }
+        }
     }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        if(ClassForCombinedMediaPlayer.mediaPlayer!=null){
+            if(ClassForCombinedMediaPlayer.mediaPlayer.isPlaying()){
+                ClassForCombinedMediaPlayer.mediaPlayer.reset();
+            }
+        }
+    }
+    @Override
+    public void onPageScrollStateChanged(int state) {}
+
 }

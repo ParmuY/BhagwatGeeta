@@ -22,37 +22,26 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.parmu.bhagwatgeeta.activities.Adhyay14_AC14;
 import com.parmu.bhagwatgeeta.R;
+import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 
 import java.io.IOException;
 
 import static com.parmu.bhagwatgeeta.activities.Adhyay14_AC14.pagePosition14;
-import static com.parmu.bhagwatgeeta.activities.Adhyay18_AC18.pagePosition18;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment14#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListener{
+
+public class Fragment14 extends Fragment {
     private TextView textView;
-    public MediaPlayer mediaPlayer14;
-    Context context14;
-    ViewPager viewPager14;
+    private Context context14;
     private static final int STORAGE_PERMISSION_CODE = 101;
-    RequestPermissions requestPermissions;
+    private RequestPermissions requestPermissions;
     private ConstraintLayout constraintLayout;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
 
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -60,15 +49,6 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment14.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Fragment14 newInstance(String param1, String param2) {
         Fragment14 fragment = new Fragment14();
         Bundle args = new Bundle();
@@ -99,8 +79,6 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
         textView.setText(getArguments().getString("message14"));
         constraintLayout = view14.findViewById(R.id.constrained_layout);
         FloatingActionButton fabPlayBtn14 = view14.findViewById(R.id.fabplaysound14);
-        viewPager14=getActivity().findViewById(R.id.pager14);
-        viewPager14.addOnPageChangeListener(this);
 
         fabPlayBtn14.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,163 +89,163 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
                 if (pagePosition14 == 0) {
 
                     try {
-                        playDisSound(context14, R.raw.c14s1);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s1);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 1) {
                     try {
-                        playDisSound(context14, R.raw.c14s2);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s2);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 2) {
                     try {
-                        playDisSound(context14, R.raw.c14s3);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s3);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 3) {
                     try {
-                        playDisSound(context14, R.raw.c14s4);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s4);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 4) {
                     try {
-                        playDisSound(context14, R.raw.c14s5);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s5);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 5) {
                     try {
-                        playDisSound(context14, R.raw.c14s6);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s6);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 6) {
                     try {
-                        playDisSound(context14, R.raw.c14s7);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s7);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 7) {
                     try {
-                        playDisSound(context14, R.raw.c14s8);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s8);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 8) {
                     try {
-                        playDisSound(context14, R.raw.c14s9);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s9);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 9) {
                     try {
-                        playDisSound(context14, R.raw.c14s10);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s10);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 10) {
                     try {
-                        playDisSound(context14, R.raw.c14s11);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s11);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 11) {
                     try {
-                        playDisSound(context14, R.raw.c14s12);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s12);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 12) {
                     try {
-                        playDisSound(context14, R.raw.c14s13);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s13);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 13) {
                     try {
-                        playDisSound(context14, R.raw.c14s14);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s14);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 14) {
                     try {
-                        playDisSound(context14, R.raw.c14s15);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s15);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 15) {
                     try {
-                        playDisSound(context14, R.raw.c14s16);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s16);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 16) {
                     try {
-                        playDisSound(context14, R.raw.c14s17);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s17);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 17) {
                     try {
-                        playDisSound(context14, R.raw.c14s18);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s18);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 18) {
                     try {
-                        playDisSound(context14, R.raw.c14s19);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s19);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 19) {
                     try {
-                        playDisSound(context14, R.raw.c14s20);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s20);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 20) {
                     try {
-                        playDisSound(context14, R.raw.c14s21);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s21);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 21) {
                     try {
-                        playDisSound(context14, R.raw.c14s22);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s22);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 22) {
                     try {
-                        playDisSound(context14, R.raw.c14s23);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s23);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 23) {
                     try {
-                        playDisSound(context14, R.raw.c14s24);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s24);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 24) {
                     try {
-                        playDisSound(context14, R.raw.c14s25);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s25);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 25) {
                     try {
-                        playDisSound(context14, R.raw.c14s26);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s26);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else if (pagePosition14 == 26) {
                     try {
-                        playDisSound(context14, R.raw.c14s27);
+                        ClassForCombinedMediaPlayer.playDisSound(context14, R.raw.c14s27);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -275,45 +253,6 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
             }
         });
         return view14;
-    }
-
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-        if(mediaPlayer14.isPlaying()){
-            try {
-                mediaPlayer14.pause();
-                mediaPlayer14.seekTo(0);
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-        if(mediaPlayer14.isPlaying()) {
-            mediaPlayer14.pause();
-            mediaPlayer14.seekTo(0);
-        }
-        else {
-            mediaPlayer14.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer14.prepare();
-        }
-        mediaPlayer14.start();
-
     }
 
     @Override
@@ -326,41 +265,12 @@ public class Fragment14 extends Fragment  implements ViewPager.OnPageChangeListe
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            if(mediaPlayer14.isPlaying()){
-                mediaPlayer14.pause();
-                mediaPlayer14.seekTo(0);
-            }
+            ClassForCombinedMediaPlayer.mediaPlayer.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 14","C14"+ pagePosition14);
 
         }
         return super.onOptionsItemSelected(item);
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        mediaPlayer14 = null;
-        mediaPlayer14 = new MediaPlayer();
-    }
-    @Override
-    public void onPause(){
-        super.onPause();
-        if(mediaPlayer14.isPlaying())
-        {
-            mediaPlayer14.pause();
-            mediaPlayer14.seekTo(0);
-        }
-    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        if(mediaPlayer14!=null)
-        {
-            mediaPlayer14.reset();
-            mediaPlayer14.release();
-            mediaPlayer14 = null;
-        }
-
     }
 
 }

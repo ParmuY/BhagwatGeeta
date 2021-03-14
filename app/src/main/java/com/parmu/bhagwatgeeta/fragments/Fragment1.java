@@ -2,7 +2,6 @@ package com.parmu.bhagwatgeeta.fragments;
 
 import android.Manifest;
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -24,13 +23,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.parmu.bhagwatgeeta.activities.Adhyay1_AC1;
 import com.parmu.bhagwatgeeta.R;
+import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
-
 import java.io.IOException;
-
-import static com.parmu.bhagwatgeeta.activities.Adhyay18_AC18.pagePosition18;
 import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pagePosition;
+import static com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer.mediaPlayer;
 
 //
 
@@ -39,27 +37,18 @@ import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pagePosition;
  * Use the {@link Fragment1#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListener {
+public class Fragment1 extends Fragment {
 
-
-    public MediaPlayer mediaPlayer;
     Context context;
-    ViewPager viewPager;
     TextView textView;
     private static final int STORAGE_PERMISSION_CODE = 101;
     RequestPermissions requestPermissions;
     private ConstraintLayout constraintLayout;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
 
-
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -67,15 +56,6 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment1.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Fragment1 newInstance(String param1, String param2) {
         Fragment1 fragment = new Fragment1();
         Bundle args = new Bundle();
@@ -95,8 +75,6 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
         }
         context= getActivity();
         requestPermissions = new RequestPermissions();
-
-
     }
 
     @Override
@@ -106,16 +84,12 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_1, container, false);
         textView = view.findViewById(R.id.text_display_1);
-
         textView.setText(getArguments().getString("message"));
         FloatingActionButton fabPlayBtn = view.findViewById(R.id.fabplaysound);
-        viewPager=getActivity().findViewById(R.id.pager);
-        viewPager.addOnPageChangeListener(this);
         constraintLayout = view.findViewById(R.id.constrained_layout);
         fabPlayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Snackbar.make(view, "Playing audio", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 Adhyay1_AC1.pageGetPosition();
@@ -123,7 +97,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 if (pagePosition==0) {
 
                     try {
-                        playDisSound(context,R.raw.c1s1);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s1);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -131,7 +105,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==1)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s2);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s2);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -139,7 +113,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==2)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s3);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s3);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -147,7 +121,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==3)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s4_5_6);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s4_5_6);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -155,7 +129,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==4)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s7);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s7);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -163,7 +137,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==5)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s8);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s8);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -171,7 +145,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==6)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s9);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s9);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -179,7 +153,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==7)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s10);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s10);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -187,7 +161,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==8)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s11);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s11);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -195,7 +169,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==9)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s12);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s12);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -203,7 +177,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==10)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s13);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s13);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -211,7 +185,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==11)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s14);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s14);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -219,7 +193,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==12)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s15);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s15);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -227,7 +201,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==13)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s16);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s16);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -235,7 +209,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==14)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s17_18);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s17_18);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -243,7 +217,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==15)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s19);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s19);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -251,7 +225,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==16)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s20_21);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s20_21);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -259,7 +233,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==17)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s22);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s22);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -267,7 +241,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==18)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s23);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s23);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -275,7 +249,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==19)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s24_25);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s24_25);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -283,7 +257,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==20)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s26);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s26);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -291,7 +265,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==21)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s27);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s27);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -299,7 +273,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==22)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s28_29);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s28_29);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -307,7 +281,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==23)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s30);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s30);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -315,7 +289,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==24)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s31);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s31);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -323,7 +297,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==25)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s32);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s32);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -331,7 +305,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==26)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s33);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s33);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -339,7 +313,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==27)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s34);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s34);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -347,7 +321,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==28)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s35);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s35);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -355,7 +329,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==29)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s36);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s36);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -363,7 +337,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==30)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s37);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s37);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -371,7 +345,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==31)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s38_39);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s38_39);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -379,7 +353,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==32)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s40);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s40);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -387,7 +361,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==33)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s41);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s41);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -395,7 +369,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==34)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s42);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s42);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -403,7 +377,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==35)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s43);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s43);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -411,7 +385,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==36)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s44);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s44);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -419,7 +393,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==37)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s45);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s45);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -427,7 +401,7 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==38)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s46);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s46);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -435,57 +409,16 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
                 else if(pagePosition==39)
                 {
                     try {
-                        playDisSound(context,R.raw.c1s47);
+                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s47);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
-
-
             }
         });
-
-
         return view;
     }
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-        if(mediaPlayer.isPlaying()){
-            try {
-                mediaPlayer.pause();
-                mediaPlayer.seekTo(0);
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
-    // method for media player
-    private void playDisSound(Context c, int soundID) throws IOException {
-
-        if(mediaPlayer.isPlaying()) {
-            mediaPlayer.pause();
-            mediaPlayer.seekTo(0);
-        }
-        else {
-            mediaPlayer.setDataSource(c, Uri.parse("android.resource://com.parmu.bhagwatgeeta/" + soundID));
-            mediaPlayer.prepare();
-        }
-        mediaPlayer.start();
-
-    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -497,41 +430,11 @@ public class Fragment1 extends Fragment implements ViewPager.OnPageChangeListene
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            if(mediaPlayer.isPlaying()){
-                mediaPlayer.pause();
-                mediaPlayer.seekTo(0);
-            }
+            ClassForCombinedMediaPlayer.mediaPlayer.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 1","C1"+ pagePosition);
-
         }
         return super.onOptionsItemSelected(item);
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        mediaPlayer = null;
-        mediaPlayer = new MediaPlayer();
-    }
-    @Override
-    public void onPause(){
-        super.onPause();
-        if(mediaPlayer.isPlaying())
-        {
-            mediaPlayer.pause();
-            mediaPlayer.seekTo(0);
-        }
-    }
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        if(mediaPlayer!=null)
-        {
-            mediaPlayer.reset();
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
-
     }
 
 }
