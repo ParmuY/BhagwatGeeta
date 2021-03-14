@@ -27,13 +27,6 @@ import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pagePosition;
 
-//
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment1#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Fragment1 extends Fragment {
 
     Context context;
@@ -429,7 +422,7 @@ public class Fragment1 extends Fragment {
         if (id==R.id.share_shlola){
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 1","C1"+ pagePosition);
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 1","c1_"+ pagePosition);
         }
         return super.onOptionsItemSelected(item);
     }

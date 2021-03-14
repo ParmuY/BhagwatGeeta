@@ -356,7 +356,7 @@ public class Fragment3 extends Fragment {
         if (id==R.id.share_shlola){
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 3","C3"+ pagePosition3);
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 3","c3_"+ pagePosition3);
 
         }
         return super.onOptionsItemSelected(item);

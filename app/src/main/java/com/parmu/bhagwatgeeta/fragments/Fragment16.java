@@ -241,7 +241,7 @@ public class Fragment16 extends Fragment {
         if (id == R.id.share_shlola) {
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(), constraintLayout, textView, "अध्याय 16", "C16" + pagePosition16);
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(), constraintLayout, textView, "अध्याय 16", "c16_" + pagePosition16);
 
         }
         return super.onOptionsItemSelected(item);

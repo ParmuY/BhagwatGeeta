@@ -47,7 +47,7 @@ public class ShareAsBitmap {
         if(!dir.exists()){
             dir.mkdirs();
         }
-        File imgFile = new File(dirPath,positionOfPager+".png");
+        File imgFile = new File(dirPath,positionOfPager+".jpeg");
         if(!imgFile.exists()){
             try {
                 imgFile.createNewFile();
@@ -56,7 +56,7 @@ public class ShareAsBitmap {
             }
             try {
                 FileOutputStream fos = new FileOutputStream(imgFile);
-                inImage.compress(Bitmap.CompressFormat.PNG,100,fos);
+                inImage.compress(Bitmap.CompressFormat.JPEG,80,fos);
                 fos.flush();
                 fos.close();
             } catch (FileNotFoundException e) {

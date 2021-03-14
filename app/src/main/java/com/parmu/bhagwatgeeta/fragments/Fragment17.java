@@ -269,7 +269,7 @@ public class Fragment17 extends Fragment {
         if (id==R.id.share_shlola){
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 17","C17"+ pagePosition17);
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 17","c17_"+ pagePosition17);
 
         }
         return super.onOptionsItemSelected(item);

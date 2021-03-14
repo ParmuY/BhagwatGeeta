@@ -262,7 +262,7 @@ public class Fragment5 extends Fragment {
         if (id==R.id.share_shlola){
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 5","C5"+ pagePosition5);
+            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 5","c5_"+ pagePosition5);
         }
         return super.onOptionsItemSelected(item);
     }
