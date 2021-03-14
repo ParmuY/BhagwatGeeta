@@ -346,7 +346,6 @@ public class Fragment4 extends Fragment{
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id==R.id.share_shlola){
-            ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             Adhyay4_AC4.pageGetPosition4();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 4","c4_"+ pagePosition4);
