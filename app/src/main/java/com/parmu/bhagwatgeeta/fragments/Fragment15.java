@@ -220,6 +220,7 @@ public class Fragment15 extends Fragment{
         int id = item.getItemId();
         if (id==R.id.share_shlola){
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
+            Adhyay15_AC15.pageGetPosition15();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 15","c15_"+ pagePosition15);
 

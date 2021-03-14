@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 
 import com.google.android.material.tabs.TabLayout;
@@ -85,5 +86,15 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
     }
     @Override
     public void onPageScrollStateChanged(int state) {}
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("onPause","onPause mediaob release if not null");
+        if(ClassForCombinedMediaPlayer.mediaPlayerOb!=null){
+            ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
+            ClassForCombinedMediaPlayer.mediaPlayerOb.release();
+            ClassForCombinedMediaPlayer.mediaPlayerOb = null;
+        }
+    }
 
 }

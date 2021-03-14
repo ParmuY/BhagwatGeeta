@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,6 +26,8 @@ import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 import java.io.IOException;
+
+import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pageGetPosition;
 import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pagePosition;
 
 public class Fragment1 extends Fragment {
@@ -421,6 +424,7 @@ public class Fragment1 extends Fragment {
         int id = item.getItemId();
         if (id==R.id.share_shlola){
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
+            Adhyay1_AC1.pageGetPosition();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 1","c1_"+ pagePosition);
         }

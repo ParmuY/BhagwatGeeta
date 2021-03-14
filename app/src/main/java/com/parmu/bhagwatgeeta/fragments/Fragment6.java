@@ -380,6 +380,7 @@ public class Fragment6 extends Fragment{
         int id = item.getItemId();
         if (id==R.id.share_shlola){
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
+            Adhyay6_AC6.pageGetPosition6();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 6","c6_"+ pagePosition6);
 

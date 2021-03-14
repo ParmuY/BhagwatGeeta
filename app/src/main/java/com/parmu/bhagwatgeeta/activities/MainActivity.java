@@ -285,14 +285,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(iFeedback,"Send Feedback:"));
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.e("ondestroy","ondestroy called main activity");
-        ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
-        ClassForCombinedMediaPlayer.mediaPlayerOb.release();
-        ClassForCombinedMediaPlayer.mediaPlayerOb = null;
-    }
 
 }
 

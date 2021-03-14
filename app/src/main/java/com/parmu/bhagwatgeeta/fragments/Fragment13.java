@@ -302,6 +302,7 @@ public class Fragment13 extends Fragment {
         int id = item.getItemId();
         if (id==R.id.share_shlola){
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
+            Adhyay13_AC13.pageGetPosition13();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 13","c13_"+ pagePosition13);
 
