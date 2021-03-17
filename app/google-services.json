@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "673719095232",
+    "project_id": "bhagwatgeeta-d40a9",
+    "storage_bucket": "bhagwatgeeta-d40a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673719095232:android:81392eed364e172e2bc225",
+        "android_client_info": {
+          "package_name": "com.parmu.bhagwatgeeta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673719095232-54q7t6rd7s2i7kghf68ppv8tvj7brtni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhLx6O4wX8VkjAeuRRZQQsPY8k3Qn9ji4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673719095232-54q7t6rd7s2i7kghf68ppv8tvj7brtni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

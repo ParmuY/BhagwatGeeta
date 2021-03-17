@@ -31,7 +31,6 @@ public class ClassForCombinedMediaPlayer {
             public void onCompletion(MediaPlayer mp) {
                 try{
                     mediaPlayerOb.reset();
-                    Log.e("media reset", "mediaplayer oncompletion listener");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

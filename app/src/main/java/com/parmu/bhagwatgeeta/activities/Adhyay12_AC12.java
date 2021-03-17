@@ -86,7 +86,6 @@ public class Adhyay12_AC12 extends AppCompatActivity implements ViewPager.OnPage
     @Override
     protected void onPause() {
         super.onPause();
-        Log.e("onPause","onPause mediaob release if not null");
         if(ClassForCombinedMediaPlayer.mediaPlayerOb!=null){
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             ClassForCombinedMediaPlayer.mediaPlayerOb.release();

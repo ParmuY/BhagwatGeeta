@@ -42,7 +42,7 @@ public class ShareAsBitmap {
 
     //sharing image form of shloka
     private Uri getImageUri(Bitmap inImage, String positionOfPager) {
-        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/BhagwatGeeta/images";
+        String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/.BhagwatGeeta/images";
         File dir = new File(dirPath);
         if(!dir.exists()){
             dir.mkdirs();
@@ -56,7 +56,7 @@ public class ShareAsBitmap {
             }
             try {
                 FileOutputStream fos = new FileOutputStream(imgFile);
-                inImage.compress(Bitmap.CompressFormat.JPEG,80,fos);
+                inImage.compress(Bitmap.CompressFormat.JPEG,60,fos);
                 fos.flush();
                 fos.close();
             } catch (FileNotFoundException e) {
