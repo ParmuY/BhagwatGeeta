@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;

@@ -20,6 +20,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
@@ -28,6 +32,7 @@ import com.parmu.bhagwatgeeta.misc.RecycleViewAdapter;
 import com.parmu.bhagwatgeeta.misc.RecycleViewItem;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         configForRecyclerView();
         hambergerToolbarActionBar();
         nightDaySwitchModeFunctionality();
-
     }
 
     // when hamberger is clicked  then drawer opens
@@ -291,7 +295,6 @@ public class MainActivity extends AppCompatActivity {
         if(InterstitialAdMobClass.mInterstitialAd!=null){
             InterstitialAdMobClass.mInterstitialAd = null;
         }
-        Log.e("onStop","on Stop called for MainActivity");
     }
 }
 

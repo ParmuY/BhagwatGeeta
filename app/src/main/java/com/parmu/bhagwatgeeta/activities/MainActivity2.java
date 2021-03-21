@@ -2,21 +2,15 @@ package com.parmu.bhagwatgeeta.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-
-import android.annotation.SuppressLint;
-import android.app.AlarmManager;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.parmu.bhagwatgeeta.R;
-
-import java.util.Calendar;
+import java.util.Collections;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -29,6 +23,14 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+        //remove when releasing app
+        MobileAds.setRequestConfiguration(new RequestConfiguration.Builder().setTestDeviceIds(Collections.singletonList("0D2987B0AA759EE9D1671F1FB1DD592F")).build());
+
         SharedPreferences sharedPref =getSharedPreferences(MY_PREFS_FILENAME,MODE_PRIVATE);
         boolean isDarkModeOn = sharedPref.getBoolean("isDarkModeOn",false);
         if(isDarkModeOn){
@@ -45,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
                 finish();
                 timer.cancel();
             }
-        },1000);
+        },2000);
     }
 
 }

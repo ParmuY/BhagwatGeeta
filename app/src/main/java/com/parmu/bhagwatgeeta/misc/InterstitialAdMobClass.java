@@ -18,13 +18,7 @@ public class InterstitialAdMobClass {
     public static InterstitialAd mInterstitialAd;
 
     public static void initInterstitialAds(Context mContext,String adUnitId){
-
-        MobileAds.initialize(mContext, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-        //remove when releasing app
-        MobileAds.setRequestConfiguration(new RequestConfiguration.Builder().setTestDeviceIds(Collections.singletonList("0D2987B0AA759EE9D1671F1FB1DD592F")).build());
+        mInterstitialAd = null;
         AdRequest adRequest = new AdRequest.Builder().build();
         InterstitialAd.load(mContext,adUnitId, adRequest, new InterstitialAdLoadCallback() {
             @Override
