@@ -17,12 +17,8 @@ import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter8;
 
 public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
-    private Toolbar toolbar;
     public static ViewPager viewPager8;
-    private ViewPagerAdapter8 adapter;
-    private TabLayout tabLayout;
     public static int pagePosition8;
-    private int pagePo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +31,7 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
         SharedPreferences sharedPreferences = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         int recentPage = sharedPreferences.getInt("PageSaved8",0);
 
-        toolbar=(Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("अध्याय 8");
         setSupportActionBar(toolbar);
 
@@ -44,13 +40,13 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
 
 
         viewPager8=findViewById(R.id.pager8);
-        adapter=new ViewPagerAdapter8(getSupportFragmentManager());
+        ViewPagerAdapter8 adapter = new ViewPagerAdapter8(getSupportFragmentManager());
         viewPager8.setAdapter(adapter);
         viewPager8.setCurrentItem(recentPage);
         //implement and below change hai
         viewPager8.addOnPageChangeListener(this);
 
-        tabLayout=findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager8);
 
     }
@@ -62,10 +58,10 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
     @Override
     protected  void onStop(){
         super.onStop();
-        pagePo = viewPager8.getCurrentItem();
+        int pagePo = viewPager8.getCurrentItem();
         SharedPreferences sharedPref = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("PageSaved8",pagePo);
+        editor.putInt("PageSaved8", pagePo);
         editor.apply();
         //for mediaplayer   iske baad ka copy paste krna hai
         if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
@@ -75,8 +71,6 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
         }
         if (InterstitialAdMobClass.mInterstitialAd !=null) {
             InterstitialAdMobClass.mInterstitialAd.show(this);
-        } else {
-            Log.d("TAG", "The interstitial ad wasn't ready yet.");
         }
     }
 

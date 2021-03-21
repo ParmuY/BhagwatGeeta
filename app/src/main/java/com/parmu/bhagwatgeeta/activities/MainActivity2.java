@@ -24,13 +24,6 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-        //remove when releasing app
-        MobileAds.setRequestConfiguration(new RequestConfiguration.Builder().setTestDeviceIds(Collections.singletonList("0D2987B0AA759EE9D1671F1FB1DD592F")).build());
-
         SharedPreferences sharedPref =getSharedPreferences(MY_PREFS_FILENAME,MODE_PRIVATE);
         boolean isDarkModeOn = sharedPref.getBoolean("isDarkModeOn",false);
         if(isDarkModeOn){

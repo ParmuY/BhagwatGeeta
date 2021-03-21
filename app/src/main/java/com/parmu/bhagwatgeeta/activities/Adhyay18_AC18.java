@@ -16,12 +16,8 @@ import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter18;
 
 public class Adhyay18_AC18 extends AppCompatActivity implements ViewPager.OnPageChangeListener {
-    private Toolbar toolbar;
-   public static  ViewPager viewPager18;
-    private ViewPagerAdapter18 adapter;
-    private TabLayout tabLayout;
+    public static  ViewPager viewPager18;
     public static int pagePosition18;
-    private int pagePo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +30,7 @@ public class Adhyay18_AC18 extends AppCompatActivity implements ViewPager.OnPage
         SharedPreferences sharedPreferences = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         int recentPage = sharedPreferences.getInt("PageSaved18",0);
 
-        toolbar=(Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("अध्याय 18");
         setSupportActionBar(toolbar);
 
@@ -43,12 +39,12 @@ public class Adhyay18_AC18 extends AppCompatActivity implements ViewPager.OnPage
 
 
         viewPager18= findViewById(R.id.pager18);
-        adapter=new ViewPagerAdapter18(getSupportFragmentManager());
+        ViewPagerAdapter18 adapter = new ViewPagerAdapter18(getSupportFragmentManager());
         viewPager18.setAdapter(adapter);
         viewPager18.setCurrentItem(recentPage);
         viewPager18.addOnPageChangeListener(this);
 
-        tabLayout=findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager18);
     }
     public static void pageGetPosition18()
@@ -59,10 +55,10 @@ public class Adhyay18_AC18 extends AppCompatActivity implements ViewPager.OnPage
     @Override
     protected  void onStop(){
         super.onStop();
-        pagePo = viewPager18.getCurrentItem();
+        int pagePo = viewPager18.getCurrentItem();
         SharedPreferences sharedPref = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("PageSaved18",pagePo);
+        editor.putInt("PageSaved18", pagePo);
         editor.apply();
         if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
             if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){

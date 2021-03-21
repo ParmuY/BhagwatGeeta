@@ -16,12 +16,8 @@ import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter5;
 
 public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
-         private Toolbar toolbar;
-         public static ViewPager viewPager5;
-         private ViewPagerAdapter5 adapter;
-         private TabLayout tabLayout;
-         public static int pagePosition5;
-         private int  pagePo;
+    public static ViewPager viewPager5;
+    public static int pagePosition5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +29,7 @@ public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageC
         SharedPreferences sharedPreferences = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         int recentPage = sharedPreferences.getInt("PageSaved5",0);
 
-        toolbar=(Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("अध्याय 5");
         setSupportActionBar(toolbar);
 
@@ -42,12 +38,12 @@ public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageC
 
 
         viewPager5= findViewById(R.id.pager5);
-        adapter = new ViewPagerAdapter5(getSupportFragmentManager());
+        ViewPagerAdapter5 adapter = new ViewPagerAdapter5(getSupportFragmentManager());
         viewPager5.setAdapter(adapter);
         viewPager5.setCurrentItem(recentPage);
         viewPager5.addOnPageChangeListener(this);
 
-        tabLayout=findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager5);
     }
     public static void pageGetPosition5()
@@ -58,10 +54,10 @@ public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageC
     @Override
     protected  void onStop(){
         super.onStop();
-        pagePo = viewPager5.getCurrentItem();
+        int pagePo = viewPager5.getCurrentItem();
         SharedPreferences sharedPref = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("PageSaved5",pagePo);
+        editor.putInt("PageSaved5", pagePo);
         editor.apply();
         if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
             if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){
@@ -70,8 +66,6 @@ public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageC
         }
         if (InterstitialAdMobClass.mInterstitialAd !=null) {
             InterstitialAdMobClass.mInterstitialAd.show(this);
-        } else {
-            Log.d("TAG", "The interstitial ad wasn't ready yet.");
         }
     }
 

@@ -17,12 +17,8 @@ import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter7;
 
 public class Adhyay7_AC7 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
-    private Toolbar toolbar;
     public static ViewPager viewPager7;
-    private ViewPagerAdapter7 adapter;
-    private TabLayout tabLayout;
     public static int pagePosition7;
-    private int pagePo;
 
 
     @Override
@@ -36,7 +32,7 @@ public class Adhyay7_AC7 extends AppCompatActivity implements ViewPager.OnPageCh
         SharedPreferences sharedPreferences = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         int recentPage = sharedPreferences.getInt("PageSaved7", 0);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("अध्याय 7");
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -44,12 +40,12 @@ public class Adhyay7_AC7 extends AppCompatActivity implements ViewPager.OnPageCh
 
 
         viewPager7 = findViewById(R.id.pager7);
-        adapter = new ViewPagerAdapter7(getSupportFragmentManager());
+        ViewPagerAdapter7 adapter = new ViewPagerAdapter7(getSupportFragmentManager());
         viewPager7.setAdapter(adapter);
         viewPager7.setCurrentItem(recentPage);
         viewPager7.addOnPageChangeListener(this);
 
-        tabLayout = findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager7);
     }
 
@@ -61,7 +57,7 @@ public class Adhyay7_AC7 extends AppCompatActivity implements ViewPager.OnPageCh
     @Override
     public void onStop() {
         super.onStop();
-        pagePo = viewPager7.getCurrentItem();
+        int pagePo = viewPager7.getCurrentItem();
         SharedPreferences sharedPref = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("PageSaved7", pagePo);
@@ -73,8 +69,6 @@ public class Adhyay7_AC7 extends AppCompatActivity implements ViewPager.OnPageCh
         }
         if (InterstitialAdMobClass.mInterstitialAd !=null) {
             InterstitialAdMobClass.mInterstitialAd.show(this);
-        } else {
-            Log.d("TAG", "The interstitial ad wasn't ready yet.");
         }
     }
 

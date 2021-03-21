@@ -60,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
         configForRecyclerView();
         hambergerToolbarActionBar();
         nightDaySwitchModeFunctionality();
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+        //remove when releasing app
+        MobileAds.setRequestConfiguration(new RequestConfiguration.Builder().setTestDeviceIds(Collections.singletonList("0D2987B0AA759EE9D1671F1FB1DD592F")).build());
     }
 
     // when hamberger is clicked  then drawer opens
@@ -259,7 +266,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     editor.putBoolean("isDarkModeOn", true);
                 } else {

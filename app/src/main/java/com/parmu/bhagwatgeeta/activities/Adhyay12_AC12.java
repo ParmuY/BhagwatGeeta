@@ -16,12 +16,8 @@ import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter12;
 
 public class Adhyay12_AC12 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
-    private Toolbar toolbar;
     public static  ViewPager viewPager12;
-    private ViewPagerAdapter12 adapter;
-    private TabLayout tabLayout;
     public static int pagePosition12;
-    private int pagePo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +30,7 @@ public class Adhyay12_AC12 extends AppCompatActivity implements ViewPager.OnPage
         SharedPreferences sharedPreferences = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         int recentPage = sharedPreferences.getInt("PageSaved12",0);
 
-        toolbar= findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("अध्याय 12");
         setSupportActionBar(toolbar);
 
@@ -44,12 +40,12 @@ public class Adhyay12_AC12 extends AppCompatActivity implements ViewPager.OnPage
 
         viewPager12=findViewById(R.id.pager12);
 
-        adapter=new ViewPagerAdapter12(getSupportFragmentManager());
+        ViewPagerAdapter12 adapter = new ViewPagerAdapter12(getSupportFragmentManager());
         viewPager12.setAdapter(adapter);
         viewPager12.setCurrentItem(recentPage);
         viewPager12.addOnPageChangeListener(this);
 
-        tabLayout=findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager12);
     }
     public static void pageGetPosition12()
@@ -60,10 +56,10 @@ public class Adhyay12_AC12 extends AppCompatActivity implements ViewPager.OnPage
     @Override
     protected  void onStop(){
         super.onStop();
-        pagePo = viewPager12.getCurrentItem();
+        int pagePo = viewPager12.getCurrentItem();
         SharedPreferences sharedPref = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("PageSaved12",pagePo);
+        editor.putInt("PageSaved12", pagePo);
         editor.apply();
         if(ClassForCombinedMediaPlayer.mediaPlayerOb !=null){
             if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){

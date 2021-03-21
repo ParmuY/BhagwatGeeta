@@ -1,5 +1,6 @@
 package com.parmu.bhagwatgeeta.misc;
 
+import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,8 +14,8 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.activities.Adhyay17_AC17;
-import com.parmu.bhagwatgeeta.activities.MainActivity;
 
+@SuppressLint("MissingFirebaseInstanceTokenRefresh")
 public class FirebaseMessageReceiver extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage){
@@ -46,7 +47,7 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
         // Check if the Android Version is greater than Oreo
         if (Build.VERSION.SDK_INT
                 >= Build.VERSION_CODES.O) {
-            NotificationChannel notificationChannel = new NotificationChannel(channel_id, "web_app", NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel notificationChannel = new NotificationChannel(channel_id, "Default", NotificationManager.IMPORTANCE_HIGH);
             notificationManager.createNotificationChannel(
                     notificationChannel);
         }
