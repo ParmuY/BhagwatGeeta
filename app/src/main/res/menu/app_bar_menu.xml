@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_search"
-        android:title="Share the app"
+        android:title="@string/share_the_app"
         android:icon="@drawable/ic_share"
         app:showAsAction="collapseActionView|ifRoom"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>

@@ -19,7 +19,8 @@
         android:id="@+id/imageview_icon"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:contentDescription="@string/list_view_item_image" />
 
         <TextView
             android:id="@+id/textview_first"
@@ -32,7 +33,7 @@
 
             android:layout_toEndOf="@+id/imageview_icon"
             android:layout_toRightOf="@+id/imageview_icon"
-            android:text="line 1"
+            android:text=""
             android:textColor="@color/textColor"
             android:textSize="17sp"
             android:textStyle="bold" />

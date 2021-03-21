@@ -3,8 +3,6 @@ package com.parmu.bhagwatgeeta.misc;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.util.Log;
-
 import java.io.IOException;
 
 public class ClassForCombinedMediaPlayer {

@@ -56,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:contentDescription="@string/fab"
         android:src="@android:drawable/ic_lock_silent_mode_off"
         app:backgroundTint="@color/fabBackgroundTint"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,5 +64,6 @@
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintVertical_bias="0.935"
+        android:focusable="true" />
 </androidx.constraintlayout.widget.ConstraintLayout>

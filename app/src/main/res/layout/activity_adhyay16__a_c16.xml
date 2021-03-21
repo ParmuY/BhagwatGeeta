@@ -21,7 +21,7 @@
         app:tabGravity="fill"
         app:tabTextColor="#FFF"
         app:tabSelectedTextColor="#4CAF50"
-        />
+        tools:targetApi="lollipop" />
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"

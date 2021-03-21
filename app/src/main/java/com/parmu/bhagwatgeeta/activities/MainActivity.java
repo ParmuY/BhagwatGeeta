@@ -4,12 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,18 +17,15 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
 import com.parmu.bhagwatgeeta.R;
-import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.misc.RecycleViewAdapter;
 import com.parmu.bhagwatgeeta.misc.RecycleViewItem;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -257,11 +252,7 @@ public class MainActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences(MY_PREFS_FILENAME, MODE_PRIVATE);
         editor = sharedPref.edit();
         boolean isDarkModeOn = sharedPref.getBoolean("isDarkModeOn", false);
-        if (isDarkModeOn) {
-            switchDark.setChecked(true);
-        } else {
-            switchDark.setChecked(false);
-        }
+        switchDark.setChecked(isDarkModeOn);
         switchDark.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -273,7 +264,6 @@ public class MainActivity extends AppCompatActivity {
                     editor.putBoolean("isDarkModeOn", false);
                 }
                 editor.apply();
-
             }
         });
 

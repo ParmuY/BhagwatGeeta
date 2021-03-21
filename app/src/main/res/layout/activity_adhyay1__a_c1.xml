@@ -20,7 +20,8 @@
         app:tabGravity="fill"
         app:tabMode="scrollable"
         app:tabTextColor="#FFF"
-        app:tabSelectedTextColor="#4CAF50"/>
+        app:tabSelectedTextColor="#4CAF50"
+        tools:targetApi="lollipop" />
 
 
     <androidx.viewpager.widget.ViewPager
