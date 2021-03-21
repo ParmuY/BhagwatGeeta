@@ -4,14 +4,12 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
-
 import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
+import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter2;
 
 public class Adhyay2_AC2 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
@@ -26,6 +24,9 @@ public class Adhyay2_AC2 extends AppCompatActivity implements ViewPager.OnPageCh
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adhyay2__a_c2);
+
+        String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
+        InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
 
         SharedPreferences sharedPreferences = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         int recentPage = sharedPreferences.getInt("PageSaved2",0);

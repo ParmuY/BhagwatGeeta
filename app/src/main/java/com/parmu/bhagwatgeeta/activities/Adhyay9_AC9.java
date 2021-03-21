@@ -12,6 +12,7 @@ import android.util.Log;
 import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
+import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter9;
 
 public class Adhyay9_AC9 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
@@ -27,6 +28,9 @@ public class Adhyay9_AC9 extends AppCompatActivity implements ViewPager.OnPageCh
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adhyay9__a_c9);
+
+        String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
+        InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
 
         SharedPreferences sharedPreferences = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         int recentPage = sharedPreferences.getInt("PageSaved9",0);

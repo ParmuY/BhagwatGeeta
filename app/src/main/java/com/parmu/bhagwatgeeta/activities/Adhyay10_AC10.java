@@ -12,6 +12,7 @@ import android.util.Log;
 import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
+import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter10;
 
 public class Adhyay10_AC10 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
@@ -26,6 +27,9 @@ public class Adhyay10_AC10 extends AppCompatActivity implements ViewPager.OnPage
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adhyay10__a_c10);
+        String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
+        InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
+
         SharedPreferences sharedPreferences = getSharedPreferences("com.parmu.bhagwatgeeta.SavedActivity", MODE_PRIVATE);
         int recentPage = sharedPreferences.getInt("PageSaved10",0);
 
@@ -41,6 +45,7 @@ public class Adhyay10_AC10 extends AppCompatActivity implements ViewPager.OnPage
         adapter=new ViewPagerAdapter10(getSupportFragmentManager());
         viewPager10.setAdapter(adapter);
         viewPager10.addOnPageChangeListener(this);
+        viewPager10.setCurrentItem(recentPage);
 
         tabLayout=findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager10);

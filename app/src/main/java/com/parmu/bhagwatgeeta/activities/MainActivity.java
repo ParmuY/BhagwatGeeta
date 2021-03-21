@@ -285,7 +285,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(iFeedback,"Send Feedback:"));
     }
 
-
 }
 
 
