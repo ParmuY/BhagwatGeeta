@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+
 import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
@@ -68,6 +70,11 @@ public class Adhyay2_AC2 extends AppCompatActivity implements ViewPager.OnPageCh
             if(ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()){
                 ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
+        }
+        if (InterstitialAdMobClass.mInterstitialAd !=null) {
+            InterstitialAdMobClass.mInterstitialAd.show(this);
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.");
         }
     }
 

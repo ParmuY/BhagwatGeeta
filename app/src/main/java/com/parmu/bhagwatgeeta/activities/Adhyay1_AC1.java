@@ -67,7 +67,7 @@ public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageCh
             }
         }
         if (InterstitialAdMobClass.mInterstitialAd !=null) {
-            InterstitialAdMobClass.mInterstitialAd.show(Adhyay1_AC1.this);
+            InterstitialAdMobClass.mInterstitialAd.show(this);
         } else {
             Log.d("TAG", "The interstitial ad wasn't ready yet.");
         }

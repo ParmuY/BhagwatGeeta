@@ -69,6 +69,11 @@ public class Adhyay16_AC16 extends AppCompatActivity implements ViewPager.OnPage
                 ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
+        if (InterstitialAdMobClass.mInterstitialAd !=null) {
+            InterstitialAdMobClass.mInterstitialAd.show(this);
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.");
+        }
     }
 
     @Override

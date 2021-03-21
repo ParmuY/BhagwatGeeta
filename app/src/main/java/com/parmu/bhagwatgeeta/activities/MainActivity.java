@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.navigation.NavigationView;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
+import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.misc.RecycleViewAdapter;
 import com.parmu.bhagwatgeeta.misc.RecycleViewItem;
 
@@ -284,7 +285,14 @@ public class MainActivity extends AppCompatActivity {
         }
         startActivity(Intent.createChooser(iFeedback,"Send Feedback:"));
     }
-
+    @Override
+    protected void onStop(){
+        super.onStop();
+        if(InterstitialAdMobClass.mInterstitialAd!=null){
+            InterstitialAdMobClass.mInterstitialAd = null;
+        }
+        Log.e("onStop","on Stop called for MainActivity");
+    }
 }
 
 

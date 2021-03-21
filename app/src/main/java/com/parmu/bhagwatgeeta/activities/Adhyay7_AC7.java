@@ -71,6 +71,11 @@ public class Adhyay7_AC7 extends AppCompatActivity implements ViewPager.OnPageCh
                 ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
+        if (InterstitialAdMobClass.mInterstitialAd !=null) {
+            InterstitialAdMobClass.mInterstitialAd.show(this);
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.");
+        }
     }
 
     @Override
