@@ -6,12 +6,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     @SuppressLint("UseSwitchCompatOrMaterialCode")
-    Switch switchDark;
+    SwitchCompat switchDark;
     public static final String MY_PREFS_FILENAME = "com.parmu.bhagwatgeeta.DarkMode";
     ArrayList<RecycleViewItem> recycleViewItemList;
     RecyclerView mRecyclerView;
@@ -222,11 +222,11 @@ public class MainActivity extends AppCompatActivity {
                         menuItem.setVisible(true);
                         return true;
                     case R.id.share_drawer:
-                        displayMessage("share selected");
+                        displayMessage("Share app (currently not available)");
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.rate:
-                        displayMessage("rate the app");
+                        displayMessage("rate the app (currently not available)");
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.feedback:
