@@ -275,7 +275,11 @@ public class Fragment7 extends Fragment{
         if (id==R.id.share_shlola){
             Adhyay7_AC7.pageGetPosition7();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 7","c7_"+ pagePosition7);
+            try {
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 7","c7_"+ pagePosition7);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         return super.onOptionsItemSelected(item);

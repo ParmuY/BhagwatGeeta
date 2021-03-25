@@ -698,7 +698,11 @@ public class Fragment18 extends Fragment{
         if (id==R.id.share_shlola){
             Adhyay18_AC18.pageGetPosition18();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 18", "c18_"+ pagePosition18);
+            try {
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 18", "c18_"+ pagePosition18);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         return super.onOptionsItemSelected(item);

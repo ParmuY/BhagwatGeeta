@@ -7,17 +7,13 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.parmu.bhagwatgeeta.activities.Adhyay1_AC1;
@@ -26,8 +22,6 @@ import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 import java.io.IOException;
-
-import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pageGetPosition;
 import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pagePosition;
 
 public class Fragment1 extends Fragment {
@@ -414,7 +408,7 @@ public class Fragment1 extends Fragment {
 
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
 
         inflater.inflate(R.menu.app_bar_menu_1, menu);
         super.onCreateOptionsMenu(menu, inflater);
@@ -425,7 +419,11 @@ public class Fragment1 extends Fragment {
         if (id==R.id.share_shlola){
             Adhyay1_AC1.pageGetPosition();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 1","c1_"+ pagePosition);
+            try {
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 1","c1_"+ pagePosition);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return super.onOptionsItemSelected(item);
     }

@@ -303,7 +303,11 @@ public class Fragment13 extends Fragment {
         if (id==R.id.share_shlola){
             Adhyay13_AC13.pageGetPosition13();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 13","c13_"+ pagePosition13);
+            try {
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 13","c13_"+ pagePosition13);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         return super.onOptionsItemSelected(item);

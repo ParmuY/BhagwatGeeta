@@ -412,7 +412,11 @@ public class Fragment11 extends Fragment{
         if (id==R.id.share_shlola){
             Adhyay11_AC11.pageGetPosition11();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 11","c11_"+ pagePosition11);
+            try {
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 11","c11_"+ pagePosition11);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return super.onOptionsItemSelected(item);
     }

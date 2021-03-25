@@ -264,7 +264,11 @@ public class Fragment14 extends Fragment {
         if (id==R.id.share_shlola){
             Adhyay14_AC14.pageGetPosition14();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 14","c14_"+ pagePosition14);
+            try {
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 14","c14_"+ pagePosition14);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         return super.onOptionsItemSelected(item);

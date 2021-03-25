@@ -340,7 +340,11 @@ public class Fragment10 extends Fragment{
         if (id==R.id.share_shlola){
             Adhyay10_AC10.pageGetPosition10();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-            shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 10","c10_"+ pagePosition10);
+            try {
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 10","c10_"+ pagePosition10);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         return super.onOptionsItemSelected(item);
