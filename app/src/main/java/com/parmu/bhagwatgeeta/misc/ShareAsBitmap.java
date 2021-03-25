@@ -51,7 +51,7 @@ public class ShareAsBitmap {
             final String relativeLocation = Environment.DIRECTORY_DCIM+File.separator+".BhagwatGeeta/images";
             ContentValues contentValues = new ContentValues();
             contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME,positionOfPager+".jpeg");
-            contentValues.put(MediaStore.MediaColumns.MIME_TYPE,"image/jpeg");
+            contentValues.put(MediaStore.MediaColumns.MIME_TYPE,"image/*");
             contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH,relativeLocation);
             imageUri = context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,contentValues);
             fos = (FileOutputStream) context.getContentResolver().openOutputStream(Objects.requireNonNull(imageUri));
