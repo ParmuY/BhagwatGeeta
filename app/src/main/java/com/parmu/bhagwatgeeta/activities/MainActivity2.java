@@ -40,7 +40,7 @@ public class MainActivity2 extends AppCompatActivity {
                 finish();
                 timer.cancel();
             }
-        },2000);
+        },4000);
     }
 
 }
