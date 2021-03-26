@@ -1,12 +1,10 @@
 package com.parmu.bhagwatgeeta.misc;
 
 import android.Manifest;
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -47,19 +45,8 @@ public class ShareAsBitmap {
         //implementing for scoped storage
         Uri imageUri;
         FileOutputStream fos = null;
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.Q){
-            final String relativeLocation = Environment.DIRECTORY_DCIM+File.separator+".BhagwatGeeta/images";
-            ContentValues contentValues = new ContentValues();
-            contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME,positionOfPager+".jpeg");
-            contentValues.put(MediaStore.MediaColumns.MIME_TYPE,"image/*");
-            contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH,relativeLocation);
-            imageUri = context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,contentValues);
-            fos = (FileOutputStream) context.getContentResolver().openOutputStream(Objects.requireNonNull(imageUri));
-            inImage.compress(Bitmap.CompressFormat.JPEG,100,fos);
-            Log.e("Uri in skd 29", String.valueOf(imageUri));
-        }
-        else {
-            String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/.BhagwatGeeta/images";
+            String dirPath = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES).getAbsolutePath()+File.separator+".BhagwatGeeta/images";
+            Log.e("dirpath",dirPath);
             File dir = new File(dirPath);
             boolean wasCreatedSuccessfully = dir.mkdirs();
             if (!wasCreatedSuccessfully) {
@@ -83,7 +70,6 @@ public class ShareAsBitmap {
                 }
             }
             imageUri =Uri.parse(imgFile.getAbsolutePath());
-        }
         if(fos!=null){
             fos.flush();
             fos.close();
@@ -106,4 +92,5 @@ public class ShareAsBitmap {
             }
         }
     }
+
 }
