@@ -45,7 +45,7 @@ public class ShareAsBitmap {
         //implementing for scoped storage
         Uri imageUri;
         FileOutputStream fos = null;
-            String dirPath = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES).getAbsolutePath()+File.separator+".BhagwatGeeta/images";
+            String dirPath = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES).getAbsolutePath();
             Log.e("dirpath",dirPath);
             File dir = new File(dirPath);
             boolean wasCreatedSuccessfully = dir.mkdirs();
@@ -64,7 +64,7 @@ public class ShareAsBitmap {
                 }
                 try {
                     fos = new FileOutputStream(imgFile);
-                    inImage.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                    inImage.compress(Bitmap.CompressFormat.JPEG, 51, fos);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }

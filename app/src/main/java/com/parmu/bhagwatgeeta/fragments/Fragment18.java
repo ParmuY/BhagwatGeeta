@@ -28,7 +28,8 @@ import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay18_AC18.pagePosition18;
 
 public class Fragment18 extends Fragment{
-    private TextView textView;
+    private TextView tvSanskrit;
+    private TextView tvBhavarth;
     private Context context18;
     private ConstraintLayout constraintLayout;
     private static final int STORAGE_PERMISSION_CODE = 101;
@@ -69,9 +70,11 @@ public class Fragment18 extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
       View view18= inflater.inflate(R.layout.fragment_18, container, false);
-      textView=view18.findViewById(R.id.text_display_18);
+      tvSanskrit =view18.findViewById(R.id.sanskrit_18);
+      tvBhavarth = view18.findViewById(R.id.bhavarth_18);
       constraintLayout = view18.findViewById(R.id.constrained_layout);
-      textView.setText(getArguments().getString("message18"));
+      tvSanskrit.setText(getArguments().getString("sanskrit18"));
+      tvBhavarth.setText(getArguments().getString("bhavarth18"));
         FloatingActionButton fabPlayBtn18 = view18.findViewById(R.id.fabplaysound18);
 
         fabPlayBtn18.setOnClickListener(new View.OnClickListener() {
@@ -699,13 +702,16 @@ public class Fragment18 extends Fragment{
             Adhyay18_AC18.pageGetPosition18();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 18", "c18_"+ pagePosition18);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 18", "c18_"+ pagePosition18);
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
         }
         return super.onOptionsItemSelected(item);
+    }
+    public Context getAdhyayContext(){
+        return context18;
     }
 
 }
