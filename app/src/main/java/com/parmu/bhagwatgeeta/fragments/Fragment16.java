@@ -28,7 +28,8 @@ import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay16_AC16.pagePosition16;
 
 public class Fragment16 extends Fragment {
-    private TextView textView;
+    private TextView tvSanskrit;
+    private TextView tvBhavarth;
     private Context context16;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions;
@@ -71,8 +72,9 @@ public class Fragment16 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view16 = inflater.inflate(R.layout.fragment_16, container, false);
-        textView = view16.findViewById(R.id.text_display_16);
-        textView.setText(getArguments().getString("message16"));
+        tvSanskrit = view16.findViewById(R.id.sanskrit_16);
+        tvBhavarth = view16.findViewById(R.id.bhavarth_16);
+        tvSanskrit.setText(getArguments().getString("message16"));
         constraintLayout = view16.findViewById(R.id.constrained_layout);
         FloatingActionButton fabPlayBtn16 = view16.findViewById(R.id.fabplaysound16);
 
@@ -242,7 +244,7 @@ public class Fragment16 extends Fragment {
             Adhyay16_AC16.pageGetPosition16();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(), constraintLayout, textView, "अध्याय 16", "c16_" + pagePosition16);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(), constraintLayout, tvSanskrit, "अध्याय 16", "c16_" + pagePosition16);
             } catch (IOException e) {
                 e.printStackTrace();
             }
