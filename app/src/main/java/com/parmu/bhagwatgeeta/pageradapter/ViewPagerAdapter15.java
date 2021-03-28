@@ -30,7 +30,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s1));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s1));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s1));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -40,7 +40,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s2));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s2));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s2));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -49,7 +49,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s3));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s3));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s3));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -58,7 +58,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s4));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s4));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s4));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -67,7 +67,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s5));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s5));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s5));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -76,7 +76,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s6));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s6));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s6));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -85,7 +85,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s7));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s7));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s7));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -94,7 +94,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s8));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s8));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s8));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -103,7 +103,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s9));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s9));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s9));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -112,7 +112,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s10));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s10));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s10));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -121,7 +121,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s11));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s11));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s11));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -130,7 +130,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s12));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s12));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s12));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -139,7 +139,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s13));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s13));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s13));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -148,7 +148,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s14));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s14));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s14));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -157,7 +157,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s15));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s15));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s15));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -166,7 +166,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s16));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s16));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s16));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -175,7 +175,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s17));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s17));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s17));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -184,7 +184,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s18));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s18));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s18));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -193,7 +193,7 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s19));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s19));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s19));
             fragment15.setArguments(bundle);
             return fragment15;
         }
@@ -202,11 +202,10 @@ public class ViewPagerAdapter15 extends FragmentStatePagerAdapter {
             Fragment15 fragment15 =new Fragment15();
             Bundle bundle = new Bundle();
             bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s20));
-            bundle.putString("sanskrit15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.sanskrit_c15s20));
+            bundle.putString("bhavarth15", Adhyay15_AC15.getAdhyay15Resources().getString(R.string.bhavarth_c15s20));
             fragment15.setArguments(bundle);
             return fragment15;
         }
-
         return null;
     }
 
