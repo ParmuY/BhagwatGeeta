@@ -74,7 +74,8 @@ public class Fragment17 extends Fragment {
         View view17= inflater.inflate(R.layout.fragment_17, container, false);
         tvSanskrit =view17.findViewById(R.id.sanskrit_17);
         tvBhavarth = view17.findViewById(R.id.bhavarth_17);
-        tvSanskrit.setText(getArguments().getString("message17"));
+        tvSanskrit.setText(getArguments().getString("sanskrit17"));
+        tvBhavarth.setText(getArguments().getString("bhavarth17"));
         constraintLayout = view17.findViewById(R.id.constrained_layout);
         FloatingActionButton fabPlayBtn17 = view17.findViewById(R.id.fabplaysound17);
 
