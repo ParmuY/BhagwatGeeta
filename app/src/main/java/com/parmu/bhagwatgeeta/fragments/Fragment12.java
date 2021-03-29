@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,7 +28,8 @@ import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay12_AC12.pagePosition12;
 
 public class Fragment12 extends Fragment {
-    private TextView textView;
+    private TextView tvSanskrit;
+    private TextView tvBhavarth;
     private Context context12;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions;
@@ -72,8 +72,10 @@ public class Fragment12 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
     View view12=inflater.inflate(R.layout.fragment_12, container, false);
-    textView=view12.findViewById(R.id.text_display_12);
-    textView.setText(getArguments().getString("message12"));
+    tvSanskrit =view12.findViewById(R.id.sanskrit_12);
+    tvBhavarth = view12.findViewById(R.id.bhavarth_12);
+    tvSanskrit.setText(getArguments().getString("sanskrit12"));
+    tvBhavarth.setText(getArguments().getString("bhavarth12"));
     constraintLayout = view12.findViewById(R.id.constrained_layout);
     FloatingActionButton fabPlayBtn12 = view12.findViewById(R.id.fabplaysound12);
         fabPlayBtn12.setOnClickListener(new View.OnClickListener() {
@@ -210,7 +212,7 @@ public class Fragment12 extends Fragment {
             Adhyay12_AC12.pageGetPosition12();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 12","c12_"+ pagePosition12);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 12","c12_"+ pagePosition12);
             } catch (IOException e) {
                 e.printStackTrace();
             }
