@@ -24,7 +24,8 @@ import static com.parmu.bhagwatgeeta.activities.Adhyay8_AC8.pagePosition8;
 
 
 public class Fragment8 extends Fragment {
-    private TextView textView;
+    private TextView tvSanskrit;
+    private TextView tvBhavarth;
     private Context context8;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions;
@@ -67,8 +68,10 @@ public class Fragment8 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view8=inflater.inflate(R.layout.fragment_8, container, false);
-        textView=view8.findViewById(R.id.text_display_8);
-        textView.setText(getArguments().getString("message8"));
+        tvSanskrit =view8.findViewById(R.id.sanskrit_8);
+        tvBhavarth = view8.findViewById(R.id.bhavarth_8);
+        tvSanskrit.setText(getArguments().getString("sanskrit8"));
+        tvBhavarth.setText(getArguments().getString("bhavarth8"));
         constraintLayout = view8.findViewById(R.id.constrained_layout);
         FloatingActionButton fabPlayBtn8 = view8.findViewById(R.id.fabplaysound8);
         fabPlayBtn8.setOnClickListener(new View.OnClickListener() {
@@ -259,7 +262,7 @@ public class Fragment8 extends Fragment {
             Adhyay8_AC8.pageGetPosition8();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 8","c8_"+ pagePosition8);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 8","c8_"+ pagePosition8);
             } catch (IOException e) {
                 e.printStackTrace();
             }
