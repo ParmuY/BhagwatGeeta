@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -18,11 +19,13 @@ import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter10;
 public class Adhyay10_AC10 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
     public static  ViewPager viewPager10;
     public static int pagePosition10;
+    private static Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adhyay10__a_c10);
+        resources = getResources();
         String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
         InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
 
@@ -92,6 +95,9 @@ public class Adhyay10_AC10 extends AppCompatActivity implements ViewPager.OnPage
             ClassForCombinedMediaPlayer.mediaPlayerOb.release();
             ClassForCombinedMediaPlayer.mediaPlayerOb = null;
         }
+    }
+    public static Resources getAdhyay10Resources(){
+        return  resources;
     }
 
 }
