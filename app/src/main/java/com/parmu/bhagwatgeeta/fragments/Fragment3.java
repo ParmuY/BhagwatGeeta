@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.parmu.bhagwatgeeta.activities.Adhyay2_AC2;
 import com.parmu.bhagwatgeeta.activities.Adhyay3_AC3;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
@@ -30,7 +29,8 @@ import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay3_AC3.pagePosition3;
 
 public class Fragment3 extends Fragment {
-    private TextView textView;
+    private TextView tvSanskrit;
+    private TextView tvBhavarth;
     private Context context3;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions;
@@ -73,8 +73,10 @@ public class Fragment3 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view3=inflater.inflate(R.layout.fragment_3, container, false);
-       textView = view3.findViewById(R.id.text_display_3);
-       textView.setText(getArguments().getString("message3"));
+       tvSanskrit = view3.findViewById(R.id.sanskrit_3);
+       tvBhavarth = view3.findViewById(R.id.bhavarth_3);
+       tvSanskrit.setText(getArguments().getString("sanskrit3"));
+       tvBhavarth.setText(getArguments().getString("bhavarth3"));
        constraintLayout = view3.findViewById(R.id.constrained_layout);
        FloatingActionButton fabPlayBtn3 = view3.findViewById(R.id.fabplaysound3);
        fabPlayBtn3.setOnClickListener(new View.OnClickListener() {
@@ -358,7 +360,7 @@ public class Fragment3 extends Fragment {
             Adhyay3_AC3.pageGetPosition3();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 3","c3_"+ pagePosition3);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 3","c3_"+ pagePosition3);
             } catch (IOException e) {
                 e.printStackTrace();
             }

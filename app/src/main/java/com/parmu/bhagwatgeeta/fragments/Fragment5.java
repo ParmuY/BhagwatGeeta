@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.parmu.bhagwatgeeta.activities.Adhyay2_AC2;
 import com.parmu.bhagwatgeeta.activities.Adhyay5_AC_5;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
@@ -29,7 +28,8 @@ import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay5_AC_5.pagePosition5;
 
 public class Fragment5 extends Fragment {
-    private TextView textView;
+    private TextView tvSanskrit;
+    private TextView tvBhavarth;
     Context context5;
     private static final int STORAGE_PERMISSION_CODE = 101;
     RequestPermissions requestPermissions;
@@ -72,8 +72,10 @@ public class Fragment5 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view5=inflater.inflate(R.layout.fragment_5, container, false);
-       textView=view5.findViewById(R.id.text_display_5);
-       textView.setText(getArguments().getString("message5"));
+       tvSanskrit =view5.findViewById(R.id.sanskrit_5);
+       tvBhavarth = view5.findViewById(R.id.bhavarth_5);
+       tvSanskrit.setText(getArguments().getString("sanskrit5"));
+       tvBhavarth.setText(getArguments().getString("bhavarth5"));
        constraintLayout = view5.findViewById(R.id.constrained_layout);
        FloatingActionButton fabPlayBtn2 = view5.findViewById(R.id.fabplaysound5);
        fabPlayBtn2.setOnClickListener(new View.OnClickListener() {
@@ -264,7 +266,7 @@ public class Fragment5 extends Fragment {
             Adhyay5_AC_5.pageGetPosition5();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 5","c5_"+ pagePosition5);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 5","c5_"+ pagePosition5);
             } catch (IOException e) {
                 e.printStackTrace();
             }

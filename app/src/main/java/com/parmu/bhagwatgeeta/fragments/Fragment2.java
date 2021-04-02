@@ -18,8 +18,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.parmu.bhagwatgeeta.activities.Adhyay12_AC12;
-import com.parmu.bhagwatgeeta.activities.Adhyay1_AC1;
 import com.parmu.bhagwatgeeta.activities.Adhyay2_AC2;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
@@ -32,7 +30,8 @@ import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay2_AC2.pagePosition2;
 
 public class Fragment2 extends Fragment {
-    private TextView textView;
+    private TextView tvSanskrit;
+    private TextView tvBhavarth;
     Context context2;
     private static final int STORAGE_PERMISSION_CODE = 101;
     RequestPermissions requestPermissions;
@@ -75,8 +74,10 @@ public class Fragment2 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view2= inflater.inflate(R.layout.fragment_2, container, false);
-        textView=view2.findViewById(R.id.text_display_2);
-        textView.setText(getArguments().getString("message2"));
+        tvSanskrit =view2.findViewById(R.id.sanskrit_2);
+        tvBhavarth= view2.findViewById(R.id.bhavarth_2);
+        tvSanskrit.setText(getArguments().getString("sanskrit2"));
+        tvBhavarth.setText(getArguments().getString("bhavarth2"));
         FloatingActionButton fabPlayBtn2 = view2.findViewById(R.id.fabplaysound2);
         constraintLayout = view2.findViewById(R.id.constrained_layout);
         fabPlayBtn2.setOnClickListener(new View.OnClickListener() {
@@ -664,7 +665,7 @@ public class Fragment2 extends Fragment {
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             Adhyay2_AC2.pageGetPosition2();
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout,textView,"अध्याय 2","c2_"+ pagePosition2);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 2","c2_"+ pagePosition2);
             } catch (IOException e) {
                 e.printStackTrace();
             }
