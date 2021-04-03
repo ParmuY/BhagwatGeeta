@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         sharedPref = getSharedPreferences(MY_PREFS_FILENAME, MODE_PRIVATE);
         isDarkModeOn = sharedPref.getBoolean("isDarkModeOn", false);
         if(isDarkModeOn){
@@ -58,10 +59,9 @@ public class MainActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
 
-        setContentView(R.layout.activity_main);
+        hambergerToolbarActionBar();
         arrayListForRecyclerView();
         configForRecyclerView();
-        hambergerToolbarActionBar();
         nightDaySwitchModeFunctionality();
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
