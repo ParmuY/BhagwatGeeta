@@ -245,7 +245,7 @@ public class Fragment16 extends Fragment {
             Adhyay16_AC16.pageGetPosition16();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(), constraintLayout, tvSanskrit, "अध्याय 16", "c16_" + pagePosition16);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(), constraintLayout, tvSanskrit,tvBhavarth, "अध्याय 16", "c16_" + pagePosition16);
             } catch (IOException e) {
                 e.printStackTrace();
             }

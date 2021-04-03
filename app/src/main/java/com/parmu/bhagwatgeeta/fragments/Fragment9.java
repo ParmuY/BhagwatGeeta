@@ -308,7 +308,7 @@ public class Fragment9 extends Fragment {
             Adhyay9_AC9.pageGetPosition9();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 9","c9_"+ pagePosition9);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 9","c9_"+ pagePosition9);
             } catch (IOException e) {
                 e.printStackTrace();
             }

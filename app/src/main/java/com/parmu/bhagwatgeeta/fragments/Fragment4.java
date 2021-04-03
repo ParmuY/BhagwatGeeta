@@ -352,7 +352,7 @@ public class Fragment4 extends Fragment{
             Adhyay4_AC4.pageGetPosition4();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 4","c4_"+ pagePosition4);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 4","c4_"+ pagePosition4);
             } catch (IOException e) {
                 e.printStackTrace();
             }

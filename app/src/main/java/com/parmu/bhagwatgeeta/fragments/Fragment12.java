@@ -212,7 +212,7 @@ public class Fragment12 extends Fragment {
             Adhyay12_AC12.pageGetPosition12();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 12","c12_"+ pagePosition12);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 12","c12_"+ pagePosition12);
             } catch (IOException e) {
                 e.printStackTrace();
             }

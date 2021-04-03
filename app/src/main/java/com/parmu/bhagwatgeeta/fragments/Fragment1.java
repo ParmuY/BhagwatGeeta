@@ -423,7 +423,7 @@ public class Fragment1 extends Fragment {
             Adhyay1_AC1.pageGetPosition();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 1","c1_"+ pagePosition);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 1","c1_"+ pagePosition);
             } catch (IOException e) {
                 e.printStackTrace();
             }

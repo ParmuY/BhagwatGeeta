@@ -235,7 +235,7 @@ public class Fragment5 extends Fragment {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (pagePosition5 == 27) {
+                } else if (pagePosition5 == 25) {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context5, R.raw.c5s27_28);
                     } catch (IOException e) {
@@ -266,7 +266,7 @@ public class Fragment5 extends Fragment {
             Adhyay5_AC_5.pageGetPosition5();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 5","c5_"+ pagePosition5);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 5","c5_"+ pagePosition5);
             } catch (IOException e) {
                 e.printStackTrace();
             }

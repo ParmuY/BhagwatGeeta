@@ -344,7 +344,7 @@ public class Fragment10 extends Fragment{
             Adhyay10_AC10.pageGetPosition10();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 10","c10_"+ pagePosition10);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 10","c10_"+ pagePosition10);
             } catch (IOException e) {
                 e.printStackTrace();
             }

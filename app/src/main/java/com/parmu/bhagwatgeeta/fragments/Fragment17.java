@@ -273,7 +273,7 @@ public class Fragment17 extends Fragment {
             Adhyay17_AC17.pageGetPosition17();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 17","c17_"+ pagePosition17);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 17","c17_"+ pagePosition17);
             } catch (IOException e) {
                 e.printStackTrace();
             }

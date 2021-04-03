@@ -360,7 +360,7 @@ public class Fragment3 extends Fragment {
             Adhyay3_AC3.pageGetPosition3();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 3","c3_"+ pagePosition3);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 3","c3_"+ pagePosition3);
             } catch (IOException e) {
                 e.printStackTrace();
             }

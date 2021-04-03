@@ -45,10 +45,18 @@ public class MainActivity extends AppCompatActivity {
     MenuItem item;
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
+    boolean isDarkModeOn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPref = getSharedPreferences(MY_PREFS_FILENAME, MODE_PRIVATE);
+        isDarkModeOn = sharedPref.getBoolean("isDarkModeOn", false);
+        if(isDarkModeOn){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
 
         setContentView(R.layout.activity_main);
         arrayListForRecyclerView();
@@ -248,10 +256,7 @@ public class MainActivity extends AppCompatActivity {
         // function for dark mode switch button
         item = navigationView.getMenu().findItem(R.id.dark_mode);
         switchDark = item.getActionView().findViewById(R.id.switch_dark);
-
-        sharedPref = getSharedPreferences(MY_PREFS_FILENAME, MODE_PRIVATE);
-        editor = sharedPref.edit();
-        boolean isDarkModeOn = sharedPref.getBoolean("isDarkModeOn", false);
+        editor=sharedPref.edit();
         switchDark.setChecked(isDarkModeOn);
         switchDark.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

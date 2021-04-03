@@ -416,7 +416,7 @@ public class Fragment11 extends Fragment{
             Adhyay11_AC11.pageGetPosition11();
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,"अध्याय 11","c11_"+ pagePosition11);
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 11","c11_"+ pagePosition11);
             } catch (IOException e) {
                 e.printStackTrace();
             }
