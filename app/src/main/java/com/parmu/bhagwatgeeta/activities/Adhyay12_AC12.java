@@ -16,10 +16,14 @@ import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter12;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Adhyay12_AC12 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
     public static  ViewPager viewPager12;
     public static int pagePosition12;
     private static Resources resources;
+    private boolean isTimerFinished = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,14 @@ public class Adhyay12_AC12 extends AppCompatActivity implements ViewPager.OnPage
 
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager12);
+        final Timer adTimer = new Timer();
+        adTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                isTimerFinished = true;
+                adTimer.cancel();
+            }
+        },3*60*1000);
     }
     public static void pageGetPosition12()
     {
@@ -69,7 +81,7 @@ public class Adhyay12_AC12 extends AppCompatActivity implements ViewPager.OnPage
                 ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
-        if (InterstitialAdMobClass.mInterstitialAd !=null) {
+        if (InterstitialAdMobClass.mInterstitialAd !=null && isTimerFinished) {
             InterstitialAdMobClass.mInterstitialAd.show(this);
         } else {
             Log.d("TAG", "The interstitial ad wasn't ready yet.");
