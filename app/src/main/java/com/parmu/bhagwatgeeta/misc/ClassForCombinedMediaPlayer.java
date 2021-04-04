@@ -35,6 +35,8 @@ public class ClassForCombinedMediaPlayer {
             }
         });
         mediaPlayerOb.start();
+    }
+    private static void downloadAudioFile(){
 
     }
 }
