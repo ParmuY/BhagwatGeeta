@@ -19,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.parmu.bhagwatgeeta.activities.Adhyay1_AC1;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
+import com.parmu.bhagwatgeeta.misc.FileDownloadFirebase;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 import java.io.IOException;
@@ -87,8 +88,11 @@ public class Fragment1 extends Fragment {
                 if (pagePosition==0) {
 
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s1);
-                    } catch (IOException e) {
+                        FileDownloadFirebase.downloadFile(context);
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s1);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
