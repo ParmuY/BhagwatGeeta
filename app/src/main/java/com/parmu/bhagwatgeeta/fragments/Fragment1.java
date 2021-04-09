@@ -13,13 +13,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.parmu.bhagwatgeeta.activities.Adhyay1_AC1;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
-import com.parmu.bhagwatgeeta.misc.FileDownloadFirebase;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 import java.io.IOException;
@@ -88,18 +88,15 @@ public class Fragment1 extends Fragment {
                 if (pagePosition==0) {
 
                     try {
-                        FileDownloadFirebase.downloadFile(context);
-//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s1);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-                    } catch (Exception e) {
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s1.mp3");
+                    } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
                 else if(pagePosition==1)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s2);
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s2.mp3");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -107,7 +104,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==2)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s3);
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s3.mp3");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -115,7 +112,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==3)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s4_5_6);
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s4_5_6.mp3");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -123,7 +120,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==4)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s7);
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s7.mp3");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -131,7 +128,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==5)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s8);
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s8.mp3");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -139,7 +136,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==6)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s9);
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s9.mp3");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -147,267 +144,267 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==7)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s10);
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s10.mp3");
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
-                else if(pagePosition==8)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s11);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==9)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s12);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==10)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s13);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==11)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s14);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==12)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s15);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==13)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s16);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==14)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s17_18);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==15)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s19);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==16)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s20_21);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==17)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s22);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==18)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s23);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==19)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s24_25);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==20)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s26);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==21)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s27);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==22)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s28_29);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==23)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s30);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==24)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s31);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==25)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s32);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==26)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s33);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==27)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s34);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==28)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s35);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==29)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s36);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==30)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s37);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==31)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s38_39);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==32)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s40);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==33)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s41);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==34)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s42);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==35)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s43);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==36)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s44);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==37)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s45);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==38)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s46);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else if(pagePosition==39)
-                {
-                    try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s47);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+//                else if(pagePosition==8)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s11);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==9)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s12);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==10)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s13);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==11)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s14);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==12)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s15);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==13)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s16);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==14)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s17_18);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==15)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s19);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==16)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s20_21);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==17)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s22);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==18)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s23);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==19)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s24_25);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==20)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s26);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==21)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s27);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==22)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s28_29);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==23)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s30);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==24)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s31);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==25)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s32);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==26)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s33);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==27)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s34);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==28)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s35);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==29)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s36);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==30)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s37);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==31)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s38_39);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==32)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s40);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==33)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s41);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==34)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s42);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==35)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s43);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==36)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s44);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==37)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s45);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==38)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s46);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                else if(pagePosition==39)
+//                {
+//                    try {
+//                        ClassForCombinedMediaPlayer.playDisSound(context,R.raw.c1s47);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
             }
         });
         return view;
@@ -434,5 +431,6 @@ public class Fragment1 extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 }
