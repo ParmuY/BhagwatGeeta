@@ -405,7 +405,7 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
         {
             return "श्लोक 4,5,6";
         }
-        else if(position>=5&&position<=14)
+        else if(position <= 14)
         {
             position=position+2;
             return "श्लोक "+position;

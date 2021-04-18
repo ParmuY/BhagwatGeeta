@@ -33,7 +33,6 @@ public class Fragment1 extends Fragment {
     RequestPermissions requestPermissions;
     private ConstraintLayout constraintLayout;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
-    private static FloatingActionButton fabPlayBtn;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -76,16 +75,13 @@ public class Fragment1 extends Fragment {
         assert getArguments() != null;
         tvSanskrit.setText(getArguments().getString("sanskrit1"));
         tvBhavarth.setText(getArguments().getString("bhavarth1"));
-        fabPlayBtn = view.findViewById(R.id.fabplaysound);
+        FloatingActionButton fabPlayBtn = view.findViewById(R.id.fabplaysound);
         constraintLayout = view.findViewById(R.id.constrained_layout);
         fabPlayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Playing audio", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 Adhyay1_AC1.pageGetPosition();
                 if (pagePosition==0) {
-
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s1.mp3");
                     } catch (IOException | InterruptedException e) {
@@ -430,10 +426,4 @@ public class Fragment1 extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    public static FloatingActionButton getFab(){
-        return  fabPlayBtn;
-    }
-
-
 }
