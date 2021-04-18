@@ -84,12 +84,11 @@ public class Fragment1 extends Fragment {
                 Snackbar.make(view, "Playing audio", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 Adhyay1_AC1.pageGetPosition();
-
                 if (pagePosition==0) {
 
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s1.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -97,7 +96,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s2.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -105,7 +104,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s3.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -113,7 +112,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s4_5_6.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -121,7 +120,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s7.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -129,7 +128,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s8.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -137,7 +136,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s9.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -145,7 +144,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s10.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -153,7 +152,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s11.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -161,7 +160,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s12.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -169,7 +168,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s13.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -177,7 +176,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s14.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -185,7 +184,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s15.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -193,7 +192,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s16.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -201,7 +200,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s17_18.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -209,7 +208,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s19.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -217,7 +216,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s20_21.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -225,7 +224,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s22.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -233,7 +232,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s23.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -241,7 +240,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s24_25.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -249,7 +248,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s26.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -257,7 +256,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s27.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -265,7 +264,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s28_29.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -273,7 +272,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s30.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -281,7 +280,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s31.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -289,7 +288,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s32.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -297,7 +296,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s33.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -305,7 +304,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s34.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -313,7 +312,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s35.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -321,7 +320,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s36.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -329,7 +328,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s37.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -337,7 +336,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s38_39.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -345,7 +344,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s40.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -353,7 +352,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s41.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -361,7 +360,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s42.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -369,7 +368,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s43.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -377,7 +376,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s44.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -385,7 +384,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s45.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -393,7 +392,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s46.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
@@ -401,7 +400,7 @@ public class Fragment1 extends Fragment {
                 {
                     try {
                         ClassForCombinedMediaPlayer.playDisSound(context,"c1s47.mp3");
-                    } catch (IOException e) {
+                    } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
                 }

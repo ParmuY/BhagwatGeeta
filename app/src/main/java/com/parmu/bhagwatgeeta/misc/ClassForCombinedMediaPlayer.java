@@ -27,7 +27,7 @@ import java.io.IOException;
 public class ClassForCombinedMediaPlayer {
     public static MediaPlayer mediaPlayerOb = new MediaPlayer();
     // method for media player
-    public static void playDisSound(Context c, String audioN) throws IOException {
+    public static void playDisSound(Context c, String audioN) throws IOException, InterruptedException {
         if (mediaPlayerOb == null) {
             mediaPlayerOb = new MediaPlayer();
         }
@@ -56,7 +56,7 @@ public class ClassForCombinedMediaPlayer {
         mediaPlayerOb.start();
     }
 
-    private static Uri downloadFile(final Context context, String audioName){
+    private static Uri downloadFile(final Context context, String audioName) throws IOException, InterruptedException {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReferenceFromUrl("gs://bhagwatgeeta-d40a9.appspot.com/audiomp3files");
         StorageReference isFileRef = storageReference.child(audioName);
@@ -69,6 +69,9 @@ public class ClassForCombinedMediaPlayer {
         }
         File localFile = new File(localAudioPath,audioName);
         if (!localFile.exists()) {
+            if(!isConnected()){
+                Toast.makeText(context,"No Internet Connection",Toast.LENGTH_SHORT).show();
+            }
             isFileRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
@@ -81,14 +84,17 @@ public class ClassForCombinedMediaPlayer {
                     Toast.makeText(context,"No internet connection",Toast.LENGTH_SHORT);
                 }
             }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
-                @SuppressLint("UseCompatLoadingForDrawables")
-                @RequiresApi(api = Build.VERSION_CODES.M)
                 @Override
                 public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
-                    Fragment1.getFab().setImageDrawable(context.getResources().getDrawable(R.drawable.ic_baseline_arrow_downward_24));
+
                 }
             });
         }
         return Uri.parse(localFile.getAbsolutePath());
+    }
+
+    private static boolean isConnected() throws IOException, InterruptedException {
+        String command = "ping -c 1 google.com";
+        return Runtime.getRuntime().exec(command).waitFor() == 0;
     }
 }
