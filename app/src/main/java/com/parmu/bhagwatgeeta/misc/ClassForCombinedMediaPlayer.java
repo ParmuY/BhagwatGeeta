@@ -1,12 +1,16 @@
 package com.parmu.bhagwatgeeta.misc;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -14,6 +18,7 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.fragments.Fragment1;
 
 import java.io.File;
@@ -51,7 +56,7 @@ public class ClassForCombinedMediaPlayer {
         mediaPlayerOb.start();
     }
 
-    private static Uri downloadFile(Context context, String audioName){
+    private static Uri downloadFile(final Context context, String audioName){
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReferenceFromUrl("gs://bhagwatgeeta-d40a9.appspot.com/audiomp3files");
         StorageReference isFileRef = storageReference.child(audioName);
@@ -70,13 +75,17 @@ public class ClassForCombinedMediaPlayer {
                     Log.e("firebase","local audio temp file created" );
                 }
             }).addOnFailureListener(new OnFailureListener() {
+                @SuppressLint("ShowToast")
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Log.e("firebase","local audio file not created"+ e.toString());
+                    Toast.makeText(context,"No internet connection",Toast.LENGTH_SHORT);
                 }
             }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
+                @SuppressLint("UseCompatLoadingForDrawables")
+                @RequiresApi(api = Build.VERSION_CODES.M)
                 @Override
                 public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
+                    Fragment1.getFab().setImageDrawable(context.getResources().getDrawable(R.drawable.ic_baseline_arrow_downward_24));
                 }
             });
         }
