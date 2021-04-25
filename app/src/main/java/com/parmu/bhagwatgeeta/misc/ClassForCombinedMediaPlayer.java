@@ -29,7 +29,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class ClassForCombinedMediaPlayer {
-
+    private static Boolean isDownloaded = null;
+    private static Boolean downInProgress = null;
     public static MediaPlayer mediaPlayerOb = new MediaPlayer();
     // method for media player
     public static void playDisSound(Context c, String audioN) throws IOException, InterruptedException {
@@ -62,7 +63,7 @@ public class ClassForCombinedMediaPlayer {
     }
 
     public static Uri downloadFile(final Context context, String audioName) throws IOException, InterruptedException {
-        StorageReference isFileRef = firebaseStorageReferences(audioName);
+        final StorageReference isFileRef = firebaseStorageReferences(audioName);
         final File localFile = createMusicDirectoryNFile(context, audioName);
 
         if(!localFile.exists()){
@@ -73,21 +74,29 @@ public class ClassForCombinedMediaPlayer {
                 @SuppressLint("UseCompatLoadingForDrawables")
                 @Override
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                    Log.e("firebase", "local audio temp file created");
+                    Log.i("firebase", "local audio temp file created");
+                    isDownloaded = true;
+                    downInProgress = false;
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @SuppressLint("ShowToast")
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(context, "on failure listener", Toast.LENGTH_SHORT);
+                    Toast.makeText(context, "on failure listener", Toast.LENGTH_SHORT).show();
+                    isDownloaded = false;
+                    downInProgress = false;
 
                 }
             }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
                 @Override
                 public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
-
+                    Toast.makeText(context,"Downloading", Toast.LENGTH_SHORT).show();
+                    downInProgress = true;
                 }
             });
+        }
+        else {
+            isDownloaded = true;
         }
 
         return Uri.parse(localFile.getAbsolutePath());
@@ -112,6 +121,13 @@ public class ClassForCombinedMediaPlayer {
     private static boolean isConnected() throws IOException, InterruptedException {
         String command = "ping -c 1 google.com";
         return Runtime.getRuntime().exec(command).waitFor() == 0;
+    }
+
+    public static Boolean isFileDownloaded(){
+        return isDownloaded;
+    }
+    public static Boolean isDownInProgress(){
+        return downInProgress;
     }
 
 }
