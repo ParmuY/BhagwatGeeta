@@ -1,5 +1,6 @@
 package com.parmu.bhagwatgeeta.pageradapter;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,8 +12,10 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.activities.Adhyay1_AC1;
 import com.parmu.bhagwatgeeta.fragments.Fragment1;
+import com.parmu.bhagwatgeeta.misc.FileChecker;
 
 public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
+    private final Context context = Adhyay1_AC1.getAdhyay1Context();
     public ViewPagerAdapter1(@NonNull FragmentManager fm) {
         super(fm);
     }
@@ -23,7 +26,9 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
         if(position==0)
         {
             Fragment1 fragment1 =new Fragment1();
+            String fileName = "c1s1.mp3";
             Bundle bundle = new Bundle();
+            bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s1));
             bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s1));
             fragment1.setArguments(bundle);
@@ -35,6 +40,7 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
         {
             Fragment1 fragment1 =new Fragment1();
             Bundle bundle = new Bundle();
+            bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context,"c1s2.mp3"));
             bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s2));
             bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s2));
             fragment1.setArguments(bundle);

@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -59,7 +60,7 @@ public class ClassForCombinedMediaPlayer {
         mediaPlayerOb.start();
     }
 
-    private static Uri downloadFile(final Context context, final String audioName) throws IOException, InterruptedException {
+    public static Uri downloadFile(final Context context, String audioName) throws IOException, InterruptedException {
         StorageReference isFileRef = firebaseStorageReferences(audioName);
         final File localFile = createMusicDirectoryNFile(context, audioName);
 
@@ -78,6 +79,7 @@ public class ClassForCombinedMediaPlayer {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     Toast.makeText(context, "on failure listener", Toast.LENGTH_SHORT);
+
                 }
             }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
                 @Override
@@ -109,4 +111,5 @@ public class ClassForCombinedMediaPlayer {
         String command = "ping -c 1 google.com";
         return Runtime.getRuntime().exec(command).waitFor() == 0;
     }
+
 }

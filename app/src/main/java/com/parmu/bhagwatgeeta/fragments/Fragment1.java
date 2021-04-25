@@ -15,13 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.parmu.bhagwatgeeta.activities.Adhyay1_AC1;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
 import java.io.IOException;
+
 import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pagePosition;
 
 public class Fragment1 extends Fragment {
@@ -75,7 +75,15 @@ public class Fragment1 extends Fragment {
         assert getArguments() != null;
         tvSanskrit.setText(getArguments().getString("sanskrit1"));
         tvBhavarth.setText(getArguments().getString("bhavarth1"));
+
+        boolean fileExist = getArguments().getBoolean("fileexist");
         FloatingActionButton fabPlayBtn = view.findViewById(R.id.fabplaysound);
+        if(!fileExist){
+            fabPlayBtn.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
+        }
+        else{
+            fabPlayBtn.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
+        }
         constraintLayout = view.findViewById(R.id.constrained_layout);
         fabPlayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -426,4 +434,5 @@ public class Fragment1 extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
