@@ -92,6 +92,7 @@ public class ClassForCombinedMediaPlayer {
                 public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
                     Toast.makeText(context,"Downloading", Toast.LENGTH_SHORT).show();
                     downInProgress = true;
+                    isDownloaded = null;
                 }
             });
         }

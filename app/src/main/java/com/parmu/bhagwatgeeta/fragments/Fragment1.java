@@ -2,12 +2,14 @@ package com.parmu.bhagwatgeeta.fragments;
 
 import android.Manifest;
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -34,6 +36,7 @@ public class Fragment1 extends Fragment {
     private Context context;
     private TextView tvSanskrit;
     private TextView tvBhavarth;
+    private AnimationDrawable arrowAnimation;
     private FloatingActionButton fabPlayBtn;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions;
@@ -78,12 +81,13 @@ public class Fragment1 extends Fragment {
         View view=inflater.inflate(R.layout.fragment_1, container, false);
         tvSanskrit = view.findViewById(R.id.sanskrit_1);
         tvBhavarth = view.findViewById(R.id.bhavarth_1);
+        fabPlayBtn = view.findViewById(R.id.fabplaysound);
         assert getArguments() != null;
         tvSanskrit.setText(getArguments().getString("sanskrit1"));
         tvBhavarth.setText(getArguments().getString("bhavarth1"));
 
         boolean fileExist = getArguments().getBoolean("fileexist");
-        fabPlayBtn = view.findViewById(R.id.fabplaysound);
+
         if(!fileExist){
             fabPlayBtn.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
         }
@@ -482,15 +486,31 @@ public class Fragment1 extends Fragment {
     }
 
     private void checkIsDownloadComplete(){
-        Boolean isDownloadSuccess = ClassForCombinedMediaPlayer.isFileDownloaded();
-        if(isDownloadSuccess!=null){
-            if(isDownloadSuccess){
-                fabPlayBtn.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Boolean isDownloadSuccess = ClassForCombinedMediaPlayer.isFileDownloaded();
+                Boolean downisInProgress = ClassForCombinedMediaPlayer.isDownInProgress();
+
+                if(isDownloadSuccess!=null){
+                    if(isDownloadSuccess){
+                        fabPlayBtn.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
+                    }
+                    else {
+                        fabPlayBtn.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
+                    }
+                }
+                if(downisInProgress!=null){
+                    if(downisInProgress){
+                        fabPlayBtn.setImageResource(R.drawable.ic_animate_downarrow);
+                        arrowAnimation = (AnimationDrawable) fabPlayBtn.getDrawable();
+                        arrowAnimation.start();
+                    }
+                }
             }
-            else {
-                fabPlayBtn.setImageResource(android.R.drawable.ic_lock_silent_mode);
-            }
-        }
+        },500);
+
     }
 
 }
