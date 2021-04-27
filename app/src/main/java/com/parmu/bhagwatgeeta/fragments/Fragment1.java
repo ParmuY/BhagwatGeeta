@@ -2,7 +2,9 @@ package com.parmu.bhagwatgeeta.fragments;
 
 import android.Manifest;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.drawable.AnimationDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -36,7 +38,6 @@ public class Fragment1 extends Fragment {
     private Context context;
     private TextView tvSanskrit;
     private TextView tvBhavarth;
-    private AnimationDrawable arrowAnimation;
     private FloatingActionButton fabPlayBtn;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions;
@@ -44,6 +45,7 @@ public class Fragment1 extends Fragment {
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
 
     private String mParam1;
     private String mParam2;
@@ -85,15 +87,8 @@ public class Fragment1 extends Fragment {
         assert getArguments() != null;
         tvSanskrit.setText(getArguments().getString("sanskrit1"));
         tvBhavarth.setText(getArguments().getString("bhavarth1"));
+        checkIfFileExist();
 
-        boolean fileExist = getArguments().getBoolean("fileexist");
-
-        if(!fileExist){
-            fabPlayBtn.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
-        }
-        else{
-            fabPlayBtn.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
-        }
         constraintLayout = view.findViewById(R.id.constrained_layout);
         fabPlayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,17 +96,15 @@ public class Fragment1 extends Fragment {
                 Adhyay1_AC1.pageGetPosition();
                 if (pagePosition==0) {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s1.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s1.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
-                }
+                    }
                 else if(pagePosition==1)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s2.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s2.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -119,8 +112,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==2)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s3.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s3.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -128,8 +120,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==3)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s4_5_6.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s4_5_6.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -137,8 +128,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==4)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s7.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s7.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -146,8 +136,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==5)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s8.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s8.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -155,8 +144,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==6)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s9.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s9.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -164,8 +152,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==7)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s10.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s10.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -173,8 +160,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==8)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s11.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s11.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -182,8 +168,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==9)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s12.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s12.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -191,8 +176,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==10)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s13.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s13.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -200,8 +184,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==11)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s14.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s14.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -209,8 +192,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==12)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s15.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s15.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -218,8 +200,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==13)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s16.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s16.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -227,8 +208,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==14)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s17_18.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s17_18.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -236,8 +216,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==15)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s19.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s19.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -245,8 +224,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==16)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s20_21.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s20_21.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -254,8 +232,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==17)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s22.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s22.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -263,8 +240,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==18)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s23.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s23.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -272,8 +248,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==19)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s24_25.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s24_25.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -281,8 +256,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==20)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s26.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s26.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -290,8 +264,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==21)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s27.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s27.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -299,8 +272,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==22)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s28_29.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s28_29.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -308,8 +280,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==23)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s30.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s30.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -317,8 +288,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==24)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s31.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s31.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -326,8 +296,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==25)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s32.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s32.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -335,8 +304,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==26)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s33.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s33.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -344,8 +312,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==27)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s34.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s34.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -353,8 +320,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==28)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s35.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s35.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -362,8 +328,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==29)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s36.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s36.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -371,8 +336,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==30)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s37.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s37.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -380,8 +344,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==31)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s38_39.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s38_39.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -389,8 +352,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==32)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s40.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s40.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -398,8 +360,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==33)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s41.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s41.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -407,8 +368,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==34)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s42.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s42.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -416,8 +376,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==35)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s43.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s43.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -425,8 +384,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==36)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s44.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s44.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -434,8 +392,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==37)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s45.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s45.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -443,8 +400,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==38)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s46.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s46.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -452,8 +408,7 @@ public class Fragment1 extends Fragment {
                 else if(pagePosition==39)
                 {
                     try {
-                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s47.mp3");
-                        checkIsDownloadComplete();
+                        ClassForCombinedMediaPlayer.playDisSound(context,"c1s47.mp3",fabPlayBtn);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -461,6 +416,7 @@ public class Fragment1 extends Fragment {
             }
         });
         return view;
+
     }
 
 
@@ -484,33 +440,13 @@ public class Fragment1 extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    private void checkIsDownloadComplete(){
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Boolean isDownloadSuccess = ClassForCombinedMediaPlayer.isFileDownloaded();
-                Boolean downisInProgress = ClassForCombinedMediaPlayer.isDownInProgress();
-
-                if(isDownloadSuccess!=null){
-                    if(isDownloadSuccess){
-                        fabPlayBtn.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
-                    }
-                    else {
-                        fabPlayBtn.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
-                    }
-                }
-                if(downisInProgress!=null){
-                    if(downisInProgress){
-                        fabPlayBtn.setImageResource(R.drawable.ic_animate_downarrow);
-                        arrowAnimation = (AnimationDrawable) fabPlayBtn.getDrawable();
-                        arrowAnimation.start();
-                    }
-                }
-            }
-        },500);
-
+    private void checkIfFileExist(){
+        boolean fileExist = getArguments().getBoolean("fileexist");
+        if(!fileExist){
+            fabPlayBtn.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
+        }
+        else{
+            fabPlayBtn.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
+        }
     }
-
 }

@@ -3,6 +3,7 @@ package com.parmu.bhagwatgeeta.misc;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -29,15 +30,15 @@ import java.io.File;
 import java.io.IOException;
 
 public class ClassForCombinedMediaPlayer {
-    private static Boolean isDownloaded = null;
-    private static Boolean downInProgress = null;
+
+    private static AnimationDrawable arrowAnimate;
     public static MediaPlayer mediaPlayerOb = new MediaPlayer();
     // method for media player
-    public static void playDisSound(Context c, String audioN) throws IOException, InterruptedException {
+    public static void playDisSound(Context c, String audioN, FloatingActionButton fab) throws IOException, InterruptedException {
         if (mediaPlayerOb == null) {
             mediaPlayerOb = new MediaPlayer();
         }
-        mediaPlayingMethod(c, downloadFile(c,audioN));
+        mediaPlayingMethod(c, downloadFile(c,audioN,fab));
     }
 
     private static void mediaPlayingMethod(Context c, Uri uri) throws IOException {
@@ -62,9 +63,9 @@ public class ClassForCombinedMediaPlayer {
         mediaPlayerOb.start();
     }
 
-    public static Uri downloadFile(final Context context, String audioName) throws IOException, InterruptedException {
-        final StorageReference isFileRef = firebaseStorageReferences(audioName);
-        final File localFile = createMusicDirectoryNFile(context, audioName);
+    public static Uri downloadFile(final Context context, String audioName, final FloatingActionButton fab) throws IOException, InterruptedException {
+         StorageReference isFileRef = firebaseStorageReferences(audioName);
+         File localFile = createMusicDirectoryNFile(context, audioName);
 
         if(!localFile.exists()){
             if (!isConnected()) {
@@ -75,31 +76,28 @@ public class ClassForCombinedMediaPlayer {
                 @Override
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                     Log.i("firebase", "local audio temp file created");
-                    isDownloaded = true;
-                    downInProgress = false;
+                    fab.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
+
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @SuppressLint("ShowToast")
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     Toast.makeText(context, "on failure listener", Toast.LENGTH_SHORT).show();
-                    isDownloaded = false;
-                    downInProgress = false;
+                    fab.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
+
 
                 }
             }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
                 @Override
                 public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
+                    fab.setImageResource(R.drawable.ic_animate_downarrow);
+                    arrowAnimate = (AnimationDrawable) fab.getDrawable();
+                    arrowAnimate.start();
                     Toast.makeText(context,"Downloading", Toast.LENGTH_SHORT).show();
-                    downInProgress = true;
-                    isDownloaded = null;
                 }
             });
         }
-        else {
-            isDownloaded = true;
-        }
-
         return Uri.parse(localFile.getAbsolutePath());
     }
 
@@ -123,12 +121,4 @@ public class ClassForCombinedMediaPlayer {
         String command = "ping -c 1 google.com";
         return Runtime.getRuntime().exec(command).waitFor() == 0;
     }
-
-    public static Boolean isFileDownloaded(){
-        return isDownloaded;
-    }
-    public static Boolean isDownInProgress(){
-        return downInProgress;
-    }
-
 }
