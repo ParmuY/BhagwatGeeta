@@ -76,7 +76,7 @@ public class ClassForCombinedMediaPlayer {
                 @Override
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                     Log.i("firebase", "local audio temp file created");
-                    fab.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
+                    fab.setImageResource(R.drawable.ic_baseline_volume_up_24);
 
                 }
             }).addOnFailureListener(new OnFailureListener() {

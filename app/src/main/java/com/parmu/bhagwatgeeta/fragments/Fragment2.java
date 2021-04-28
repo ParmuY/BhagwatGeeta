@@ -676,7 +676,7 @@ public class Fragment2 extends Fragment {
             fabPlayBtn2.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
         }
         else{
-            fabPlayBtn2.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
+            fabPlayBtn2.setImageResource(R.drawable.ic_baseline_volume_up_24);
         }
     }
 }
