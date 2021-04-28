@@ -91,10 +91,19 @@ public class ClassForCombinedMediaPlayer {
             }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
                 @Override
                 public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
-                    fab.setImageResource(R.drawable.ic_animate_downarrow);
-                    arrowAnimate = (AnimationDrawable) fab.getDrawable();
-                    arrowAnimate.start();
-                    Toast.makeText(context,"Downloading", Toast.LENGTH_SHORT).show();
+                    try {
+                        if(isConnected()){
+                            fab.setImageResource(R.drawable.ic_animate_downarrow);
+                            arrowAnimate = (AnimationDrawable) fab.getDrawable();
+                            arrowAnimate.start();
+                            Toast.makeText(context,"Downloading", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                 }
             });
         }
