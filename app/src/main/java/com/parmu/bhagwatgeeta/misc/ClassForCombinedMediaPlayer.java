@@ -36,7 +36,8 @@ import static android.content.ContentValues.TAG;
 public class ClassForCombinedMediaPlayer {
 
     private static AnimationDrawable arrowAnimate;
-    public static MediaPlayer mediaPlayerOb = new MediaPlayer();
+    public static MediaPlayer mediaPlayerOb;
+    public static FileDownloadTask fileDownloadTask=null;
     // method for media player
     public static void playDisSound(Context c, String audioN, FloatingActionButton fab) throws IOException, InterruptedException {
         if (mediaPlayerOb == null) {
@@ -75,7 +76,8 @@ public class ClassForCombinedMediaPlayer {
             if (!isConnected()) {
                 Toast.makeText(context, "No Internet Connection", Toast.LENGTH_SHORT).show();
             }
-            isFileRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+            fileDownloadTask = isFileRef.getFile(localFile);
+            fileDownloadTask.addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                 @SuppressLint("UseCompatLoadingForDrawables")
                 @Override
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {

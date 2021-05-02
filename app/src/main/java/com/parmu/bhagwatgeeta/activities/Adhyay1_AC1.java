@@ -96,6 +96,9 @@ public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageCh
                 ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
+        if(ClassForCombinedMediaPlayer.fileDownloadTask!=null){
+            ClassForCombinedMediaPlayer.fileDownloadTask.cancel();
+        }
     }
 
     @Override
@@ -108,6 +111,9 @@ public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageCh
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             ClassForCombinedMediaPlayer.mediaPlayerOb.release();
             ClassForCombinedMediaPlayer.mediaPlayerOb = null;
+        }
+        if(ClassForCombinedMediaPlayer.fileDownloadTask!=null){
+            ClassForCombinedMediaPlayer.fileDownloadTask.cancel();
         }
     }
     public static Resources getAdhyay1Resources(){
