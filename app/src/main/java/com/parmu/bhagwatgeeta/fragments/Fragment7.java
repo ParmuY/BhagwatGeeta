@@ -74,6 +74,7 @@ public class Fragment7 extends Fragment{
         View view7= inflater.inflate(R.layout.fragment_7, container, false);
         tvSanskrit =view7.findViewById(R.id.sanskrit_7);
         tvBhavarth  =view7.findViewById(R.id.bhavarth_7);
+        assert getArguments() != null;
         tvSanskrit.setText(getArguments().getString("sanskrit7"));
         tvBhavarth.setText(getArguments().getString("bhavarth7"));
         constraintLayout = view7.findViewById(R.id.constrained_layout);

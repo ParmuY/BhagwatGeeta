@@ -35,8 +35,8 @@ import static android.content.ContentValues.TAG;
 
 public class ClassForCombinedMediaPlayer {
 
-    private static AnimationDrawable arrowAnimate;
-    public static MediaPlayer mediaPlayerOb;
+    public static AnimationDrawable arrowAnimate;
+    public static MediaPlayer mediaPlayerOb= null;
     public static FileDownloadTask fileDownloadTask=null;
     // method for media player
     public static void playDisSound(Context c, String audioN, FloatingActionButton fab) throws IOException, InterruptedException {
