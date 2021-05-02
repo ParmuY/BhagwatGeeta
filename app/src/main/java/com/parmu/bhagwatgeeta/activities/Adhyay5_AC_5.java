@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -24,12 +25,14 @@ public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageC
     public static int pagePosition5;
     private static Resources resources;
     private boolean isTimerFinished = false;
+    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adhyay5__a_c_5);
         resources  =getResources();
+        context = Adhyay5_AC_5.this;
         String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
         InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
 
@@ -110,6 +113,9 @@ public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageC
     }
     public static Resources getAdhyay5Resources(){
         return resources;
+    }
+    public static Context getAdhyay5Context(){
+        return context;
     }
 
 }

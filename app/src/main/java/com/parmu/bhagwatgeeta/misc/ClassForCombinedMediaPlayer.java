@@ -15,11 +15,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
+import com.google.android.datatransport.cct.internal.LogEvent;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnPausedListener;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.parmu.bhagwatgeeta.R;
@@ -28,6 +30,8 @@ import com.parmu.bhagwatgeeta.fragments.Fragment1;
 
 import java.io.File;
 import java.io.IOException;
+
+import static android.content.ContentValues.TAG;
 
 public class ClassForCombinedMediaPlayer {
 
@@ -104,6 +108,11 @@ public class ClassForCombinedMediaPlayer {
                         e.printStackTrace();
                     }
 
+                }
+            }).addOnPausedListener(new OnPausedListener<FileDownloadTask.TaskSnapshot>() {
+                @Override
+                public void onPaused(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
+                    Log.e("onPauselistner ","getFile paused");
                 }
             });
         }
