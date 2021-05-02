@@ -25,14 +25,12 @@ public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageC
     public static int pagePosition5;
     private static Resources resources;
     private boolean isTimerFinished = false;
-    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adhyay5__a_c_5);
         resources  =getResources();
-        context = Adhyay5_AC_5.this;
         String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
         InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
 
@@ -44,11 +42,10 @@ public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageC
         setSupportActionBar(toolbar);
 
         ActionBar actionBar= getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-
         viewPager5= findViewById(R.id.pager5);
-        ViewPagerAdapter5 adapter = new ViewPagerAdapter5(getSupportFragmentManager());
+        ViewPagerAdapter5 adapter = new ViewPagerAdapter5(getSupportFragmentManager(),this);
         viewPager5.setAdapter(adapter);
         viewPager5.setCurrentItem(recentPage);
         viewPager5.addOnPageChangeListener(this);
@@ -113,9 +110,6 @@ public class Adhyay5_AC_5 extends AppCompatActivity implements ViewPager.OnPageC
     }
     public static Resources getAdhyay5Resources(){
         return resources;
-    }
-    public static Context getAdhyay5Context(){
-        return context;
     }
 
 }

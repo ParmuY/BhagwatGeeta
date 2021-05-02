@@ -5,18 +5,14 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
-
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter1;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,14 +23,12 @@ public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageCh
     public static int pagePosition;
     private static Resources resources;
     private boolean isTimerFinished= false;
-    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adhyay1__a_c1);
         resources = getResources();
-        context = Adhyay1_AC1.this;
 
         String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
         InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
@@ -49,7 +43,7 @@ public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageCh
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         viewPager = findViewById(R.id.pager);
-        ViewPagerAdapter1 adapter = new ViewPagerAdapter1(getSupportFragmentManager());
+        ViewPagerAdapter1 adapter = new ViewPagerAdapter1(getSupportFragmentManager(),this);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);
         //opening recent left page in view pager
@@ -119,7 +113,6 @@ public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageCh
     public static Resources getAdhyay1Resources(){
         return resources;
     }
-    public static Context getAdhyay1Context(){ return context;}
 }
 
 

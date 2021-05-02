@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class Adhyay6_AC6 extends AppCompatActivity implements ViewPager.OnPageCh
         setContentView(R.layout.activity_adhyay6__a_c6);
         resources = getResources();
 
+
         String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
         InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
 
@@ -43,10 +45,11 @@ public class Adhyay6_AC6 extends AppCompatActivity implements ViewPager.OnPageCh
         setSupportActionBar(toolbar);
 
         ActionBar actionBar= getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         viewPager6= findViewById(R.id.pager6);
-        ViewPagerAdapter6 adapter = new ViewPagerAdapter6(getSupportFragmentManager());
+        ViewPagerAdapter6 adapter = new ViewPagerAdapter6(getSupportFragmentManager(),this);
         viewPager6.setAdapter(adapter);
         viewPager6.setCurrentItem(recentPage);
         viewPager6.addOnPageChangeListener(this);
@@ -114,6 +117,4 @@ public class Adhyay6_AC6 extends AppCompatActivity implements ViewPager.OnPageCh
     public static Resources getAdhyay6Resources(){
         return resources;
     }
-
-
 }

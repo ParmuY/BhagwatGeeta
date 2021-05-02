@@ -15,10 +15,11 @@ import com.parmu.bhagwatgeeta.fragments.Fragment1;
 import com.parmu.bhagwatgeeta.misc.FileChecker;
 
 public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
-    private final Context context = Adhyay1_AC1.getAdhyay1Context();
+    private final Context context;
 
-    public ViewPagerAdapter1(@NonNull FragmentManager fm) {
+    public ViewPagerAdapter1(@NonNull FragmentManager fm,Context ctx) {
         super(fm);
+        this.context = ctx;
     }
 
     @NonNull

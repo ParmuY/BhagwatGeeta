@@ -25,14 +25,12 @@ public class Adhyay2_AC2 extends AppCompatActivity implements ViewPager.OnPageCh
     public static int pagePosition2;
     private static Resources resources;
     private boolean isTimerFinished = false;
-    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adhyay2__a_c2);
         resources = getResources();
-        context = Adhyay2_AC2.this;
 
         String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
         InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
@@ -45,10 +43,11 @@ public class Adhyay2_AC2 extends AppCompatActivity implements ViewPager.OnPageCh
         setSupportActionBar(toolbar);
 
         ActionBar actionBar= getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         viewPager2=findViewById(R.id.pager2);
-        ViewPagerAdapter2 adapter = new ViewPagerAdapter2(getSupportFragmentManager());
+        ViewPagerAdapter2 adapter = new ViewPagerAdapter2(getSupportFragmentManager(),this);
         viewPager2.setAdapter(adapter);
         viewPager2.addOnPageChangeListener(this);
         viewPager2.setCurrentItem(recentPage);
@@ -115,6 +114,5 @@ public class Adhyay2_AC2 extends AppCompatActivity implements ViewPager.OnPageCh
     public static Resources getAdhyay2Resources(){
         return resources;
     }
-    public static Context getAdhyay2Context(){ return  context;}
 
 }

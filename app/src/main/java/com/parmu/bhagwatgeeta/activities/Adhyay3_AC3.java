@@ -26,14 +26,12 @@ public class Adhyay3_AC3 extends AppCompatActivity implements ViewPager.OnPageCh
     public static int pagePosition3;
     private static Resources resources;
     private boolean isTimerFinished = false;
-    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adhyay3__a_c3);
         resources = getResources();
-        context = Adhyay3_AC3.this;
 
         String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
         InterstitialAdMobClass.initInterstitialAds(this, interstitialAdUnitId);
@@ -46,11 +44,12 @@ public class Adhyay3_AC3 extends AppCompatActivity implements ViewPager.OnPageCh
         setSupportActionBar(toolbar);
 
         ActionBar actionBar= getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
         viewPager3=findViewById(R.id.pager3);
-        ViewPagerAdapter3 adapter = new ViewPagerAdapter3(getSupportFragmentManager());
+        ViewPagerAdapter3 adapter = new ViewPagerAdapter3(getSupportFragmentManager(),this);
         viewPager3.setAdapter(adapter);
         viewPager3.setCurrentItem(recentPage);
         viewPager3.addOnPageChangeListener(this);
@@ -116,8 +115,5 @@ public class Adhyay3_AC3 extends AppCompatActivity implements ViewPager.OnPageCh
     }
     public static Resources getAdhyay3Resources(){
         return resources;
-    }
-    public static Context getAdhyay3Context(){
-        return context;
     }
 }
