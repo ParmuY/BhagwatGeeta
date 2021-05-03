@@ -83,6 +83,10 @@ public class Adhyay17_AC17 extends AppCompatActivity implements ViewPager.OnPage
         if (InterstitialAdMobClass.mInterstitialAd !=null && isTimerFinished) {
             InterstitialAdMobClass.mInterstitialAd.show(this);
         }
+        if(ClassForCombinedMediaPlayer.fileDownloadTask!=null){
+            ClassForCombinedMediaPlayer.fileDownloadTask.cancel();
+            ClassForCombinedMediaPlayer.fileDownloadTask = null;
+        }
     }
 
     @Override
@@ -97,6 +101,10 @@ public class Adhyay17_AC17 extends AppCompatActivity implements ViewPager.OnPage
                 ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             }
         }
+        if(ClassForCombinedMediaPlayer.fileDownloadTask!=null){
+            ClassForCombinedMediaPlayer.fileDownloadTask.cancel();
+            ClassForCombinedMediaPlayer.fileDownloadTask = null;
+        }
     }
     @Override
     public void onPageScrollStateChanged(int state) {}
@@ -107,6 +115,10 @@ public class Adhyay17_AC17 extends AppCompatActivity implements ViewPager.OnPage
             ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
             ClassForCombinedMediaPlayer.mediaPlayerOb.release();
             ClassForCombinedMediaPlayer.mediaPlayerOb = null;
+        }
+        if(ClassForCombinedMediaPlayer.fileDownloadTask!=null){
+            ClassForCombinedMediaPlayer.fileDownloadTask.cancel();
+            ClassForCombinedMediaPlayer.fileDownloadTask = null;
         }
     }
  public static Resources getAdhyay17Resources(){
