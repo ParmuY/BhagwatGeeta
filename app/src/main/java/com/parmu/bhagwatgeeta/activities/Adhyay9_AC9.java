@@ -45,7 +45,7 @@ public class Adhyay9_AC9 extends AppCompatActivity implements ViewPager.OnPageCh
 
 
         viewPager9=findViewById(R.id.pager9);
-        ViewPagerAdapter9 adapter = new ViewPagerAdapter9(getSupportFragmentManager());
+        ViewPagerAdapter9 adapter = new ViewPagerAdapter9(getSupportFragmentManager(),this);
         viewPager9.setAdapter(adapter);
         viewPager9.setCurrentItem(recentPage);
         viewPager9.addOnPageChangeListener(this);

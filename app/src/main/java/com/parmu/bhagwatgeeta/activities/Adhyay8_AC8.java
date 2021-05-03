@@ -47,7 +47,7 @@ public class Adhyay8_AC8 extends AppCompatActivity implements ViewPager.OnPageCh
 
 
         viewPager8=findViewById(R.id.pager8);
-        ViewPagerAdapter8 adapter = new ViewPagerAdapter8(getSupportFragmentManager());
+        ViewPagerAdapter8 adapter = new ViewPagerAdapter8(getSupportFragmentManager(),this);
         viewPager8.setAdapter(adapter);
         viewPager8.setCurrentItem(recentPage);
         //implement and below change hai

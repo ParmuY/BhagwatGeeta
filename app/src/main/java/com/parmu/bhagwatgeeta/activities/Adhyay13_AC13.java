@@ -46,7 +46,7 @@ public class Adhyay13_AC13 extends AppCompatActivity implements ViewPager.OnPage
 
 
         viewPager13=findViewById(R.id.pager13);
-        ViewPagerAdapter13 adapter = new ViewPagerAdapter13(getSupportFragmentManager());
+        ViewPagerAdapter13 adapter = new ViewPagerAdapter13(getSupportFragmentManager(),this);
         viewPager13.setAdapter(adapter);
         viewPager13.setCurrentItem(recentPage);
         viewPager13.addOnPageChangeListener(this);

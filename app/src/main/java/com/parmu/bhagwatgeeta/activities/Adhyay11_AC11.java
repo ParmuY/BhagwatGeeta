@@ -44,7 +44,7 @@ public class Adhyay11_AC11 extends AppCompatActivity implements ViewPager.OnPage
 
 
         viewPager11=findViewById(R.id.pager11);
-        ViewPagerAdapter11 adapter = new ViewPagerAdapter11(getSupportFragmentManager());
+        ViewPagerAdapter11 adapter = new ViewPagerAdapter11(getSupportFragmentManager(),this);
         viewPager11.setAdapter(adapter);
         viewPager11.setCurrentItem(recentPage);
         viewPager11.addOnPageChangeListener(this);

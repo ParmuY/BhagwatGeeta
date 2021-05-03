@@ -45,7 +45,7 @@ public class Adhyay10_AC10 extends AppCompatActivity implements ViewPager.OnPage
 
         viewPager10=findViewById(R.id.pager10);
 
-        ViewPagerAdapter10 adapter = new ViewPagerAdapter10(getSupportFragmentManager());
+        ViewPagerAdapter10 adapter = new ViewPagerAdapter10(getSupportFragmentManager(),this);
         viewPager10.setAdapter(adapter);
         viewPager10.addOnPageChangeListener(this);
         viewPager10.setCurrentItem(recentPage);

@@ -47,7 +47,7 @@ public class Adhyay7_AC7 extends AppCompatActivity implements ViewPager.OnPageCh
 
 
         viewPager7 = findViewById(R.id.pager7);
-        ViewPagerAdapter7 adapter = new ViewPagerAdapter7(getSupportFragmentManager());
+        ViewPagerAdapter7 adapter = new ViewPagerAdapter7(getSupportFragmentManager(),this);
         viewPager7.setAdapter(adapter);
         viewPager7.setCurrentItem(recentPage);
         viewPager7.addOnPageChangeListener(this);

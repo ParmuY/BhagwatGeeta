@@ -1,5 +1,6 @@
 package com.parmu.bhagwatgeeta.pageradapter;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,23 +12,26 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.activities.Adhyay12_AC12;
 import com.parmu.bhagwatgeeta.fragments.Fragment12;
+import com.parmu.bhagwatgeeta.misc.FileChecker;
 
 public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
-    public ViewPagerAdapter12(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
-    }
-
-    public ViewPagerAdapter12(FragmentManager supportFragmentManager) {
+    private final Context context;
+    public ViewPagerAdapter12(FragmentManager supportFragmentManager, Context ctx) {
         super(supportFragmentManager);
+        this.context = ctx;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
+        String fileName;
         if(position==0)
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s1"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s1));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s1));
             fragment12.setArguments(bundle);
@@ -38,6 +42,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s2"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s2));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s2));
             fragment12.setArguments(bundle);
@@ -47,6 +54,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s3_4"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s3_4));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s3_4));
             fragment12.setArguments(bundle);
@@ -56,6 +66,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s5"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s5));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s5));
             fragment12.setArguments(bundle);
@@ -65,6 +78,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s6"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s6));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s6));
             fragment12.setArguments(bundle);
@@ -74,6 +90,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s7"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s7));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s7));
             fragment12.setArguments(bundle);
@@ -83,6 +102,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s8"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s8));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s8));
             fragment12.setArguments(bundle);
@@ -92,6 +114,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s9"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s9));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s9));
             fragment12.setArguments(bundle);
@@ -101,6 +126,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s10"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s10));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s10));
             fragment12.setArguments(bundle);
@@ -110,6 +138,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s11"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s11));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s11));
             fragment12.setArguments(bundle);
@@ -119,6 +150,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s12"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s12));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s12));
             fragment12.setArguments(bundle);
@@ -128,6 +162,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s13_14"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s13_14));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s13_14));
             fragment12.setArguments(bundle);
@@ -137,6 +174,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s15"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s15));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s15));
             fragment12.setArguments(bundle);
@@ -146,6 +186,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s16"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s16));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s16));
             fragment12.setArguments(bundle);
@@ -155,6 +198,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s17"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s17));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s17));
             fragment12.setArguments(bundle);
@@ -164,6 +210,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s18"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s18));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s18));
             fragment12.setArguments(bundle);
@@ -173,6 +222,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s19"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s19));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s19));
             fragment12.setArguments(bundle);
@@ -182,6 +234,9 @@ public class ViewPagerAdapter12 extends FragmentStatePagerAdapter {
         {
             Fragment12 fragment12 =new Fragment12();
             Bundle bundle = new Bundle();
+            fileName = "c12s20"+"."+"mp3";
+            bundle.putBoolean("fileexist12", FileChecker.checkFileForExistence(context,fileName));
+            bundle.putString("filename12", fileName);
             bundle.putString("sanskrit12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.sanskrit_c12s20));
             bundle.putString("bhavarth12", Adhyay12_AC12.getAdhyay12Resources().getString(R.string.bhavarth_c12s20));
             fragment12.setArguments(bundle);

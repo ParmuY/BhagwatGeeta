@@ -47,7 +47,7 @@ public class Adhyay12_AC12 extends AppCompatActivity implements ViewPager.OnPage
 
         viewPager12=findViewById(R.id.pager12);
 
-        ViewPagerAdapter12 adapter = new ViewPagerAdapter12(getSupportFragmentManager());
+        ViewPagerAdapter12 adapter = new ViewPagerAdapter12(getSupportFragmentManager(),this);
         viewPager12.setAdapter(adapter);
         viewPager12.setCurrentItem(recentPage);
         viewPager12.addOnPageChangeListener(this);

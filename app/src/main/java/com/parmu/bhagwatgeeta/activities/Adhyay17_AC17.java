@@ -46,7 +46,7 @@ public class Adhyay17_AC17 extends AppCompatActivity implements ViewPager.OnPage
 
 
         viewPager17= findViewById(R.id.pager17);
-        ViewPagerAdapter17 adapter = new ViewPagerAdapter17(getSupportFragmentManager());
+        ViewPagerAdapter17 adapter = new ViewPagerAdapter17(getSupportFragmentManager(),this);
         viewPager17.setAdapter(adapter);
         viewPager17.setCurrentItem(recentPage);
         viewPager17.addOnPageChangeListener(this);

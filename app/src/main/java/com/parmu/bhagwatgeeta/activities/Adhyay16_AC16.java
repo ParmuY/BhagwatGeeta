@@ -46,7 +46,7 @@ public class Adhyay16_AC16 extends AppCompatActivity implements ViewPager.OnPage
 
 
         viewPager16=findViewById(R.id.pager16);
-        ViewPagerAdapter16 adapter = new ViewPagerAdapter16(getSupportFragmentManager());
+        ViewPagerAdapter16 adapter = new ViewPagerAdapter16(getSupportFragmentManager(),this);
         viewPager16.setAdapter(adapter);
         viewPager16.setCurrentItem(recentPage);
         viewPager16.addOnPageChangeListener(this);

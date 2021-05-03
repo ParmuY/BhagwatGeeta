@@ -46,7 +46,7 @@ public class Adhyay14_AC14 extends AppCompatActivity implements ViewPager.OnPage
 
 
         viewPager14=findViewById(R.id.pager14);
-        ViewPagerAdapter14 adapter = new ViewPagerAdapter14(getSupportFragmentManager());
+        ViewPagerAdapter14 adapter = new ViewPagerAdapter14(getSupportFragmentManager(),this);
         viewPager14.setAdapter(adapter);
         viewPager14.setCurrentItem(recentPage);
         viewPager14.addOnPageChangeListener(this);

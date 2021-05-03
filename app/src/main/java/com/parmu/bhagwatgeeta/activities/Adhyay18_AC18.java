@@ -47,7 +47,7 @@ public class Adhyay18_AC18 extends AppCompatActivity implements ViewPager.OnPage
 
 
         viewPager18= findViewById(R.id.pager18);
-        ViewPagerAdapter18 adapter = new ViewPagerAdapter18(getSupportFragmentManager());
+        ViewPagerAdapter18 adapter = new ViewPagerAdapter18(getSupportFragmentManager(),this);
         viewPager18.setAdapter(adapter);
         viewPager18.setCurrentItem(recentPage);
         viewPager18.addOnPageChangeListener(this);

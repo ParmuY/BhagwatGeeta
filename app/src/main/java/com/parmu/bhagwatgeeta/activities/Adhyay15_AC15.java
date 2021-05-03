@@ -48,7 +48,7 @@ public class Adhyay15_AC15 extends AppCompatActivity implements ViewPager.OnPage
 
 
         viewPager15=findViewById(R.id.pager15);
-        ViewPagerAdapter15 adapter = new ViewPagerAdapter15(getSupportFragmentManager());
+        ViewPagerAdapter15 adapter = new ViewPagerAdapter15(getSupportFragmentManager(),this);
         viewPager15.setAdapter(adapter);
         viewPager15.setCurrentItem(recentPage);
         viewPager15.addOnPageChangeListener(this);

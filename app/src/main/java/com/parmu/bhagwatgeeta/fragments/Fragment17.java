@@ -35,6 +35,9 @@ public class Fragment17 extends Fragment {
     private RequestPermissions requestPermissions;
     private ConstraintLayout constraintLayout;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
+    private boolean fileExist;
+    private String fileName;
+    private FloatingActionButton fabPlayBtn17;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -74,187 +77,25 @@ public class Fragment17 extends Fragment {
         View view17= inflater.inflate(R.layout.fragment_17, container, false);
         tvSanskrit =view17.findViewById(R.id.sanskrit_17);
         tvBhavarth = view17.findViewById(R.id.bhavarth_17);
+        constraintLayout = view17.findViewById(R.id.constrained_layout);
+        fabPlayBtn17 = view17.findViewById(R.id.fabplaysound17);
+
+        assert getArguments() != null;
+        fileExist = getArguments().getBoolean("fileexist17");
+        fileName =getArguments().getString("filename17");
         tvSanskrit.setText(getArguments().getString("sanskrit17"));
         tvBhavarth.setText(getArguments().getString("bhavarth17"));
-        constraintLayout = view17.findViewById(R.id.constrained_layout);
-        FloatingActionButton fabPlayBtn17 = view17.findViewById(R.id.fabplaysound17);
-
+        checkIfFileExist();
         fabPlayBtn17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Adhyay17_AC17.pageGetPosition17();
-
-//                if (pagePosition17 == 0) {
-//
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s1);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 1) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s2);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 2) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s3);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 3) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s4);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 4) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s5);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 5) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s6);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 6) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s7);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 7) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s8);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 8) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s9);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 9) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s10);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 10) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s11);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 11) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s12);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 12) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s13);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 13) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s14);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 14) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s15);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 15) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s16);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 16) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s17);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 17) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s18);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 18) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s19);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 19) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s20);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 20) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s21);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 21) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s22);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 22) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s23);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 23) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s24);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 24) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s25);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 25) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s26);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 26) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s27);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else if (pagePosition17 == 27) {
-//                    try {
-//                        ClassForCombinedMediaPlayer.playDisSound(context17, R.raw.c17s28);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
+                try {
+                    ClassForCombinedMediaPlayer.playDisSound(context17,fileName,fabPlayBtn17);
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
         return view17;
@@ -280,5 +121,14 @@ public class Fragment17 extends Fragment {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+    private void checkIfFileExist(){
+
+        if(!fileExist){
+            fabPlayBtn17.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
+        }
+        else{
+            fabPlayBtn17.setImageResource(R.drawable.ic_baseline_volume_up_24);
+        }
     }
 }
