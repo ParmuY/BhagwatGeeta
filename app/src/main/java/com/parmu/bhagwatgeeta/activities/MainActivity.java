@@ -18,6 +18,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -27,6 +29,8 @@ import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.misc.RecycleViewAdapter;
 import com.parmu.bhagwatgeeta.misc.RecycleViewItem;
+import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter1;
+
 import java.util.ArrayList;
 import java.util.Collections;
 

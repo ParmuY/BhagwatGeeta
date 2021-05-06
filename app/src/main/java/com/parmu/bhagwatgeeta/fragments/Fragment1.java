@@ -1,11 +1,15 @@
 package com.parmu.bhagwatgeeta.fragments;
 
 import android.Manifest;
+import android.app.ActionBar;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,14 +19,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toolbar;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagwatgeeta.activities.Adhyay1_AC1;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagwatgeeta.misc.RequestPermissions;
 import com.parmu.bhagwatgeeta.misc.ShareAsBitmap;
+import com.parmu.bhagwatgeeta.pageradapter.ViewPagerAdapter1;
+
 import java.io.IOException;
 import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.pagePosition;
+import static com.parmu.bhagwatgeeta.activities.Adhyay1_AC1.viewPager;
 
 public class Fragment1 extends Fragment {
 
@@ -38,6 +48,7 @@ public class Fragment1 extends Fragment {
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
 
 
     public Fragment1() {
@@ -74,6 +85,7 @@ public class Fragment1 extends Fragment {
         tvSanskrit = view.findViewById(R.id.sanskrit_1);
         tvBhavarth = view.findViewById(R.id.bhavarth_1);
         fabPlayBtn = view.findViewById(R.id.fabplaysound);
+        constraintLayout = view.findViewById(R.id.constrained_layout);
 
         assert getArguments() != null;
         tvSanskrit.setText(getArguments().getString("sanskrit1"));
@@ -82,13 +94,12 @@ public class Fragment1 extends Fragment {
         fileName = getArguments().getString("filename");
         checkIfFileExist();
 
-        constraintLayout = view.findViewById(R.id.constrained_layout);
+
         fabPlayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     ClassForCombinedMediaPlayer.playDisSound(context,fileName,fabPlayBtn);
-                    Log.e("one command"," only one");
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
