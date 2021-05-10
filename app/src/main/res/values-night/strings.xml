@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_link_playstore">http://play.google.com/store/apps/details?id=</string>
     <string name="app_name">Bhagavad Gita</string>
     <string name="app_name_hi">भगवत गीता</string>
     <string name="adhyay">अध्याय</string>
@@ -9,9 +10,7 @@
     <string name="shloka">\"श्लोक \"</string>
     <string name="share_shloka">Share Shloka</string>
     <string name="favourite">Favourite</string>
-    <string name="content_about">हमने इस एंड्रॉयड ऐप के रूप में "भगवद् गीता" के अध्यायों और सही उच्चारण को संकलित करने की कोशिश की है। आप इस ऐप्लिकेशन में कोई गलती पाते हैं हमें एक ईमेल भेजें और हम इसे सही करने का प्रयास करेंगे।
-
-</string>
+    <string name="content_about">हमने इस एंड्रॉयड ऐप के रूप में "भगवद् गीता" के अध्यायों और सही उच्चारण को संकलित करने की कोशिश की है। आप इस ऐप्लिकेशन में कोई गलती पाते हैं हमें एक ईमेल भेजें और हम इसे सही करने का प्रयास करेंगे।</string>
 
     <string name="button">Button</string>
     <string name="navigation_drawer_open">Open Drawer</string>
@@ -20,7 +19,7 @@
     <string name="about_app">About app</string>
     <string name="notification_title">श्रीमद्भगवद्गीता ज्ञान</string>
     <string name="notification_text">आज का ज्ञान</string>
-    <string name="youtube_channel_link"><a href="http://m.youtube.com/channel/UCVtjkubwUesxdPb6hpnoANw">Youtube Channel Link</a></string>
+    <string name="youtube_channel_link"><a href="http://m.youtube.com/channel/UCVtjkubwUesxdPb6hpnoANw">Vedic Vigyan(Youtube Channel)</a></string>
     <string name="feedback">Feedback</string>
 
 

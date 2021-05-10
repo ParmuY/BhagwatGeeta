@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class AboutAppActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle("About App");
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         TextView textView = findViewById(R.id.aboutTextView);
         textView.setText(R.string.content_about);
@@ -30,6 +32,7 @@ public class AboutAppActivity extends AppCompatActivity {
         textView.setText(str+"\n\nVersion 1.0"+"\n\nCredits:");
         youtubeLink= findViewById(R.id.youtube_link);
         youtubeLink.setMovementMethod(LinkMovementMethod.getInstance());
+        youtubeLink.setLinkTextColor(Color.GRAY);
 
 
 

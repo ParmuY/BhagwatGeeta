@@ -3,6 +3,7 @@ package com.parmu.bhagwatgeeta.activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
+import com.parmu.bhagwatgeeta.BuildConfig;
 import com.parmu.bhagwatgeeta.R;
 import com.parmu.bhagwatgeeta.misc.InterstitialAdMobClass;
 import com.parmu.bhagwatgeeta.misc.RecycleViewAdapter;
@@ -235,7 +237,9 @@ public class MainActivity extends AppCompatActivity {
                         menuItem.setVisible(true);
                         return true;
                     case R.id.share_drawer:
-                        displayMessage("Share app (currently not available)");
+                        Intent iShare= new Intent(Intent.ACTION_VIEW);
+                        iShare.setData(Uri.parse(getResources().getString(R.string.app_link_playstore)+ "com.parmu.bhagwatgeeta"));
+                        startActivity(iShare);
                         drawerLayout.closeDrawers();
                         return true;
                     case R.id.rate:
