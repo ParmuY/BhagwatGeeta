@@ -75,13 +75,9 @@ public class ClassForCombinedMediaPlayer {
 
                 }
             }).addOnFailureListener(new OnFailureListener() {
-                @SuppressLint("ShowToast")
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(context, "on failure listener", Toast.LENGTH_SHORT).show();
                     fab.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
-
-
                 }
             }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
                 @Override
@@ -112,7 +108,7 @@ public class ClassForCombinedMediaPlayer {
 
     private static StorageReference firebaseStorageReferences(String audioName){
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageReference = storage.getReferenceFromUrl("gs://bhagvadgita-d40a9.appspot.com/audiomp3files");
+        StorageReference storageReference = storage.getReferenceFromUrl("gs://bhagvadgita-26c63.appspot.com/audiomp3files");
         return storageReference.child(audioName);
     }
 
