@@ -1,5 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Bhagavad Gita</string>
+    <string name="app_link_playstore">https://play.google.com/store/apps/details?id=</string>
+    <string name="app_name">भगवद गीता-Bhagavad Gita</string>
     <string name="app_name_hi">भगवत गीता</string>
     <string name="adhyay">अध्याय</string>
     <string name="textview">TextView</string>
@@ -28,7 +29,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="youtube_channel_link"><a href="http://m.youtube.com/channel/UCVtjkubwUesxdPb6hpnoANw">Youtube Channel Link</a></string>
+    <string name="youtube_channel_link"><a href="http://m.youtube.com/channel/UCVtjkubwUesxdPb6hpnoANw">Vedic Vigyan(Youtube Channel)</a></string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="about_app">About app</string>
     <string name="notification_title">श्रीमद्भगवद्गीता ज्ञान</string>
@@ -55,8 +56,10 @@
         <item>अध्याय 18 ~ मोक्षसंन्यास योग</item>
     </string-array>
     <string name="admob_application_id">ca-app-pub-7368351753880084~9932194098</string>
-<!--    test ad unit interstitial--><string name="interstitial_ad_unit_id_adhyay">ca-app-pub-3940256099942544/1033173712</string>
-<!--  real ad unit interstitial--><!--    <string name="interstitial_ad_unit_id_adhyay"></string>-->
+<!--    test ad unit interstitial-->
+    <string name="interstitial_ad_unit_id_adhyay">ca-app-pub-3940256099942544/1033173712</string>
+<!--  real ad unit interstitial  -->
+<!--    <string name="interstitial_ad_unit_id_adhyay">ca-app-pub-7368351753880084/6855084518</string>-->
 
 
 <!--    strings for Chapter18-->
@@ -1450,7 +1453,7 @@
     <string name="bhavarth_c1s46">भावार्थ  :- यदि मुझ शस्त्ररहित एवं सामना न करने वाले को शस्त्र हाथ में लिए हुए धृतराष्ट्र के पुत्र रण में मार डालें तो वह मारना भी मेरे लिए अधिक कल्याणकारक होगा ॥46॥</string>
     <string name="sanskrit_c1s47">संजय उवाच    :-\nएवमुक्त्वार्जुनः सङ्ख्ये रथोपस्थ उपाविशत्।\nविसृज्य सशरं चापं शोकसंविग्नमानसः  ॥47॥\n</string>
     <string name="bhavarth_c1s47">भावार्थ  :- संजय बोले- रणभूमि में शोक से उद्विग्न मन वाले अर्जुन इस प्रकार कहकर, बाणसहित धनुष को त्यागकर रथ के पिछले भाग में बैठ गए  ॥47॥\n\nॐ तत्सदिति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादेऽर्जुनविषादयोगो नाम प्रथमोऽध्यायः। \n॥1॥</string>
-
+    <string name="privacy_policy">Privacy Policy</string>
 
 
 </resources>

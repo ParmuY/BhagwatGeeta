@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "673719095232",
-    "project_id": "bhagwatgeeta-d40a9",
-    "storage_bucket": "bhagwatgeeta-d40a9.appspot.com"
+    "project_number": "608745197157",
+    "project_id": "bhagvadgita-26c63",
+    "storage_bucket": "bhagvadgita-26c63.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:673719095232:android:81392eed364e172e2bc225",
+        "mobilesdk_app_id": "1:608745197157:android:a3f5f674321e5302f0408c",
         "android_client_info": {
-          "package_name": "com.parmu.bhagwatgeeta"
+          "package_name": "com.parmu.bhagvadgita"
         }
       },
       "oauth_client": [
         {
-          "client_id": "673719095232-54q7t6rd7s2i7kghf68ppv8tvj7brtni.apps.googleusercontent.com",
+          "client_id": "608745197157-cn7aci2f2foff6gs5o2p1qblu9c858cp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDhLx6O4wX8VkjAeuRRZQQsPY8k3Qn9ji4"
+          "current_key": "AIzaSyA5gA0Xhn9b22vjknNBbE6lQ84umxyAG5M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "673719095232-54q7t6rd7s2i7kghf68ppv8tvj7brtni.apps.googleusercontent.com",
+              "client_id": "608745197157-cn7aci2f2foff6gs5o2p1qblu9c858cp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.parmu.bhagwatgeeta">
+    package="com.parmu.bhagvadgita">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -14,134 +15,151 @@
         tools:ignore="AllowBackup">
 
         <activity
-            android:name=".activities.AboutAppActivity"
-            android:parentActivityName=".activities.MainActivity"
+            android:name="com.parmu.bhagvadgita.activities.AboutAppActivity"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             android:label="@string/about_app"
-            />
+            tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".activities.Adhyay18_AC18"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay17_AC17"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay16_AC16"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay15_AC15"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay14_AC14"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay13_AC13"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay12_AC12"
-            android:parentActivityName=".activities.MainActivity"
+            android:name="com.parmu.bhagvadgita.activities.Adhyay18_AC18"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            />
+            tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".activities.Adhyay11_AC11"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay10_AC10"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay9_AC9"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay8_AC8"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay7_AC7"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay6_AC6"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay5_AC_5"
-            android:parentActivityName=".activities.MainActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activities.Adhyay4_AC4"
-            android:parentActivityName=".activities.MainActivity"
+            android:name="com.parmu.bhagvadgita.activities.Adhyay17_AC17"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            />
+            tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".activities.Adhyay3_AC3"
-            android:parentActivityName=".activities.MainActivity"
+            android:name="com.parmu.bhagvadgita.activities.Adhyay16_AC16"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".activities.Adhyay2_AC2"
-            android:parentActivityName=".activities.MainActivity"
+            android:name="com.parmu.bhagvadgita.activities.Adhyay15_AC15"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".activities.Adhyay1_AC1"
-            android:parentActivityName=".activities.MainActivity"
+            android:name="com.parmu.bhagvadgita.activities.Adhyay14_AC14"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.parmu.bhagvadgita.activities.Adhyay13_AC13"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:launchMode="singleTask">
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay12_AC12"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay11_AC11"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay10_AC10"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay9_AC9"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay8_AC8"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay7_AC7"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay6_AC6"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay5_AC_5"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay4_AC4"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay3_AC3"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay2_AC2"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.Adhyay1_AC1"
+            android:parentActivityName="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.parmu.bhagvadgita.activities.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".misc.FirebaseMessageReceiver"
+        <service android:name="com.parmu.bhagvadgita.misc.FirebaseMessageReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -150,7 +168,6 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_application_id"/>
-
     </application>
 
 

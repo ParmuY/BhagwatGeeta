@@ -9,7 +9,6 @@
     tools:context=".fragments.Fragment1"
     >
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -59,7 +58,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sanskrit_1"
                 app:layout_constraintVertical_bias="0.0" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
@@ -68,7 +66,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:clickable="true"
-    android:src="@android:drawable/ic_lock_silent_mode_off"
+    android:src="@drawable/ic_baseline_volume_up_24"
     app:backgroundTint="@color/fabBackgroundTint"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +75,7 @@
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.935"
         android:focusable="true"
-        android:contentDescription="@string/fab" />
+        android:contentDescription="@string/fab"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

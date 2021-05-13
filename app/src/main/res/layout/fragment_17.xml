@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:contentDescription="@string/fab"
-        android:src="@android:drawable/ic_lock_silent_mode_off"
+        android:src="@drawable/ic_baseline_volume_up_24"
         app:backgroundTint="@color/fabBackgroundTint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
