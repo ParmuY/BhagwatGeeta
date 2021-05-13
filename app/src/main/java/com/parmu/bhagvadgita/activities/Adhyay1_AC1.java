@@ -15,6 +15,7 @@ import com.parmu.bhagvadgita.misc.InterstitialAdMobClass;
 import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter1;
 import java.util.Timer;
 import java.util.TimerTask;
+//
 
 
 public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageChangeListener{
