@@ -46,9 +46,9 @@
     </string-array>
     <string name="admob_application_id">ca-app-pub-7368351753880084~9932194098</string>
     <!--    test ad unit interstitial-->
-    <!--    <string name="interstitial_ad_unit_id_adhyay">ca-app-pub-3940256099942544/1033173712</string>-->
+        <string name="interstitial_ad_unit_id_adhyay">ca-app-pub-3940256099942544/1033173712</string>
     <!--  real ad unit interstitial  -->
-    <string name="interstitial_ad_unit_id_adhyay">ca-app-pub-7368351753880084/6855084518</string>
+<!--    <string name="interstitial_ad_unit_id_adhyay">ca-app-pub-7368351753880084/6855084518</string>-->
     <string name="fab">fab</string>
     <string name="list_view_item_image">list view item image</string>
     <string name="share_the_app">Share the app</string>
