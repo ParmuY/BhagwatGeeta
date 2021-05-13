@@ -41,6 +41,7 @@ public class Adhyay18_AC18 extends AppCompatActivity implements ViewPager.OnPage
         setSupportActionBar(toolbar);
 
         ActionBar actionBar= getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 

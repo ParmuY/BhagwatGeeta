@@ -73,7 +73,8 @@ public class Fragment10 extends Fragment{
         constraintLayout = view10.findViewById(R.id.constrained_layout);
         fabPlayBtn10 = view10.findViewById(R.id.fabplaysound10);
 
-      fileExist = getArguments().getBoolean("fileexist10");
+        assert getArguments() != null;
+        fileExist = getArguments().getBoolean("fileexist10");
       fileName = getArguments().getString("filename10");
       tvSanskrit.setText(getArguments().getString("sanskrit10"));
       tvBhavarth.setText(getArguments().getString("bhavarth10"));

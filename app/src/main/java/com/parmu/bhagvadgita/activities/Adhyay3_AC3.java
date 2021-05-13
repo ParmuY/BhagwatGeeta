@@ -36,7 +36,7 @@ public class Adhyay3_AC3 extends AppCompatActivity implements ViewPager.OnPageCh
         SharedPreferences sharedPreferences = getSharedPreferences("com.parmu.bhagvadgita.SavedActivity", MODE_PRIVATE);
         int recentPage = sharedPreferences.getInt("PageSaved3",0);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("अध्याय 3");
         setSupportActionBar(toolbar);
 

@@ -44,14 +44,11 @@ public class ClassForCombinedMediaPlayer {
             mediaPlayerOb.setDataSource(c, uri);
             mediaPlayerOb.prepare();
         }
-        mediaPlayerOb.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                try{
-                    mediaPlayerOb.reset();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        mediaPlayerOb.setOnCompletionListener(mp -> {
+            try{
+                mediaPlayerOb.reset();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
         mediaPlayerOb.start();
@@ -66,49 +63,37 @@ public class ClassForCombinedMediaPlayer {
                 Toast.makeText(context, "No Internet Connection", Toast.LENGTH_SHORT).show();
             }
             fileDownloadTask = isFileRef.getFile(localFile);
-            fileDownloadTask.addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                @SuppressLint("UseCompatLoadingForDrawables")
-                @Override
-                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                    Log.i("firebase", "local audio temp file created");
-                    fab.setImageResource(R.drawable.ic_baseline_volume_up_24);
+            fileDownloadTask.addOnSuccessListener(taskSnapshot -> {
+                Log.i("firebase", "local audio temp file created");
+                fab.setImageResource(R.drawable.ic_baseline_volume_up_24);
 
-                }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     fab.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
                 }
-            }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
-                @Override
-                public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
-                    try {
-                        if(isConnected()){
-                            fab.setImageResource(R.drawable.ic_animate_downarrow);
-                            arrowAnimate = (AnimationDrawable) fab.getDrawable();
-                            arrowAnimate.start();
-                            Toast.makeText(context,"Downloading", Toast.LENGTH_SHORT).show();
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+            }).addOnProgressListener(snapshot -> {
+                try {
+                    if(isConnected()){
+                        fab.setImageResource(R.drawable.ic_animate_downarrow);
+                        arrowAnimate = (AnimationDrawable) fab.getDrawable();
+                        arrowAnimate.start();
+                        Toast.makeText(context,"Downloading", Toast.LENGTH_SHORT).show();
                     }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
-                }
-            }).addOnPausedListener(new OnPausedListener<FileDownloadTask.TaskSnapshot>() {
-                @Override
-                public void onPaused(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
-                    Log.e("onPauselistner ","getFile paused");
-                }
-            });
+            }).addOnPausedListener(snapshot -> Log.e("onPauselistner ","getFile paused"));
         }
         return Uri.parse(localFile.getAbsolutePath());
     }
 
     private static StorageReference firebaseStorageReferences(String audioName){
         FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageReference = storage.getReferenceFromUrl("gs://bhagvadgita-26c63.appspot.com/audiomp3files");
+        StorageReference storageReference = storage.getReferenceFromUrl("gs://bhagvadgita-26c63.appspot.com/audiomp3files/");
         return storageReference.child(audioName);
     }
 

@@ -58,7 +58,7 @@ public class Adhyay1_AC1 extends AppCompatActivity implements ViewPager.OnPageCh
                 isTimerFinished = true;
                 adTimer.cancel();
             }
-        },3*60*1000);
+        },1000);
     }
 
     public static void pageGetPosition() {

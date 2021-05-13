@@ -3,8 +3,8 @@ package com.parmu.bhagvadgita.misc;
 
 
 public class RecycleViewItem  {
-    private int mImageResource;
-    private String mText1;
+    private final int mImageResource;
+    private final String mText1;
 
     public RecycleViewItem(int imageResource, String text1){
         mImageResource = imageResource;

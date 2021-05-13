@@ -73,7 +73,8 @@ public class Fragment12 extends Fragment {
     constraintLayout = view12.findViewById(R.id.constrained_layout);
     fabPlayBtn12 = view12.findViewById(R.id.fabplaysound12);
 
-    fileExist = getArguments().getBoolean("fileexist12");
+        assert getArguments() != null;
+        fileExist = getArguments().getBoolean("fileexist12");
     fileName =getArguments().getString("filename12");
     tvSanskrit.setText(getArguments().getString("sanskrit12"));
     tvBhavarth.setText(getArguments().getString("bhavarth12"));

@@ -890,7 +890,7 @@ public class  ViewPagerAdapter2 extends FragmentStatePagerAdapter {
         {
             return "श्लोक 42,43,44";
         }
-        else if(position<=70&&position>=43)
+        else if(position<=70)
         {
             position=position+2;
             return "श्लोक "+position;

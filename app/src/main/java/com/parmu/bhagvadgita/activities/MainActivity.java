@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.CompoundButton;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -18,19 +17,14 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
 import com.parmu.bhagvadgita.R;
 import com.parmu.bhagvadgita.misc.InterstitialAdMobClass;
 import com.parmu.bhagvadgita.misc.RecycleViewAdapter;
 import com.parmu.bhagvadgita.misc.RecycleViewItem;
-
 import java.util.ArrayList;
-import java.util.Collections;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,13 +60,7 @@ public class MainActivity extends AppCompatActivity {
         arrayListForRecyclerView();
         configForRecyclerView();
         nightDaySwitchModeFunctionality();
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-        //remove when releasing app
-        MobileAds.setRequestConfiguration(new RequestConfiguration.Builder().setTestDeviceIds(Collections.singletonList("0D2987B0AA759EE9D1671F1FB1DD592F")).build());
+        MobileAds.initialize(this, initializationStatus -> {});
     }
 
     // when hamberger is clicked  then drawer opens
@@ -115,95 +103,94 @@ public class MainActivity extends AppCompatActivity {
         recycleViewAdapter = new RecycleViewAdapter(recycleViewItemList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(recycleViewAdapter);
-        recycleViewAdapter.setOnItemClickListener(new RecycleViewAdapter.OnItemClickListener(){
-            @Override
-            public void onItemClick(int position){
+        recycleViewAdapter.setOnItemClickListener(position -> {
 
-                if (position == 0) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay1_AC1.class);
-                    startActivity(intent);
-
-                }
-                if (position == 1) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay2_AC2.class);
-                    startActivity(intent);
-
-                }
-                if (position == 2) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay3_AC3.class);
-                    startActivity(intent);
-
-                }
-                if (position == 3) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay4_AC4.class);
-                    startActivity(intent);
-                }
-                if (position == 4) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay5_AC_5.class);
-                    startActivity(intent);
-                }
-                if (position == 5) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay6_AC6.class);
-                    startActivity(intent);
-                }
-                if (position == 6) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay7_AC7.class);
-                    startActivity(intent);
-                }
-                if (position == 7) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay8_AC8.class);
-                    startActivity(intent);
-                }
-                if (position == 8) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay9_AC9.class);
-                    startActivity(intent);
-                }
-                if (position == 9) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay10_AC10.class);
-                    startActivity(intent);
-                }
-                if (position == 10) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay11_AC11.class);
-                    startActivity(intent);
-                }
-                if (position == 11) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay12_AC12.class);
-                    startActivity(intent);
-                }
-                if (position == 12) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay13_AC13.class);
-                    startActivity(intent);
-                }
-                if (position == 13) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay14_AC14.class);
-                    startActivity(intent);
-                }
-                if (position == 14) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay15_AC15.class);
-                    startActivity(intent);
-                }
-                if (position == 15) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay16_AC16.class);
-                    startActivity(intent);
-                }
-                if (position == 16) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay17_AC17.class);
-                    startActivity(intent);
-                }
-                if (position == 17) {
-                    Intent intent = new Intent(MainActivity.this, Adhyay18_AC18.class);
-                    startActivity(intent);
-                }
-
+            if (position == 0) {
+                Intent intent = new Intent(MainActivity.this, Adhyay1_AC1.class);
+                startActivity(intent);
 
             }
+            if (position == 1) {
+                Intent intent = new Intent(MainActivity.this, Adhyay2_AC2.class);
+                startActivity(intent);
+
+            }
+            if (position == 2) {
+                Intent intent = new Intent(MainActivity.this, Adhyay3_AC3.class);
+                startActivity(intent);
+
+            }
+            if (position == 3) {
+                Intent intent = new Intent(MainActivity.this, Adhyay4_AC4.class);
+                startActivity(intent);
+            }
+            if (position == 4) {
+                Intent intent = new Intent(MainActivity.this, Adhyay5_AC_5.class);
+                startActivity(intent);
+            }
+            if (position == 5) {
+                Intent intent = new Intent(MainActivity.this, Adhyay6_AC6.class);
+                startActivity(intent);
+            }
+            if (position == 6) {
+                Intent intent = new Intent(MainActivity.this, Adhyay7_AC7.class);
+                startActivity(intent);
+            }
+            if (position == 7) {
+                Intent intent = new Intent(MainActivity.this, Adhyay8_AC8.class);
+                startActivity(intent);
+            }
+            if (position == 8) {
+                Intent intent = new Intent(MainActivity.this, Adhyay9_AC9.class);
+                startActivity(intent);
+            }
+            if (position == 9) {
+                Intent intent = new Intent(MainActivity.this, Adhyay10_AC10.class);
+                startActivity(intent);
+            }
+            if (position == 10) {
+                Intent intent = new Intent(MainActivity.this, Adhyay11_AC11.class);
+                startActivity(intent);
+            }
+            if (position == 11) {
+                Intent intent = new Intent(MainActivity.this, Adhyay12_AC12.class);
+                startActivity(intent);
+            }
+            if (position == 12) {
+                Intent intent = new Intent(MainActivity.this, Adhyay13_AC13.class);
+                startActivity(intent);
+            }
+            if (position == 13) {
+                Intent intent = new Intent(MainActivity.this, Adhyay14_AC14.class);
+                startActivity(intent);
+            }
+            if (position == 14) {
+                Intent intent = new Intent(MainActivity.this, Adhyay15_AC15.class);
+                startActivity(intent);
+            }
+            if (position == 15) {
+                Intent intent = new Intent(MainActivity.this, Adhyay16_AC16.class);
+                startActivity(intent);
+            }
+            if (position == 16) {
+                Intent intent = new Intent(MainActivity.this, Adhyay17_AC17.class);
+                startActivity(intent);
+            }
+            if (position == 17) {
+                Intent intent = new Intent(MainActivity.this, Adhyay18_AC18.class);
+                startActivity(intent);
+            }
+
+
         });
     }
     //hamberge menu action bar and toolbar
+    @SuppressLint("NonConstantResourceId")
     private void hambergerToolbarActionBar(){
         toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         toolbar.setTitle("अध्याय");
+        setSupportActionBar(toolbar);
+
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigationView);
         actionBar = getSupportActionBar();
@@ -211,49 +198,50 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_hamburger_menu);
+//        actionBar.setTitle("अध्याय");
 
         //listener for navigation item click
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.dark_mode:
-                        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_NO && !switchDark.isChecked()){
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                            switchDark.setChecked(true);
-                            editor.putBoolean("isDarkModeOn", true);
-                        }
-                        else{
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                            switchDark.setChecked(false);
-                            editor.putBoolean("isDarkModeOn", false);
-                        }
-                        editor.apply();
-                        menuItem.setVisible(true);
-                        return true;
-                    case R.id.share_drawer:
-                        Intent iShare= new Intent(Intent.ACTION_VIEW);
-                        iShare.setData(Uri.parse(getResources().getString(R.string.app_link_playstore)+ "com.parmu.bhagvadgita"));
-                        startActivity(iShare);
-                        drawerLayout.closeDrawers();
-                        return true;
-                    case R.id.rate:
-                        displayMessage("rate the app (currently not available)");
-                        drawerLayout.closeDrawers();
-                        return true;
-                    case R.id.feedback:
-                        feedbackIntent();
-                        drawerLayout.closeDrawers();
-                        return true;
-                    case R.id.about:
-                        Intent intent = new Intent(MainActivity.this,AboutAppActivity.class);
-                        startActivity(intent);
-                        drawerLayout.closeDrawers();
-                        return true;
-                }
-                return true;
+        navigationView.setNavigationItemSelectedListener(menuItem -> {
+            switch (menuItem.getItemId()) {
+                case R.id.dark_mode:
+                    if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_NO && !switchDark.isChecked()){
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        switchDark.setChecked(true);
+                        editor.putBoolean("isDarkModeOn", true);
+                    }
+                    else{
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        switchDark.setChecked(false);
+                        editor.putBoolean("isDarkModeOn", false);
+                    }
+                    editor.apply();
+                    menuItem.setVisible(true);
+                    return true;
+                case R.id.share_drawer:
+                    Intent iShare= new Intent(Intent.ACTION_VIEW);
+                    iShare.setData(Uri.parse(getResources().getString(R.string.app_link_playstore)+ "com.parmu.bhagvadgita"));
+                    startActivity(iShare);
+                    drawerLayout.closeDrawers();
+                    return true;
+                case R.id.rate:
+                    displayMessage("rate the app (currently not available)");
+                    drawerLayout.closeDrawers();
+                    return true;
+                case R.id.feedback:
+                    feedbackIntent();
+                    drawerLayout.closeDrawers();
+                    return true;
+                case R.id.about:
+                    Intent intent = new Intent(MainActivity.this,AboutAppActivity.class);
+                    startActivity(intent);
+                    drawerLayout.closeDrawers();
+                    return true;
+                case R.id.privacy_policy:
+                    Intent ipolicy = new Intent(Intent.ACTION_VIEW);
+                    ipolicy.setData(Uri.parse(""));
+                    startActivity(ipolicy);
             }
+            return true;
         });
     }
     //nightday mode switch functionality
@@ -263,18 +251,15 @@ public class MainActivity extends AppCompatActivity {
         switchDark = item.getActionView().findViewById(R.id.switch_dark);
         editor=sharedPref.edit();
         switchDark.setChecked(isDarkModeOn);
-        switchDark.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    editor.putBoolean("isDarkModeOn", true);
-                } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    editor.putBoolean("isDarkModeOn", false);
-                }
-                editor.apply();
+        switchDark.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (b) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                editor.putBoolean("isDarkModeOn", true);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                editor.putBoolean("isDarkModeOn", false);
             }
+            editor.apply();
         });
 
 
