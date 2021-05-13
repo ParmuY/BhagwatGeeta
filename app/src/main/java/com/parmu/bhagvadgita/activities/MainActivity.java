@@ -238,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.privacy_policy:
                     Intent ipolicy = new Intent(Intent.ACTION_VIEW);
-                    ipolicy.setData(Uri.parse(""));
+                    ipolicy.setData(Uri.parse("https://bhgvd-giitaa-bhagavad-g.flycricket.io/privacy.html"));
                     startActivity(ipolicy);
             }
             return true;
