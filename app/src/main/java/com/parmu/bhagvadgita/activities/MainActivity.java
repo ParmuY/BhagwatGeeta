@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-
+//code optimization and improvization
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     @SuppressLint("UseSwitchCompatOrMaterialCode")
