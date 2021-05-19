@@ -19,7 +19,7 @@ import com.parmu.bhagvadgita.misc.ShareAsBitmap;
 
 import java.io.IOException;
 
-public class Fragment1 extends Fragment {
+public class SlokaPagerFragment extends Fragment {
 
     private Context context;
     private TextView tvSanskrit;
@@ -36,12 +36,12 @@ public class Fragment1 extends Fragment {
 
 
 
-    public Fragment1() {
+    public SlokaPagerFragment() {
         // Required empty public constructor
     }
 
-    public static Fragment1 newInstance(String param1, String param2) {
-        Fragment1 fragment = new Fragment1();
+    public static SlokaPagerFragment newInstance(String param1, String param2) {
+        SlokaPagerFragment fragment = new SlokaPagerFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
