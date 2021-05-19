@@ -73,8 +73,8 @@ public class Fragment1 extends Fragment {
         constraintLayout = view.findViewById(R.id.constrained_layout);
 
         assert getArguments() != null;
-        tvSanskrit.setText(getArguments().getString("sanskrit1"));
-        tvBhavarth.setText(getArguments().getString("bhavarth1"));
+        tvSanskrit.setText(getArguments().getString("sanskrit"));
+        tvBhavarth.setText(getArguments().getString("bhavarth"));
         fileExist = getArguments().getBoolean("fileexist");
         fileName = getArguments().getString("filename");
         checkIfFileExist();
