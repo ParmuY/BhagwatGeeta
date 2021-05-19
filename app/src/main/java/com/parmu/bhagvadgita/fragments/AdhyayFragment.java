@@ -3,18 +3,11 @@ package com.parmu.bhagvadgita.fragments;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import com.google.android.material.tabs.TabLayout;
@@ -40,7 +33,6 @@ import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter8;
 import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter9;
 
 public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeListener {
-    private ViewPager viewPager;
 
     public AdhyayFragment() {
         // Required empty public constructor
@@ -59,9 +51,8 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
         ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
-
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
-        viewPager = rootAdhyayFrag.findViewById(R.id.view_pager);
+        ViewPager viewPager = rootAdhyayFrag.findViewById(R.id.view_pager);
         if (getArguments() != null) {
             String adhyayName = getArguments().getString("adhyayname");
                 if(adhyayName.equals("adhyay1")) {
@@ -154,20 +145,13 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
                     ViewPagerAdapter18 adapter18 = new ViewPagerAdapter18(requireActivity().getSupportFragmentManager(),getContext());
                     viewPager.setAdapter(adapter18);
                 }
+
         }
         viewPager.addOnPageChangeListener(this);
         TabLayout tabLayout = rootAdhyayFrag.findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
-        return rootAdhyayFrag;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            Log.e("onoptionitem selected", "in adhyay fragment");
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return rootAdhyayFrag;
     }
 
     @Override
@@ -202,4 +186,17 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
         }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (ClassForCombinedMediaPlayer.mediaPlayerOb != null) {
+            if (ClassForCombinedMediaPlayer.mediaPlayerOb.isPlaying()) {
+                ClassForCombinedMediaPlayer.mediaPlayerOb.reset();
+            }
+        }
+        if(ClassForCombinedMediaPlayer.fileDownloadTask!=null){
+            ClassForCombinedMediaPlayer.fileDownloadTask.cancel();
+            ClassForCombinedMediaPlayer.fileDownloadTask = null;
+        }
+    }
 }

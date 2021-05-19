@@ -89,7 +89,7 @@ public class ListViewFragment extends Fragment {
                 requireActivity().getSupportFragmentManager().beginTransaction()
                         .setReorderingAllowed(true)
                         .replace(R.id.frag_container_list_view, AdhyayFragment.class, bundle1, "adhyay1")
-                        .addToBackStack("adhyay1")
+                        .addToBackStack("adhyay")
                         .commit();
             }
             else if(position==1) {
