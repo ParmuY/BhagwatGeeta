@@ -8,9 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-
 import com.parmu.bhagvadgita.R;
-import com.parmu.bhagvadgita.activities.Adhyay1_AC1;
 import com.parmu.bhagvadgita.fragments.Fragment1;
 import com.parmu.bhagvadgita.misc.FileChecker;
 
@@ -33,8 +31,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s1));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s1));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s1));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s1));
             fragment1.setArguments(bundle);
             return fragment1;
 
@@ -47,8 +45,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s2));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s2));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s2));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s2));
             fragment1.setArguments(bundle);
             return fragment1;
 
@@ -61,8 +59,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s3));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s3));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s3));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s3));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -73,8 +71,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s4_5_6));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s4_5_6));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s4_5_6));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s4_5_6));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -85,8 +83,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s7));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s7));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s7));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s7));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -97,8 +95,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s8));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s8));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s8));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s8));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -109,8 +107,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s9));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s9));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s9));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s9));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -121,8 +119,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s10));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s10));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s10));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s10));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -133,8 +131,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s11));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s11));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s11));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s11));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -145,8 +143,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s12));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s12));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s12));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s12));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -157,8 +155,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s13));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s13));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s13));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s13));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -169,8 +167,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s14));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s14));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s14));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s14));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -181,8 +179,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s15));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s15));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s15));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s15));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -193,8 +191,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s16));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s16));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s16));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s16));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -205,8 +203,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s17_18));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s17_18));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s17_18));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s17_18));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -217,8 +215,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s19));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s19));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s19));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s19));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -229,8 +227,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s20_21));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s20_21));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s20_21));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s20_21));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -241,8 +239,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s22));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s22));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s22));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s22));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -253,8 +251,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s23));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s23));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s23));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s23));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -265,8 +263,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s24_25));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s24_25));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s24_25));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s24_25));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -277,8 +275,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s26));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s26));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s26));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s26));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -289,8 +287,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s27));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s27));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s27));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s27));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -301,8 +299,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s28_29));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s28_29));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s28_29));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s28_29));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -313,8 +311,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s30));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s30));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s30));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s30));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -325,8 +323,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s31));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s31));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s31));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s31));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -337,8 +335,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s32));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s32));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s32));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s32));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -349,8 +347,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s33));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s33));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s33));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s33));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -361,8 +359,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s34));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s34));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s34));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s34));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -371,8 +369,10 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Fragment1 fragment1 =new Fragment1();
             fileName = "c1s35"+"."+"mp3";
             Bundle bundle = new Bundle();
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s35));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s35));
+            bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
+            bundle.putString("filename", fileName);
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s35));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s35));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -383,8 +383,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s36));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s36));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s36));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s36));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -395,8 +395,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s37));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s37));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s37));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s37));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -407,8 +407,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s38_39));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s38_39));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s38_39));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s38_39));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -419,8 +419,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s40));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s40));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s40));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s40));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -431,8 +431,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s41));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s41));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s41));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s41));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -443,8 +443,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s42));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s42));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s42));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s42));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -455,8 +455,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s43));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s43));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s43));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s43));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -467,8 +467,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s44));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s44));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s44));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s44));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -479,8 +479,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s45));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s45));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s45));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s45));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -491,8 +491,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s46));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s46));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s46));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s46));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -503,8 +503,8 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
             Bundle bundle = new Bundle();
             bundle.putBoolean("fileexist", FileChecker.checkFileForExistence(context, fileName));
             bundle.putString("filename", fileName);
-            bundle.putString("sanskrit1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.sanskrit_c1s47));
-            bundle.putString("bhavarth1", Adhyay1_AC1.getAdhyay1Resources().getString(R.string.bhavarth_c1s47));
+            bundle.putString("sanskrit1", context.getString(R.string.sanskrit_c1s47));
+            bundle.putString("bhavarth1", context.getString(R.string.bhavarth_c1s47));
             fragment1.setArguments(bundle);
             return fragment1;
         }
@@ -570,7 +570,7 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
         {
             return "श्लोक 28,29";
         }
-        else if(position>=24&&position<=31)
+        else if(position<=31)
         {
             position = position+6;
             return "श्लोक "+position;
@@ -579,7 +579,7 @@ public class ViewPagerAdapter1 extends FragmentStatePagerAdapter {
         {
             return "श्लोक 38,39";
         }
-        else if(position>=33&&position<=40)
+        else if(position<=40)
         {
             position=position+7;
             return "श्लोक "+position;

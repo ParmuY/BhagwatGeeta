@@ -44,9 +44,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         }
 
     }
-
     public RecycleViewAdapter(ArrayList<RecycleViewItem> recycleViewItemList){
-
         mItemList  = recycleViewItemList;
 
     }

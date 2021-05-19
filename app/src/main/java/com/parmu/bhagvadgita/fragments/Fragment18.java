@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.parmu.bhagvadgita.activities.Adhyay18_AC18;
 import com.parmu.bhagvadgita.R;
 import com.parmu.bhagvadgita.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagvadgita.misc.RequestPermissions;
@@ -82,8 +81,6 @@ public class Fragment18 extends Fragment{
       fabPlayBtn18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Adhyay18_AC18.pageGetPosition18();
                 try {
                     ClassForCombinedMediaPlayer.playDisSound(context18,fileName,fabPlayBtn18);
                 } catch (IOException | InterruptedException e) {

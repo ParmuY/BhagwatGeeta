@@ -2,17 +2,13 @@ package com.parmu.bhagvadgita.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.parmu.bhagvadgita.activities.Adhyay7_AC7;
 import com.parmu.bhagvadgita.R;
 import com.parmu.bhagvadgita.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagvadgita.misc.RequestPermissions;
@@ -80,8 +76,6 @@ public class Fragment7 extends Fragment{
         fabPlayBtn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Adhyay7_AC7.pageGetPosition7();
                 try {
                         ClassForCombinedMediaPlayer.playDisSound(context7,fileName,fabPlayBtn7);
                     } catch (IOException | InterruptedException e) {

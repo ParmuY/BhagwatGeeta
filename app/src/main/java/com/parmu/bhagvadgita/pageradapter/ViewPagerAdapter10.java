@@ -2,15 +2,12 @@ package com.parmu.bhagvadgita.pageradapter;
 
 import android.content.Context;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-
 import com.parmu.bhagvadgita.R;
-import com.parmu.bhagvadgita.activities.Adhyay10_AC10;
 import com.parmu.bhagvadgita.fragments.Fragment10;
 import com.parmu.bhagvadgita.misc.FileChecker;
 
@@ -33,8 +30,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s1"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s1));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s1));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s1));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s1));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -45,8 +42,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s2"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s2));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s2));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s2));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s2));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -57,8 +54,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s3"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s3));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s3));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s3));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s3));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -69,8 +66,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s4_5"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s4_5));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s4_5));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s4_5));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s4_5));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -81,8 +78,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s6"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s6));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s6));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s6));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s6));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -93,8 +90,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s7"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s7));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s7));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s7));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s7));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -105,8 +102,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s8"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s8));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s8));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s8));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s8));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -117,8 +114,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s9"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s9));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s9));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s9));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s9));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -129,8 +126,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s10"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s10));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s10));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s10));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s10));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -141,8 +138,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s11"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s11));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s11));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s11));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s11));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -153,8 +150,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s12_13"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s12_13));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s12_13));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s12_13));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s12_13));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -165,8 +162,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s14"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s14));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s14));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s14));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s14));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -177,8 +174,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s15"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s15));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s15));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s15));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s15));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -189,8 +186,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s16"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s16));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s16));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s16));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s16));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -201,8 +198,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s17"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s17));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s17));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s17));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s17));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -213,8 +210,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s18"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s18));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s18));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s18));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s18));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -225,8 +222,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s19"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s19));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s19));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s19));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s19));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -237,8 +234,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s20"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s20));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s20));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s20));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s20));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -249,8 +246,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s21"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s21));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s21));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s21));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s21));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -261,8 +258,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s22"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s22));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s22));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s22));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s22));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -273,8 +270,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s23"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s23));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s23));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s23));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s23));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -285,8 +282,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s24"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s24));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s24));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s24));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s24));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -297,8 +294,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s25"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s25));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s25));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s25));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s25));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -309,8 +306,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s26"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s26));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s26));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s26));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s26));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -321,8 +318,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s27"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s27));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s27));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s27));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s27));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -333,8 +330,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s28"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s28));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s28));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s28));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s28));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -345,8 +342,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s29"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s29));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s29));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s29));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s29));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -357,8 +354,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s30"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s30));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s30));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s30));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s30));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -369,8 +366,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s31"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s31));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s31));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s31));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s31));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -381,8 +378,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s32"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s32));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s32));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s32));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s32));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -393,8 +390,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s33"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s33));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s33));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s33));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s33));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -405,8 +402,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s34"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s34));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s34));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s34));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s34));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -417,8 +414,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s35"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s35));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s35));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s35));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s35));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -429,8 +426,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s36"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s36));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s36));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s36));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s36));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -441,8 +438,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s37"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s37));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s37));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s37));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s37));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -453,8 +450,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s38"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s38));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s38));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s38));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s38));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -465,8 +462,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s39"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s39));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s39));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s39));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s39));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -477,8 +474,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s40"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s40));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s40));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s40));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s40));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -489,8 +486,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s41"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s41));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s41));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s41));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s41));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -501,8 +498,8 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             fileName = "c10s42"+"."+"mp3";
             bundle.putBoolean("fileexist10", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename10", fileName);
-            bundle.putString("sanskrit10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.sanskrit_c10s42));
-            bundle.putString("bhavarth10", Adhyay10_AC10.getAdhyay10Resources().getString(R.string.bhavarth_c10s42));
+            bundle.putString("sanskrit10", context.getString(R.string.sanskrit_c10s42));
+            bundle.putString("bhavarth10", context.getString(R.string.bhavarth_c10s42));
             fragment10.setArguments(bundle);
             return fragment10;
         }
@@ -523,14 +520,14 @@ public class ViewPagerAdapter10 extends FragmentStatePagerAdapter {
             return "श्लोक " + position;
         } else if (position == 4) {
             return "श्लोक 4,5";
-        } else if (position <= 10 && position >= 5) {
+        } else if (position <= 10) {
             position = position + 1;
             return "श्लोक " + position;
         } 
         else if(position==11){
             return "श्लोक 12,13";
         }
-        else if (position <= 40 && position >= 11) {
+        else if (position <= 40) {
             position = position + 2;
             return "श्लोक " + position;
         }

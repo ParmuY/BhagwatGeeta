@@ -8,9 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-
 import com.parmu.bhagvadgita.R;
-import com.parmu.bhagvadgita.activities.Adhyay4_AC4;
 import com.parmu.bhagvadgita.fragments.Fragment4;
 import com.parmu.bhagvadgita.misc.FileChecker;
 
@@ -34,8 +32,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s1"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s1));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s1));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s1));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s1));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -46,8 +44,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s2"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s2));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s2));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s2));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s2));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -58,8 +56,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s3"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s3));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s3));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s3));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s3));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -70,8 +68,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s4"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s4));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s4));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s4));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s4));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -82,8 +80,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s5"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s5));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s5));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s5));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s5));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -94,8 +92,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s6"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s6));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s6));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s6));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s6));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -106,8 +104,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s7"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s7));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s7));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s7));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s7));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -118,8 +116,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s8"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s8));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s8));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s8));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s8));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -130,8 +128,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s9"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s9));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s9));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s9));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s9));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -142,8 +140,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s10"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s10));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s10));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s10));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s10));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -154,8 +152,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s11"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s11));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s11));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s11));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s11));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -166,8 +164,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s12"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s12));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s12));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s12));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s12));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -178,8 +176,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s13"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s13));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s13));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s13));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s13));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -190,8 +188,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s14"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s14));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s14));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s14));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s14));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -202,8 +200,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s15"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s15));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s15));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s15));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s15));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -214,8 +212,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s16"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s16));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s16));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s16));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s16));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -226,8 +224,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s17"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s17));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s17));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s17));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s17));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -238,8 +236,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s18"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s18));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s18));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s18));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s18));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -250,8 +248,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s19"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s19));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s19));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s19));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s19));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -262,8 +260,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s20"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s20));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s20));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s20));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s20));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -274,8 +272,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s21"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s21));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s21));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s21));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s21));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -286,8 +284,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s22"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s22));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s22));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s22));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s22));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -298,8 +296,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s23"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s23));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s23));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s23));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s23));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -310,8 +308,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s24"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s24));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s24));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s24));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s24));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -322,8 +320,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s25"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s25));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s25));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s25));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s25));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -334,8 +332,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s26"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s26));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s26));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s26));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s26));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -346,8 +344,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s27"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s27));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s27));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s27));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s27));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -358,8 +356,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s28"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s28));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s28));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s28));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s28));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -370,8 +368,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s29_30"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s29_30));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s29_30));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s29_30));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s29_30));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -382,8 +380,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s31"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s31));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s31));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s31));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s31));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -394,8 +392,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s32"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s32));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s32));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s32));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s32));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -406,8 +404,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s33"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s33));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s33));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s33));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s33));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -418,8 +416,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s34"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s34));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s34));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s34));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s34));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -430,8 +428,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s35"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s35));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s35));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s35));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s35));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -442,8 +440,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s36"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s36));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s36));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s36));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s36));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -454,8 +452,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s37"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s37));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s37));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s37));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s37));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -466,8 +464,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s38"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s38));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s38));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s38));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s38));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -478,8 +476,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s39"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s39));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s39));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s39));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s39));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -490,8 +488,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s40"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s40));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s40));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s40));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s40));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -502,8 +500,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s41"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s41));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s41));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s41));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s41));
             fragment4.setArguments(bundle);
             return fragment4;
         }
@@ -514,8 +512,8 @@ public class ViewPagerAdapter4 extends FragmentStatePagerAdapter {
             fileName = "c4s42"+"."+"mp3";
             bundle.putBoolean("fileexist4", FileChecker.checkFileForExistence(context,fileName));
             bundle.putString("filename4", fileName);
-            bundle.putString("sanskrit4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.sanskrit_c4s42));
-            bundle.putString("bhavarth4", Adhyay4_AC4.getAdhyay4Resources().getString(R.string.bhavarth_c4s42));
+            bundle.putString("sanskrit4", context.getString(R.string.sanskrit_c4s42));
+            bundle.putString("bhavarth4", context.getString(R.string.bhavarth_c4s42));
             fragment4.setArguments(bundle);
             return fragment4;
         }
