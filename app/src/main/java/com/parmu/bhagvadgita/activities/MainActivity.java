@@ -26,6 +26,7 @@ import com.parmu.bhagvadgita.misc.InterstitialAdMobClass;
 
 public class MainActivity extends AppCompatActivity {
 //code optimization and improvization
+    //bitmap feature implementation branch
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     @SuppressLint("UseSwitchCompatOrMaterialCode")
