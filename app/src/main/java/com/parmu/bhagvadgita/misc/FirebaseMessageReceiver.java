@@ -13,7 +13,7 @@ import androidx.core.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.parmu.bhagvadgita.R;
-import com.parmu.bhagvadgita.activities.Adhyay17_AC17;
+import com.parmu.bhagvadgita.activities.MainActivity;
 
 @SuppressLint("MissingFirebaseInstanceTokenRefresh")
 public class FirebaseMessageReceiver extends FirebaseMessagingService {
@@ -25,7 +25,7 @@ public class FirebaseMessageReceiver extends FirebaseMessagingService {
     }
     public void showNotification(String title, String message){
         // Pass the intent to switch to the MainActivity
-        Intent intent = new Intent(this, Adhyay17_AC17.class);
+        Intent intent = new Intent(this, MainActivity.class);
         String channel_id = "notification_channel";
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);

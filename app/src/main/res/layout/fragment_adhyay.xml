@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activities.Adhyay6_AC6"
-    >
-    <include
-        layout="@layout/toolbar_layout"
-        android:id="@+id/toolbar"/>
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AdhyayFragment"
+    android:orientation="vertical">
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="4dp"
-        android:id="@+id/tabs"
-        app:tabSelectedTextColor="#4CAF50"
+        android:id="@+id/tab_layout"
         android:background="@color/colorPrimary"
-        app:tabGravity="fill"
+        android:elevation="4dp"
+        app:tabGravity="center"
         app:tabMode="scrollable"
         app:tabTextColor="#FFF"
+        app:tabSelectedTextColor="#4CAF50"
         tools:targetApi="lollipop" />
+
     <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/pager6"/>
+        android:layout_height="match_parent">
+    </androidx.viewpager.widget.ViewPager>
+
 </LinearLayout>

@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.parmu.bhagvadgita.activities.Adhyay12_AC12;
 import com.parmu.bhagvadgita.R;
 import com.parmu.bhagvadgita.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagvadgita.misc.RequestPermissions;
@@ -20,30 +19,29 @@ import com.parmu.bhagvadgita.misc.ShareAsBitmap;
 
 import java.io.IOException;
 
-public class Fragment12 extends Fragment {
+public class SlokaPagerFragment extends Fragment {
+
+    private Context context;
     private TextView tvSanskrit;
     private TextView tvBhavarth;
-    private Context context12;
+    private FloatingActionButton fabPlayBtn;
+    private boolean fileExist;
+    private String fileName;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions;
     private ConstraintLayout constraintLayout;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
-    private boolean fileExist;
-    private String fileName;
-    private FloatingActionButton fabPlayBtn12;
-
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private String mParam1;
-    private String mParam2;
 
-    public Fragment12() {
+
+    public SlokaPagerFragment() {
         // Required empty public constructor
     }
 
-    public static Fragment12 newInstance(String param1, String param2) {
-        Fragment12 fragment = new Fragment12();
+    public static SlokaPagerFragment newInstance(String param1, String param2) {
+        SlokaPagerFragment fragment = new SlokaPagerFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -56,47 +54,49 @@ public class Fragment12 extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            String mParam1 = getArguments().getString(ARG_PARAM1);
+            String mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        context12= getActivity();
+        context= getActivity();
         requestPermissions = new RequestPermissions();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-    View view12=inflater.inflate(R.layout.fragment_12, container, false);
-    tvSanskrit =view12.findViewById(R.id.sanskrit_12);
-    tvBhavarth = view12.findViewById(R.id.bhavarth_12);
-    constraintLayout = view12.findViewById(R.id.constrained_layout);
-    fabPlayBtn12 = view12.findViewById(R.id.fabplaysound12);
+        View view=inflater.inflate(R.layout.fragment_1, container, false);
+        tvSanskrit = view.findViewById(R.id.sanskrit_1);
+        tvBhavarth = view.findViewById(R.id.bhavarth_1);
+        fabPlayBtn = view.findViewById(R.id.fabplaysound);
+        constraintLayout = view.findViewById(R.id.constrained_layout);
 
         assert getArguments() != null;
-        fileExist = getArguments().getBoolean("fileexist12");
-    fileName =getArguments().getString("filename12");
-    tvSanskrit.setText(getArguments().getString("sanskrit12"));
-    tvBhavarth.setText(getArguments().getString("bhavarth12"));
-    checkIfFileExist();
+        tvSanskrit.setText(getArguments().getString("sanskrit"));
+        tvBhavarth.setText(getArguments().getString("bhavarth"));
+        fileExist = getArguments().getBoolean("fileexist");
+        fileName = getArguments().getString("filename");
+        checkIfFileExist();
 
-        fabPlayBtn12.setOnClickListener(new View.OnClickListener() {
+
+        fabPlayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Adhyay12_AC12.pageGetPosition12();
                 try {
-                    ClassForCombinedMediaPlayer.playDisSound(context12,fileName,fabPlayBtn12);
+                    ClassForCombinedMediaPlayer.playDisSound(context,fileName,fabPlayBtn);
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
-            }
+               }
         });
-    return view12;
+        return view;
+
     }
 
+
 //    @Override
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
 //
 //        inflater.inflate(R.menu.app_bar_menu_1, menu);
 //        super.onCreateOptionsMenu(menu, inflater);
@@ -105,25 +105,23 @@ public class Fragment12 extends Fragment {
 //    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 //        int id = item.getItemId();
 //        if (id==R.id.share_shlola){
-//            Adhyay12_AC12.pageGetPosition12();
+//            Adhyay1_AC1.pageGetPosition();
 //            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
 //            try {
-//                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 12","c12_"+ pagePosition12);
+//                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 1","c1_"+ pagePosition);
 //            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
-//
 //        }
 //        return super.onOptionsItemSelected(item);
 //    }
     private void checkIfFileExist(){
 
         if(!fileExist){
-            fabPlayBtn12.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
+            fabPlayBtn.setImageResource(R.drawable.ic_baseline_arrow_downward_24);
         }
         else{
-            fabPlayBtn12.setImageResource(R.drawable.ic_baseline_volume_up_24);
+            fabPlayBtn.setImageResource(R.drawable.ic_baseline_volume_up_24);
         }
     }
-
 }
