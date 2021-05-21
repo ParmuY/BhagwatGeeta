@@ -1,12 +1,18 @@
 package com.parmu.bhagvadgita.fragments;
 
+import android.Manifest;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -18,6 +24,7 @@ import com.parmu.bhagvadgita.misc.RequestPermissions;
 import com.parmu.bhagvadgita.misc.ShareAsBitmap;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class SlokaPagerFragment extends Fragment {
 
@@ -29,7 +36,6 @@ public class SlokaPagerFragment extends Fragment {
     private String fileName;
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions;
-    private ConstraintLayout constraintLayout;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -52,13 +58,13 @@ public class SlokaPagerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
         if (getArguments() != null) {
             String mParam1 = getArguments().getString(ARG_PARAM1);
             String mParam2 = getArguments().getString(ARG_PARAM2);
         }
         context= getActivity();
         requestPermissions = new RequestPermissions();
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -70,7 +76,6 @@ public class SlokaPagerFragment extends Fragment {
         tvSanskrit = view.findViewById(R.id.sanskrit_1);
         tvBhavarth = view.findViewById(R.id.bhavarth_1);
         fabPlayBtn = view.findViewById(R.id.fabplaysound);
-        constraintLayout = view.findViewById(R.id.constrained_layout);
 
         assert getArguments() != null;
         tvSanskrit.setText(getArguments().getString("sanskrit"));
@@ -78,7 +83,6 @@ public class SlokaPagerFragment extends Fragment {
         fileExist = getArguments().getBoolean("fileexist");
         fileName = getArguments().getString("filename");
         checkIfFileExist();
-
 
         fabPlayBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,28 +97,29 @@ public class SlokaPagerFragment extends Fragment {
         return view;
 
     }
-
-
+//
+//
 //    @Override
 //    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
-//
 //        inflater.inflate(R.menu.app_bar_menu_1, menu);
+//        Log.e("OnCreateOptionsMenu", "option menu created");
 //        super.onCreateOptionsMenu(menu, inflater);
 //    }
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        int id = item.getItemId();
-//        if (id==R.id.share_shlola){
-//            Adhyay1_AC1.pageGetPosition();
-//            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-//            try {
-//                shareAsBitmap.share_bitMap_to_Apps(getActivity(),constraintLayout, tvSanskrit,tvBhavarth,"अध्याय 1","c1_"+ pagePosition);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id==R.id.share_shlola){
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
+
+            int random = new Random().nextInt(100);
+            try {
+                shareAsBitmap.share_bitMap_to_Apps(getActivity(), tvSanskrit,tvBhavarth,"अध्याय 1","c1_"+ random);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
     private void checkIfFileExist(){
 
         if(!fileExist){

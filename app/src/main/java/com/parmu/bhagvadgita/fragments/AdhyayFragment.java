@@ -1,13 +1,19 @@
 package com.parmu.bhagvadgita.fragments;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
+
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.google.android.material.tabs.TabLayout;
@@ -40,6 +46,7 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
     }
 
     @SuppressLint("RestrictedApi")
@@ -199,4 +206,54 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
             ClassForCombinedMediaPlayer.fileDownloadTask = null;
         }
     }
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.app_bar_menu_1, menu);
+        Log.e("OnCreateOptionsMenu", "option menu created");
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+//    @Override
+//    public void onStart() {
+//        Log.e("lifecycle of fragment","onStart");
+//        super.onStart();
+//    }
+//
+//    @Override
+//    public void onResume() {
+//        Log.e("lifecycle of fragment","on resume");
+//        super.onResume();
+//    }
+//
+//
+//    @Override
+//    public void onAttach(@NonNull Context context) {
+//        Log.e("lifecycle of fragment","on attach");
+//        super.onAttach(context);
+//    }
+
+    @Override
+    public void onDestroyView() {
+
+        Log.e("lifecycle of fragment","on destroy view");
+        super.onDestroyView();
+    }
+//
+//    @Override
+//    public void onDestroy() {
+//        Log.e("lifecycle of fragment","on destroy");
+//        super.onDestroy();
+//    }
+//
+//    @Override
+//    public void onDetach() {
+//        Log.e("lifecycle of fragment","on detach");
+//        super.onDetach();
+//    }
+//
+//    @Override
+//    public void onStop() {
+//        Log.e("lifecycle of fragment","on start");
+//        super.onStop();
+//    }
 }

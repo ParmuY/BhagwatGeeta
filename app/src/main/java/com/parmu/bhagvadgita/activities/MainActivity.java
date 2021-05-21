@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
     boolean isDarkModeOn;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
             else if(fm.getBackStackEntryCount()==1){
                 fm.popBackStack("adhyay",FragmentManager.POP_BACK_STACK_INCLUSIVE);
             }
-
             return true;
         }
         return super.onOptionsItemSelected(item);

@@ -4,11 +4,18 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Environment;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -23,18 +30,49 @@ import java.io.IOException;
 
 public class ShareAsBitmap {
 
-    public Bitmap getBitmapFromView(View view, TextView textView1, TextView textView2) {
-        //Define a bitmap with the same size as the view
-        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(),view.getHeight(), Bitmap.Config.ARGB_8888);
-        //Bind a canvas to it
-        Canvas canvas = new Canvas(returnedBitmap);
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
-            view.setBackgroundResource(R.drawable.paper_texture_brown);
-            textView1.setTextColor(Color.BLACK);
-            textView2.setTextColor(Color.BLACK);
+    public Bitmap getBitmapFromView(Context context, TextView textView1, TextView textView2) {
+
+        Resources res = context.getResources();
+        float scale = res.getDisplayMetrics().density;
+        String str1 = textView1.getText().toString();
+        String str2 = textView2.getText().toString();
+        Bitmap returnedBitmap = BitmapFactory.decodeResource(res,R.drawable.bg_sloka_png);
+        Bitmap.Config bitmapConfig = returnedBitmap.getConfig();
+        if(bitmapConfig==null){
+            bitmapConfig = Bitmap.Config.ARGB_8888;
         }
-        view.draw(canvas);
-        //return the bitmap
+        returnedBitmap = returnedBitmap.copy(bitmapConfig,true);
+        Canvas canvas = new Canvas(returnedBitmap);
+        TextPaint paint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(Color.WHITE);
+        paint.setTextSize(25*scale);
+        //textwidth is taken common in str1 and str2
+        int textWidth = canvas.getWidth() - (int)(16*scale);
+        //for str1
+        StaticLayout textLayout1 = new StaticLayout(str1,paint,textWidth, Layout.Alignment.ALIGN_CENTER,1.0f,1.0f,false);
+        int textHeight1 = textLayout1.getHeight();
+        //for str2
+        StaticLayout textLayout2 = new StaticLayout(str2,paint,textWidth, Layout.Alignment.ALIGN_CENTER,1.0f,1.0f,false);
+        int textHeight2 = textLayout2.getHeight();
+
+        //coordinates for str1 sanskrit
+        int x1 = (returnedBitmap.getWidth()- textWidth)/2;
+        int y1 = (returnedBitmap.getHeight()-textHeight1)/4;
+        //coordinates for str2 bhavarth
+        int x2 = (returnedBitmap.getWidth()- textWidth)/2;
+        int y2 = (returnedBitmap.getHeight()-textHeight2)/2;
+
+        //for str1
+        canvas.save();
+        canvas.translate(x1,y1);
+        textLayout1.draw(canvas);
+        canvas.restore();
+        //for str2
+        canvas.save();
+        canvas.translate(x2,y2);
+        textLayout2.draw(canvas);
+        canvas.restore();
+
         return returnedBitmap;
     }
 
@@ -62,7 +100,7 @@ public class ShareAsBitmap {
                 }
                 try {
                     fos = new FileOutputStream(imgFile);
-                    inImage.compress(Bitmap.CompressFormat.JPEG, 51, fos);
+                    inImage.compress(Bitmap.CompressFormat.PNG, 90, fos);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -76,12 +114,12 @@ public class ShareAsBitmap {
     }
 
 
-    public void share_bitMap_to_Apps(Context context, View view, TextView textView1, TextView textView2, String adhyayN,String positionOfPager) throws IOException {
+    public void share_bitMap_to_Apps(Context context, TextView textView1, TextView textView2, String adhyayN,String positionOfPager) throws IOException {
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             String appDes = "\uD83D\uDD05"+adhyayN+"\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47"+"here will come the app link";
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("*/*");
-            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getBitmapFromView(view, textView1, textView2),positionOfPager,context));
+            i.putExtra(Intent.EXTRA_STREAM, getImageUri(getBitmapFromView(context, textView1, textView2),positionOfPager,context));
             i.putExtra(Intent.EXTRA_TEXT,appDes);
             try {
                 context.startActivity(Intent.createChooser(i, "Share by"));
