@@ -25,6 +25,8 @@ import com.parmu.bhagvadgita.misc.ShareAsBitmap;
 
 import java.io.IOException;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class SlokaPagerFragment extends Fragment {
 
@@ -39,7 +41,6 @@ public class SlokaPagerFragment extends Fragment {
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
 
 
     public SlokaPagerFragment() {
@@ -97,20 +98,14 @@ public class SlokaPagerFragment extends Fragment {
         return view;
 
     }
-//
-//
-//    @Override
-//    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
-//        inflater.inflate(R.menu.app_bar_menu_1, menu);
-//        Log.e("OnCreateOptionsMenu", "option menu created");
-//        super.onCreateOptionsMenu(menu, inflater);
-//    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id==R.id.share_shlola){
+        if (id==R.id.share_shlola && item.isEnabled()){
+            item.setEnabled(false);
+            timerForShareSloka(item);
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
-
             int random = new Random().nextInt(100);
             try {
                 shareAsBitmap.share_bitMap_to_Apps(getActivity(), tvSanskrit,tvBhavarth,"अध्याय 1","c1_"+ random);
@@ -128,5 +123,20 @@ public class SlokaPagerFragment extends Fragment {
         else{
             fabPlayBtn.setImageResource(R.drawable.ic_baseline_volume_up_24);
         }
+    }
+
+    private void timerForShareSloka(@NonNull MenuItem item){
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                requireActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        item.setEnabled(true);
+                    }
+                });
+            }
+        },3000);
     }
 }

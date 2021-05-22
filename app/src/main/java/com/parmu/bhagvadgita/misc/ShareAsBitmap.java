@@ -42,8 +42,11 @@ public class ShareAsBitmap {
             bitmapConfig = Bitmap.Config.ARGB_8888;
         }
         returnedBitmap = returnedBitmap.copy(bitmapConfig,true);
+
         Canvas canvas = new Canvas(returnedBitmap);
         TextPaint paint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
+        Paint imgPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
         paint.setColor(Color.WHITE);
         paint.setTextSize(25*scale);
         //textwidth is taken common in str1 and str2
