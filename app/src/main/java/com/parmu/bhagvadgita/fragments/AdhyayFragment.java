@@ -209,7 +209,6 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.app_bar_menu_1, menu);
-        Log.e("OnCreateOptionsMenu", "option menu created");
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -231,13 +230,13 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
 //        Log.e("lifecycle of fragment","on attach");
 //        super.onAttach(context);
 //    }
-
-    @Override
-    public void onDestroyView() {
-
-        Log.e("lifecycle of fragment","on destroy view");
-        super.onDestroyView();
-    }
+//
+//    @Override
+//    public void onDestroyView() {
+//
+//        Log.e("lifecycle of fragment","on destroy view");
+//        super.onDestroyView();
+//    }
 //
 //    @Override
 //    public void onDestroy() {
