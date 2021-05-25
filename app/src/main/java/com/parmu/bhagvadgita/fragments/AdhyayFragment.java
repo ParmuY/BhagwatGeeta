@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
@@ -39,6 +40,8 @@ import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter8;
 import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter9;
 
 public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeListener {
+    private ViewPager viewPager;
+    private ActionBar actionBar;
 
     public AdhyayFragment() {
         // Required empty public constructor
@@ -49,116 +52,143 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
         setHasOptionsMenu(true);
     }
 
+
     @SuppressLint("RestrictedApi")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootAdhyayFrag = inflater.inflate(R.layout.fragment_adhyay, container, false);
-        ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
+        actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
-        ViewPager viewPager = rootAdhyayFrag.findViewById(R.id.view_pager);
-        if (getArguments() != null) {
-            String adhyayName = getArguments().getString("adhyayname");
-                if(adhyayName.equals("adhyay1")) {
-                    actionBar.setTitle("अध्याय 1");
-                    ViewPagerAdapter1 adapter = new ViewPagerAdapter1(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter);
-                }
-                else if(adhyayName.equals("adhyay2")) {
-                    actionBar.setTitle("अध्याय 2");
-                    ViewPagerAdapter2 adapter2 = new ViewPagerAdapter2(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter2);
-                }
-                else if(adhyayName.equals("adhyay3")) {
-                    actionBar.setTitle("अध्याय 3");
-                    ViewPagerAdapter3 adapter3 = new ViewPagerAdapter3(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter3);
-                }
-                else if(adhyayName.equals("adhyay4")) {
-                    actionBar.setTitle("अध्याय 4");
-                    ViewPagerAdapter4 adapter4 = new ViewPagerAdapter4(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter4);
-                }
-                else if(adhyayName.equals("adhyay5")) {
-                    actionBar.setTitle("अध्याय 5");
-                    ViewPagerAdapter5 adapter5 = new ViewPagerAdapter5(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter5);
-                }
-                else if(adhyayName.equals("adhyay6")) {
-                    actionBar.setTitle("अध्याय 6");
-                    ViewPagerAdapter6 adapter6 = new ViewPagerAdapter6(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter6);
-                }
-                else if(adhyayName.equals("adhyay7")) {
-                    actionBar.setTitle("अध्याय 7");
-                    ViewPagerAdapter7 adapter7 = new ViewPagerAdapter7(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter7);
-                }
-                else if(adhyayName.equals("adhyay8")) {
-                    actionBar.setTitle("अध्याय 8");
-                    ViewPagerAdapter8 adapter8 = new ViewPagerAdapter8(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter8);
-                }
-                else if(adhyayName.equals("adhyay9")) {
-                    actionBar.setTitle("अध्याय 9");
-                    ViewPagerAdapter9 adapter9 = new ViewPagerAdapter9(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter9);
-                }
-                else if(adhyayName.equals("adhyay10")) {
-                    actionBar.setTitle("अध्याय 10");
-                    ViewPagerAdapter10 adapter10 = new ViewPagerAdapter10(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter10);
-                }
-                else if(adhyayName.equals("adhyay11")) {
-                    actionBar.setTitle("अध्याय 11");
-                    ViewPagerAdapter11 adapter11 = new ViewPagerAdapter11(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter11);
-                }
-                else if(adhyayName.equals("adhyay12")) {
-                    actionBar.setTitle("अध्याय 12");
-                    ViewPagerAdapter12 adapter12 = new ViewPagerAdapter12(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter12);
-                }
-                else if(adhyayName.equals("adhyay13")) {
-                    actionBar.setTitle("अध्याय 13");
-                    ViewPagerAdapter13 adapter13 = new ViewPagerAdapter13(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter13);
-                }
-                else if(adhyayName.equals("adhyay14")) {
-                    actionBar.setTitle("अध्याय 14");
-                    ViewPagerAdapter14 adapter14 = new ViewPagerAdapter14(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter14);
-                }
-                else if(adhyayName.equals("adhyay15")) {
-                    actionBar.setTitle("अध्याय 15");
-                    ViewPagerAdapter15 adapter15 = new ViewPagerAdapter15(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter15);
-                }
-                else if(adhyayName.equals("adhyay16")) {
-                    actionBar.setTitle("अध्याय 16");
-                    ViewPagerAdapter16 adapter16 = new ViewPagerAdapter16(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter16);
-                }
-                else if(adhyayName.equals("adhyay17")) {
-                    actionBar.setTitle("अध्याय 17");
-                    ViewPagerAdapter17 adapter17 = new ViewPagerAdapter17(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter17);
-                }
-                else if(adhyayName.equals("adhyay18")) {
-                    actionBar.setTitle("अध्याय 18");
-                    ViewPagerAdapter18 adapter18 = new ViewPagerAdapter18(requireActivity().getSupportFragmentManager(),getContext());
-                    viewPager.setAdapter(adapter18);
-                }
-
-        }
+        viewPager = rootAdhyayFrag.findViewById(R.id.view_pager);
         viewPager.addOnPageChangeListener(this);
         TabLayout tabLayout = rootAdhyayFrag.findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
-
+        configureAdapter();
         return rootAdhyayFrag;
+    }
+
+    private void configureAdapter() {
+        if (getArguments() != null) {
+            String adhyayName = getArguments().getString("adhyayname");
+            switch (adhyayName) {
+                case "adhyay1":
+                    actionBar.setTitle("अध्याय 1");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter1 adapter = new ViewPagerAdapter1(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter);
+                    break;
+                case "adhyay2":
+                    actionBar.setTitle("अध्याय 2");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter2 adapter2 = new ViewPagerAdapter2(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter2);
+                    break;
+                case "adhyay3":
+                    actionBar.setTitle("अध्याय 3");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter3 adapter3 = new ViewPagerAdapter3(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter3);
+                    break;
+                case "adhyay4":
+                    actionBar.setTitle("अध्याय 4");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter4 adapter4 = new ViewPagerAdapter4(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter4);
+                    break;
+                case "adhyay5":
+                    actionBar.setTitle("अध्याय 5");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter5 adapter5 = new ViewPagerAdapter5(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter5);
+                    break;
+                case "adhyay6":
+                    actionBar.setTitle("अध्याय 6");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter6 adapter6 = new ViewPagerAdapter6(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter6);
+                    break;
+                case "adhyay7":
+                    actionBar.setTitle("अध्याय 7");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter7 adapter7 = new ViewPagerAdapter7(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter7);
+                    break;
+                case "adhyay8":
+                    actionBar.setTitle("अध्याय 8");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter8 adapter8 = new ViewPagerAdapter8(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter8);
+                    break;
+                case "adhyay9":
+                    actionBar.setTitle("अध्याय 9");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter9 adapter9 = new ViewPagerAdapter9(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter9);
+                    break;
+                case "adhyay10":
+                    actionBar.setTitle("अध्याय 10");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter10 adapter10 = new ViewPagerAdapter10(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter10);
+                    break;
+                case "adhyay11":
+                    actionBar.setTitle("अध्याय 11");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter11 adapter11 = new ViewPagerAdapter11(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter11);
+                    break;
+                case "adhyay12":
+                    actionBar.setTitle("अध्याय 12");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter12 adapter12 = new ViewPagerAdapter12(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter12);
+                    break;
+                case "adhyay13":
+                    actionBar.setTitle("अध्याय 13");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter13 adapter13 = new ViewPagerAdapter13(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter13);
+                    break;
+                case "adhyay14":
+                    actionBar.setTitle("अध्याय 14");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter14 adapter14 = new ViewPagerAdapter14(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter14);
+                    break;
+                case "adhyay15":
+                    actionBar.setTitle("अध्याय 15");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter15 adapter15 = new ViewPagerAdapter15(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter15);
+                    break;
+                case "adhyay16":
+                    actionBar.setTitle("अध्याय 16");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter16 adapter16 = new ViewPagerAdapter16(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter16);
+                    break;
+                case "adhyay17":
+                    actionBar.setTitle("अध्याय 17");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter17 adapter17 = new ViewPagerAdapter17(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter17);
+                    break;
+                case "adhyay18":
+                    actionBar.setTitle("अध्याय 18");
+                    viewPager.setAdapter(null);
+                    ViewPagerAdapter18 adapter18 = new ViewPagerAdapter18(getChildFragmentManager(), getContext());
+                    viewPager.setAdapter(adapter18);
+                    break;
+            }
+        }
+    }
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.app_bar_menu_1, menu);
     }
 
     @Override
@@ -206,53 +236,6 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
             ClassForCombinedMediaPlayer.fileDownloadTask = null;
         }
     }
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.app_bar_menu_1, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
 
-//    @Override
-//    public void onStart() {
-//        Log.e("lifecycle of fragment","onStart");
-//        super.onStart();
-//    }
-//
-//    @Override
-//    public void onResume() {
-//        Log.e("lifecycle of fragment","on resume");
-//        super.onResume();
-//    }
-//
-//
-//    @Override
-//    public void onAttach(@NonNull Context context) {
-//        Log.e("lifecycle of fragment","on attach");
-//        super.onAttach(context);
-//    }
-//
-//    @Override
-//    public void onDestroyView() {
-//
-//        Log.e("lifecycle of fragment","on destroy view");
-//        super.onDestroyView();
-//    }
-//
-//    @Override
-//    public void onDestroy() {
-//        Log.e("lifecycle of fragment","on destroy");
-//        super.onDestroy();
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        Log.e("lifecycle of fragment","on detach");
-//        super.onDetach();
-//    }
-//
-//    @Override
-//    public void onStop() {
-//        Log.e("lifecycle of fragment","on start");
-//        super.onStop();
-//    }
+
 }

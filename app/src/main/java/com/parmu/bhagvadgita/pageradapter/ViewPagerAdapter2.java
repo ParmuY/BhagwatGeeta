@@ -17,7 +17,7 @@ public class  ViewPagerAdapter2 extends FragmentStatePagerAdapter {
 
 
     public ViewPagerAdapter2(FragmentManager supportFragmentManager,Context ctx) {
-        super(supportFragmentManager);
+        super(supportFragmentManager,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.context = ctx;
     }
 

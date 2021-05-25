@@ -19,6 +19,8 @@ import android.text.TextPaint;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import com.parmu.bhagvadgita.R;
@@ -58,6 +60,7 @@ public class ShareAsBitmap {
         //
         int lineCount1 = textLayout1.getLineCount();
         Log.e("line Count sanskrit", String.valueOf(lineCount1));
+
         //for str2
         StaticLayout textLayout2 = new StaticLayout(str2, paint, textWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 1.0f, false);
 
@@ -65,7 +68,7 @@ public class ShareAsBitmap {
         //
         int lineCount2 = textLayout2.getLineCount();
         Log.e("line Count bhavarth", String.valueOf(lineCount2));
-
+        Toast.makeText(context,"sanskrit="+lineCount1+"   bhavarth="+lineCount2,Toast.LENGTH_LONG).show();
         int x1 = 0;
         int y1 = 0;
         int y2 = 0;

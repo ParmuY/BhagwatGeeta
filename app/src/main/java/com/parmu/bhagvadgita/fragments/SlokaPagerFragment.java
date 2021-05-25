@@ -39,31 +39,32 @@ public class SlokaPagerFragment extends Fragment {
     private static final int STORAGE_PERMISSION_CODE = 101;
     private RequestPermissions requestPermissions;
     private final ShareAsBitmap shareAsBitmap = new ShareAsBitmap();
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+//
+//    private static String KEY_ARGU_FILE_EXIST = "fileexist";
+//    private static String KEY_ARGU_FILE_NAME = "filename";
+//    private static String KEY_ARGU_SANSKRIT = "sanskrit";
+//    private static String KEY_ARGU_BHAVARTH = "bhavarth";
 
 
     public SlokaPagerFragment() {
         // Required empty public constructor
     }
-
-    public static SlokaPagerFragment newInstance(String param1, String param2) {
-        SlokaPagerFragment fragment = new SlokaPagerFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+//
+//    public static SlokaPagerFragment newInstance(boolean fileExist,String fileName, String sanskrit, String bhavarth) {
+//        SlokaPagerFragment fragment = new SlokaPagerFragment();
+//        Bundle args = new Bundle();
+//        args.putBoolean(KEY_ARGU_FILE_EXIST,fileExist);
+//        args.putString(KEY_ARGU_FILE_NAME, fileName);
+//        args.putString(KEY_ARGU_SANSKRIT, sanskrit);
+//        args.putString(KEY_ARGU_BHAVARTH,bhavarth);
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            String mParam1 = getArguments().getString(ARG_PARAM1);
-            String mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-        context= getActivity();
+        context= getContext();
         requestPermissions = new RequestPermissions();
         setHasOptionsMenu(true);
     }
@@ -96,24 +97,23 @@ public class SlokaPagerFragment extends Fragment {
                }
         });
         return view;
-
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if (id==R.id.share_shlola && item.isEnabled()){
+        if (item.getItemId()==R.id.share_shlola && item.isEnabled()){
             item.setEnabled(false);
             timerForShareSloka(item);
-            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getActivity());
+            requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getContext());
             int random = new Random().nextInt(10000);
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getActivity(), tvSanskrit,tvBhavarth,"अध्याय 1","c1_"+ random);
+                shareAsBitmap.share_bitMap_to_Apps(getContext(), tvSanskrit,tvBhavarth,"अध्याय 1","c1_"+ random);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            return true;
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
     private void checkIfFileExist(){
 

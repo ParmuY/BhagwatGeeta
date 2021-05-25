@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.view.Menu;
 import android.widget.TextView;
 import com.parmu.bhagvadgita.R;
 
@@ -33,8 +34,5 @@ public class AboutAppActivity extends AppCompatActivity {
         youtubeLink= findViewById(R.id.youtube_link);
         youtubeLink.setMovementMethod(LinkMovementMethod.getInstance());
         youtubeLink.setLinkTextColor(Color.GRAY);
-
-
-
     }
 }
