@@ -105,9 +105,9 @@ public class SlokaPagerFragment extends Fragment {
             item.setEnabled(false);
             timerForShareSloka(item);
             requestPermissions.checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE, getContext());
-            int random = new Random().nextInt(10000);
+            String adhyayNumber = String.valueOf(AdhyayFragment.getAdhyayNum());
             try {
-                shareAsBitmap.share_bitMap_to_Apps(getContext(), tvSanskrit,tvBhavarth,"अध्याय 1","c1_"+ random);
+                shareAsBitmap.share_bitMap_to_Apps(getContext(), tvSanskrit,tvBhavarth, adhyayNumber,"imgC"+adhyayNumber+"S"+AdhyayFragment.getPagerPositon());
             } catch (IOException e) {
                 e.printStackTrace();
             }

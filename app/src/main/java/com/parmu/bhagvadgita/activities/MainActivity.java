@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     SwitchCompat switchDark;
-    public static final String MY_PREFS_FILENAME = "com.parmu.bhagvadgita.DarkMode";
+    private static final String MY_PREFS_FILENAME = "com.parmu.bhagvadgita.DarkMode";
     Toolbar toolbar;
     MenuItem item;
     SharedPreferences sharedPref;
@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("अध्याय");
         setSupportActionBar(toolbar);
+        editor = sharedPref.edit();
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(menuItem -> {

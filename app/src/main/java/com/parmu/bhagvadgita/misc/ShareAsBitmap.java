@@ -5,24 +5,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Environment;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import com.parmu.bhagvadgita.R;
 
@@ -63,16 +57,12 @@ public class ShareAsBitmap {
         int textHeight1 = textLayout1.getHeight();
         //
         int lineCount1 = textLayout1.getLineCount();
-        Log.e("line Count sanskrit", String.valueOf(lineCount1));
 
         //for str2
         StaticLayout textLayout2 = new StaticLayout(str2, paint, textWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 1.0f, false);
 
         int textHeight2 = textLayout2.getHeight();
-        //
         int lineCount2 = textLayout2.getLineCount();
-        Log.e("line Count bhavarth", String.valueOf(lineCount2));
-        Toast.makeText(context,"sanskrit="+lineCount1+"   bhavarth="+lineCount2,Toast.LENGTH_LONG).show();
         int x1 = 0;
         int y1 = 0;
         int y2 = 0;
@@ -284,8 +274,6 @@ public class ShareAsBitmap {
             y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.4f);
         }
 
-
-
         //for str1
         canvas.save();
         canvas.translate(x1, y1);
@@ -324,7 +312,7 @@ public class ShareAsBitmap {
             }
             try {
                 fos = new FileOutputStream(imgFile);
-                inImage.compress(Bitmap.CompressFormat.PNG, 90, fos);
+                inImage.compress(Bitmap.CompressFormat.JPEG, 50, fos);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -340,7 +328,7 @@ public class ShareAsBitmap {
 
     public void share_bitMap_to_Apps(Context context, TextView textView1, TextView textView2, String adhyayN, String positionOfPager) throws IOException {
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            String appDes = "\uD83D\uDD05" + adhyayN + "\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47" + "here will come the app link";
+            String appDes = "\uD83D\uDD05" + "अध्याय "+adhyayN + "\uD83D\uDD05\n\uD83D\uDE4Fश्रीमद्भगवद्गीता\uD83D\uDE4F\nShared via Bhagvad Gita app\uD83D\uDC47" + "here will come the app link";
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("*/*");
             i.setPackage("com.whatsapp");
