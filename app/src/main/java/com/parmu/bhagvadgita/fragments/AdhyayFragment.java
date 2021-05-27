@@ -73,13 +73,15 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
         assert getArguments() != null;
         adhyayName = getArguments().getString("adhyayname");
-        sharedPrefFrag = requireActivity().getSharedPreferences(MY_PAGER_HISORY_PREF_FILE,Context.MODE_PRIVATE);
 
         viewPager = rootAdhyayFrag.findViewById(R.id.view_pager);
         viewPager.addOnPageChangeListener(this);
         TabLayout tabLayout = rootAdhyayFrag.findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
         configureAdapter();
+        sharedPrefFrag = requireActivity().getSharedPreferences(MY_PAGER_HISORY_PREF_FILE,Context.MODE_PRIVATE);
+        int recentPagePo = sharedPrefFrag.getInt("adhyay"+adhyayNum,0);
+        viewPager.setCurrentItem(recentPagePo);
         return rootAdhyayFrag;
     }
 
@@ -266,6 +268,16 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
             ClassForCombinedMediaPlayer.fileDownloadTask = null;
         }
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        String adhyay = String.valueOf(getAdhyayNum());
+        prefEditorFrag = sharedPrefFrag.edit();
+        prefEditorFrag.putInt("adhyay"+adhyay,getPagerPositon());
+        prefEditorFrag.apply();
+    }
+
     public static int getPagerPositon(){
         return viewPager.getCurrentItem();
     }
