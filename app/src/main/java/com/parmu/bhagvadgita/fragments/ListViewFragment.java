@@ -3,15 +3,11 @@ package com.parmu.bhagvadgita.fragments;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,10 +17,8 @@ import com.parmu.bhagvadgita.misc.RecycleViewItem;
 import java.util.ArrayList;
 
 public class ListViewFragment extends Fragment {
-    ArrayList<RecycleViewItem> recycleViewItemList;
-    RecyclerView mRecyclerView;
-    RecyclerView.LayoutManager mLayoutManager;
-    RecycleViewAdapter recycleViewAdapter;
+    private ArrayList<RecycleViewItem> recycleViewItemList;
+    private RecyclerView mRecyclerView;
 
     public ListViewFragment() {
         // Required empty public constructor
@@ -78,8 +72,8 @@ public class ListViewFragment extends Fragment {
     private void configForRecyclerView(){
 
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(getContext());
-        recycleViewAdapter = new RecycleViewAdapter(recycleViewItemList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(recycleViewItemList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(recycleViewAdapter);
         recycleViewAdapter.setOnItemClickListener(position -> {

@@ -1,15 +1,14 @@
 package com.parmu.bhagvadgita.fragments;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
@@ -21,6 +20,7 @@ import android.view.ViewGroup;
 import com.google.android.material.tabs.TabLayout;
 import com.parmu.bhagvadgita.R;
 import com.parmu.bhagvadgita.misc.ClassForCombinedMediaPlayer;
+import com.parmu.bhagvadgita.misc.InterstitialAdMobClass;
 import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter1;
 import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter10;
 import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter11;
@@ -40,14 +40,18 @@ import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter7;
 import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter8;
 import com.parmu.bhagvadgita.pageradapter.ViewPagerAdapter9;
 
+import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeListener {
     private static ViewPager viewPager;
     private ActionBar actionBar;
     private SharedPreferences sharedPrefFrag;
-    private SharedPreferences.Editor prefEditorFrag;
     private static final String MY_PAGER_HISORY_PREF_FILE = "com.parmu.bhagvadgita.PagerHistory";
     private String adhyayName ;
     private static int adhyayNum;
+    private boolean isTimerFinished = false;
 
     public AdhyayFragment() {
         // Required empty public constructor
@@ -58,6 +62,18 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+        String interstitialAdUnitId = getString(R.string.interstitial_ad_unit_id_adhyay);
+        InterstitialAdMobClass.initInterstitialAds(getContext(),interstitialAdUnitId);
+        //timer for showing ads
+        final Timer timer  = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                isTimerFinished = true;
+                timer.cancel();
+            }
+        },5000);
     }
 
 
@@ -73,7 +89,6 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24);
         assert getArguments() != null;
         adhyayName = getArguments().getString("adhyayname");
-
         viewPager = rootAdhyayFrag.findViewById(R.id.view_pager);
         viewPager.addOnPageChangeListener(this);
         TabLayout tabLayout = rootAdhyayFrag.findViewById(R.id.tab_layout);
@@ -273,9 +288,14 @@ public class AdhyayFragment extends Fragment implements ViewPager.OnPageChangeLi
     public void onStop() {
         super.onStop();
         String adhyay = String.valueOf(getAdhyayNum());
-        prefEditorFrag = sharedPrefFrag.edit();
+        SharedPreferences.Editor prefEditorFrag = sharedPrefFrag.edit();
         prefEditorFrag.putInt("adhyay"+adhyay,getPagerPositon());
         prefEditorFrag.apply();
+        Log.e("adhyay frag","onStop() called");
+        if(InterstitialAdMobClass.mInterstitialAd!=null && isTimerFinished){
+            InterstitialAdMobClass.mInterstitialAd.show(requireActivity());
+        }
+
     }
 
     public static int getPagerPositon(){

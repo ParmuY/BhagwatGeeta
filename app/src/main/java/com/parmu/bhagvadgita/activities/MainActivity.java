@@ -27,16 +27,15 @@ import com.parmu.bhagvadgita.misc.InterstitialAdMobClass;
 public class MainActivity extends AppCompatActivity {
 //code optimization and improvization
     //bitmap feature implementation branch
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
+
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
     @SuppressLint("UseSwitchCompatOrMaterialCode")
-    SwitchCompat switchDark;
+    private SwitchCompat switchDark;
     private static final String MY_PREFS_FILENAME = "com.parmu.bhagvadgita.DarkMode";
-    Toolbar toolbar;
-    MenuItem item;
-    SharedPreferences sharedPref;
-    SharedPreferences.Editor editor;
-    boolean isDarkModeOn;
+    private SharedPreferences sharedPref;
+    private SharedPreferences.Editor editor;
+    private boolean isDarkModeOn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         }
         hambergerToolbarActionBar();
         nightDaySwitchModeFunctionality();
+
         MobileAds.initialize(this, initializationStatus -> {});
     }
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @SuppressLint("NonConstantResourceId")
     private void hambergerToolbarActionBar(){
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("अध्याय");
         setSupportActionBar(toolbar);
         editor = sharedPref.edit();
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     //nightday mode switch functionality
     private void nightDaySwitchModeFunctionality(){
         // function for dark mode switch button
-        item = navigationView.getMenu().findItem(R.id.dark_mode);
+        MenuItem item = navigationView.getMenu().findItem(R.id.dark_mode);
         switchDark = item.getActionView().findViewById(R.id.switch_dark);
         editor=sharedPref.edit();
         switchDark.setChecked(isDarkModeOn);
@@ -167,9 +167,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop(){
         super.onStop();
-//        if(InterstitialAdMobClass.mInterstitialAd!=null){
-//            InterstitialAdMobClass.mInterstitialAd = null;
-//        }
+        if(InterstitialAdMobClass.mInterstitialAd!=null){
+            InterstitialAdMobClass.mInterstitialAd = null;
+        }
     }
 
 }

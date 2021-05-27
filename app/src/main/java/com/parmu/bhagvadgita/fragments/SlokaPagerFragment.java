@@ -1,36 +1,25 @@
 package com.parmu.bhagvadgita.fragments;
 
 import android.Manifest;
-import android.content.Context;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.parmu.bhagvadgita.R;
 import com.parmu.bhagvadgita.misc.ClassForCombinedMediaPlayer;
 import com.parmu.bhagvadgita.misc.RequestPermissions;
 import com.parmu.bhagvadgita.misc.ShareAsBitmap;
-
 import java.io.IOException;
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class SlokaPagerFragment extends Fragment {
 
-    private Context context;
     private TextView tvSanskrit;
     private TextView tvBhavarth;
     private FloatingActionButton fabPlayBtn;
@@ -64,7 +53,6 @@ public class SlokaPagerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        context= getContext();
         requestPermissions = new RequestPermissions();
         setHasOptionsMenu(true);
     }
@@ -86,16 +74,13 @@ public class SlokaPagerFragment extends Fragment {
         fileName = getArguments().getString("filename");
         checkIfFileExist();
 
-        fabPlayBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    ClassForCombinedMediaPlayer.playDisSound(context,fileName,fabPlayBtn);
-                } catch (IOException | InterruptedException e) {
-                    e.printStackTrace();
-                }
-               }
-        });
+        fabPlayBtn.setOnClickListener(view1 -> {
+            try {
+                ClassForCombinedMediaPlayer.playDisSound(getContext(),fileName,fabPlayBtn);
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
+           });
         return view;
     }
 
@@ -130,11 +115,9 @@ public class SlokaPagerFragment extends Fragment {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                requireActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        item.setEnabled(true);
-                    }
+                requireActivity().runOnUiThread(() -> {
+                    item.setEnabled(true);
+                    timer.cancel();
                 });
             }
         },3000);
