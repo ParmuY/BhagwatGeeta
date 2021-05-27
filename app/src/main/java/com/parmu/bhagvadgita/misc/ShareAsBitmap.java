@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -38,6 +39,9 @@ public class ShareAsBitmap {
         float scale = res.getDisplayMetrics().density;
         String str1 = textView1.getText().toString();
         String str2 = textView2.getText().toString();
+
+        //removing brackets  from string
+
 
         Bitmap returnedBitmap = BitmapFactory.decodeResource(res, R.drawable.bg_sloka);
         Bitmap.Config bitmapConfig = returnedBitmap.getConfig();
@@ -73,6 +77,7 @@ public class ShareAsBitmap {
         int y1 = 0;
         int y2 = 0;
         int x2 = 0;
+
         if (lineCount1 <= 4 && lineCount2 <= 4) {
             //coordinates for str1 sanskrit
             x1 = (returnedBitmap.getWidth() - textWidth) / 2;
@@ -80,37 +85,35 @@ public class ShareAsBitmap {
             //coordinates for str2 bhavarth
             x2 = (returnedBitmap.getWidth() - textWidth) / 2;
             y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.7f);
-        } else if (lineCount1 == 4 && lineCount2 == 8) {
-            //for last sloke of c1
-            //coordinates for str1 sanskrit
-            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
-            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
-            //coordinates for str2 bhavarth
-            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
-            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
-        } else if (lineCount1 == 5 && lineCount2 == 5) {
-            //specially for c1s38_39
-            //coordinates for str1 sanskrit
-            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
-            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
-            //coordinates for str2 bhavarth
-            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
-            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.6f);
-        } else if (lineCount1 <= 6 && lineCount2 <= 6) {
+        }
+        else if (lineCount1 <= 6 && lineCount2 <= 6) {
             //coordinates for str1 sanskrit
             x1 = (returnedBitmap.getWidth() - textWidth) / 2;
             y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
             //coordinates for str2 bhavarth
             x2 = (returnedBitmap.getWidth() - textWidth) / 2;
             y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.4f);
-        } else if (lineCount1 >= 7 && lineCount2 >= 7) {
+        }
+        else if (lineCount1 == 3  && lineCount2 <= 10) {
             //coordinates for str1 sanskrit
             x1 = (returnedBitmap.getWidth() - textWidth) / 2;
-            y1 = (returnedBitmap.getHeight() - textHeight1) / 8;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
             //coordinates for str2 bhavarth
             x2 = (returnedBitmap.getWidth() - textWidth) / 2;
             y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
-        } else if (lineCount1 == 7 && lineCount2 == 5) {
+        }
+        else if (lineCount1 == 7&& lineCount2 <= 12) {
+            //coordinates for str1 sanskrit
+            //for c3s28
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 12;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.00f);
+        }
+
+        //
+        if (lineCount1 == 7 && lineCount2 == 5) {
             //specially fr c1s20_21
             //coordinates for str1 sanskrit
             x1 = (returnedBitmap.getWidth() - textWidth) / 2;
@@ -119,6 +122,168 @@ public class ShareAsBitmap {
             x2 = (returnedBitmap.getWidth() - textWidth) / 2;
             y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.35f);
         }
+        if ((lineCount1 == 3 || lineCount1 ==4|| lineCount1==5 )&& (lineCount2 == 11 || lineCount2==12)) {
+            //coordinates for str1 sanskrit
+            //for c3s28
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.00f);
+        }
+        if (lineCount1 == 4 && lineCount2 == 16) {
+            //coordinates for str1 sanskrit
+            //for c3s3
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 25;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.00f);
+        }
+        if (lineCount1 == 3 && lineCount2 == 14) {
+            //coordinates for str1 sanskrit
+            //for c3s3
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 8;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.00f);
+        }
+        if (lineCount1 == 5 && lineCount2 == 7) {
+            //coordinates for str1 sanskrit
+            //for c2s6
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 6 && lineCount2 == 7) {
+            //coordinates for str1 sanskrit
+            //for c2s6
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 8  && lineCount2 == 8) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 8;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 6  && lineCount2 == 9) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 8;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 7  && lineCount2 == 8) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 8;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 8  && lineCount2 == 7) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 8;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 7  && lineCount2 == 7) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 8;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 4 && lineCount2 ==7) {
+            //for last sloke of c1
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 4 && lineCount2 == 8) {
+            //for last sloke of c1
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if ((lineCount1 == 3 || lineCount1==4) && lineCount2 == 13) {
+            //coordinates for str1 sanskrit
+            //for c4s9
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) /8;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.00f);
+        }
+        if (lineCount1 == 6 && lineCount2 == 10) {
+            //coordinates for str1 sanskrit
+            //for c4s9
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) /14;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 5 && lineCount2 == 9) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 6;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 5 && lineCount2 == 8) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 4 && lineCount2 == 9) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 4  && lineCount2 == 10) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.2f);
+        }
+        if (lineCount1 == 3 && lineCount2 == 6) {
+            //coordinates for str1 sanskrit
+            x1 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y1 = (returnedBitmap.getHeight() - textHeight1) / 4;
+            //coordinates for str2 bhavarth
+            x2 = (returnedBitmap.getWidth() - textWidth) / 2;
+            y2 = (int) ((returnedBitmap.getHeight() - textHeight2) / 1.4f);
+        }
+
 
 
         //for str1

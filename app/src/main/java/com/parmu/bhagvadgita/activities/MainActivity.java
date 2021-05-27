@@ -166,9 +166,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop(){
         super.onStop();
-        if(InterstitialAdMobClass.mInterstitialAd!=null){
-            InterstitialAdMobClass.mInterstitialAd = null;
-        }
+//        if(InterstitialAdMobClass.mInterstitialAd!=null){
+//            InterstitialAdMobClass.mInterstitialAd = null;
+//        }
     }
 
 }
