@@ -38,17 +38,6 @@ public class SlokaPagerFragment extends Fragment {
     public SlokaPagerFragment() {
         // Required empty public constructor
     }
-//
-//    public static SlokaPagerFragment newInstance(boolean fileExist,String fileName, String sanskrit, String bhavarth) {
-//        SlokaPagerFragment fragment = new SlokaPagerFragment();
-//        Bundle args = new Bundle();
-//        args.putBoolean(KEY_ARGU_FILE_EXIST,fileExist);
-//        args.putString(KEY_ARGU_FILE_NAME, fileName);
-//        args.putString(KEY_ARGU_SANSKRIT, sanskrit);
-//        args.putString(KEY_ARGU_BHAVARTH,bhavarth);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
